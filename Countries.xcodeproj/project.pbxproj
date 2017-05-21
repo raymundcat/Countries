@@ -1,0 +1,951 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3146AC1CE6C117885CA5BE7E /* Pods_CountriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A604DA18568B3343E664F77 /* Pods_CountriesTests.framework */; };
+		4AEA601FE947A25010986BBD /* Pods_Countries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9BDF5957242FC193E76737 /* Pods_Countries.framework */; };
+		CBC488A21453320CDF32E811 /* Pods_CountriesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD2379864D812892CABCA5B /* Pods_CountriesUITests.framework */; };
+		EC16ED0C1ECF77E200A5CE2B /* CountriesListFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16ED0B1ECF77E200A5CE2B /* CountriesListFlowController.m */; };
+		EC16ED0F1ECF7CD000A5CE2B /* CountriesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16ED0E1ECF7CD000A5CE2B /* CountriesListViewController.m */; };
+		EC32872B1ED1F1E000221C66 /* UIColor+Countries.m in Sources */ = {isa = PBXBuildFile; fileRef = EC32872A1ED1F1E000221C66 /* UIColor+Countries.m */; };
+		EC32872E1ED1F8E400221C66 /* NSArray+Map.m in Sources */ = {isa = PBXBuildFile; fileRef = EC32872D1ED1F8E400221C66 /* NSArray+Map.m */; };
+		EC40233F1ECF8339006BFBB5 /* CountriesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = EC40233E1ECF8339006BFBB5 /* CountriesListPresenter.m */; };
+		EC4023441ECF8C57006BFBB5 /* CountriesListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4023431ECF8C57006BFBB5 /* CountriesListAPI.m */; };
+		EC4023471ED00E8B006BFBB5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4023461ED00E8B006BFBB5 /* BaseViewController.m */; };
+		EC40234B1ED01D74006BFBB5 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = EC40234A1ED01D74006BFBB5 /* Country.m */; };
+		EC40234E1ED02B0D006BFBB5 /* ReachabilityAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EC40234D1ED02B0D006BFBB5 /* ReachabilityAPI.m */; };
+		EC40235F1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC40235E1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m */; };
+		EC633DA41ECDF4EA0040B8EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DA31ECDF4EA0040B8EB /* main.m */; };
+		EC633DA71ECDF4EA0040B8EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DA61ECDF4EA0040B8EB /* AppDelegate.m */; };
+		EC633DAD1ECDF4EA0040B8EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC633DAB1ECDF4EA0040B8EB /* Main.storyboard */; };
+		EC633DAF1ECDF4EA0040B8EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC633DAE1ECDF4EA0040B8EB /* Assets.xcassets */; };
+		EC633DB21ECDF4EA0040B8EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC633DB01ECDF4EA0040B8EB /* LaunchScreen.storyboard */; };
+		EC633DBD1ECDF4EA0040B8EB /* CountriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DBC1ECDF4EA0040B8EB /* CountriesTests.m */; };
+		EC633DC81ECDF4EA0040B8EB /* CountriesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DC71ECDF4EA0040B8EB /* CountriesUITests.m */; };
+		EC633DF31ECF651D0040B8EB /* InitialFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DF21ECF651D0040B8EB /* InitialFlowController.m */; };
+		ECBCC7801ED20DA800A7AE00 /* CountriesSearchFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */; };
+		ECBCC7841ED2205800A7AE00 /* CountriesSerachPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC7831ED2205800A7AE00 /* CountriesSerachPresenter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC633DB91ECDF4EA0040B8EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC633D971ECDF4EA0040B8EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC633D9E1ECDF4EA0040B8EB;
+			remoteInfo = Countries;
+		};
+		EC633DC41ECDF4EA0040B8EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC633D971ECDF4EA0040B8EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC633D9E1ECDF4EA0040B8EB;
+			remoteInfo = Countries;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4AD2379864D812892CABCA5B /* Pods_CountriesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D9BDF5957242FC193E76737 /* Pods_Countries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A604DA18568B3343E664F77 /* Pods_CountriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		830E089FFF85BD051925C3EB /* Pods-CountriesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountriesUITests/Pods-CountriesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CD7236C0AFF6403EA1537A2A /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
+		CE6FF10CDDCED941FC592AF8 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
+		D6F618152ABEA2C57868C265 /* Pods-CountriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountriesTests/Pods-CountriesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DFFB83C73ECE6ADE710DB5C4 /* Pods-CountriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountriesTests/Pods-CountriesTests.release.xcconfig"; sourceTree = "<group>"; };
+		EC16ED0A1ECF77E200A5CE2B /* CountriesListFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListFlowController.h; sourceTree = "<group>"; };
+		EC16ED0B1ECF77E200A5CE2B /* CountriesListFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesListFlowController.m; sourceTree = "<group>"; };
+		EC16ED0D1ECF7CD000A5CE2B /* CountriesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListViewController.h; sourceTree = "<group>"; };
+		EC16ED0E1ECF7CD000A5CE2B /* CountriesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesListViewController.m; sourceTree = "<group>"; };
+		EC3287291ED1F1E000221C66 /* UIColor+Countries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Countries.h"; sourceTree = "<group>"; };
+		EC32872A1ED1F1E000221C66 /* UIColor+Countries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Countries.m"; sourceTree = "<group>"; };
+		EC32872C1ED1F8E400221C66 /* NSArray+Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Map.h"; sourceTree = "<group>"; };
+		EC32872D1ED1F8E400221C66 /* NSArray+Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Map.m"; sourceTree = "<group>"; };
+		EC40233D1ECF8339006BFBB5 /* CountriesListPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListPresenter.h; sourceTree = "<group>"; };
+		EC40233E1ECF8339006BFBB5 /* CountriesListPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesListPresenter.m; sourceTree = "<group>"; };
+		EC4023421ECF8C57006BFBB5 /* CountriesListAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListAPI.h; sourceTree = "<group>"; };
+		EC4023431ECF8C57006BFBB5 /* CountriesListAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesListAPI.m; sourceTree = "<group>"; };
+		EC4023451ED00E8B006BFBB5 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		EC4023461ED00E8B006BFBB5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		EC4023491ED01D74006BFBB5 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		EC40234A1ED01D74006BFBB5 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		EC40234C1ED02B0D006BFBB5 /* ReachabilityAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityAPI.h; sourceTree = "<group>"; };
+		EC40234D1ED02B0D006BFBB5 /* ReachabilityAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityAPI.m; sourceTree = "<group>"; };
+		EC40235D1ED1A5CC006BFBB5 /* CountryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryCollectionViewCell.h; sourceTree = "<group>"; };
+		EC40235E1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryCollectionViewCell.m; sourceTree = "<group>"; };
+		EC633D9F1ECDF4EA0040B8EB /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC633DA31ECDF4EA0040B8EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC633DA51ECDF4EA0040B8EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EC633DA61ECDF4EA0040B8EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EC633DAC1ECDF4EA0040B8EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC633DAE1ECDF4EA0040B8EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC633DB11ECDF4EA0040B8EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC633DB31ECDF4EA0040B8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC633DB81ECDF4EA0040B8EB /* CountriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC633DBC1ECDF4EA0040B8EB /* CountriesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountriesTests.m; sourceTree = "<group>"; };
+		EC633DBE1ECDF4EA0040B8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC633DC31ECDF4EA0040B8EB /* CountriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC633DC71ECDF4EA0040B8EB /* CountriesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountriesUITests.m; sourceTree = "<group>"; };
+		EC633DC91ECDF4EA0040B8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC633DF01ECF64490040B8EB /* FlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowController.h; sourceTree = "<group>"; };
+		EC633DF11ECF651D0040B8EB /* InitialFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialFlowController.h; sourceTree = "<group>"; };
+		EC633DF21ECF651D0040B8EB /* InitialFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialFlowController.m; sourceTree = "<group>"; };
+		ECBCC77E1ED20DA800A7AE00 /* CountriesSearchFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchFlowController.h; sourceTree = "<group>"; };
+		ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSearchFlowController.m; sourceTree = "<group>"; };
+		ECBCC7821ED2205800A7AE00 /* CountriesSerachPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSerachPresenter.h; sourceTree = "<group>"; };
+		ECBCC7831ED2205800A7AE00 /* CountriesSerachPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSerachPresenter.m; sourceTree = "<group>"; };
+		F95A951CF1E990B161F07565 /* Pods-CountriesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountriesUITests/Pods-CountriesUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC633D9C1ECDF4EA0040B8EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AEA601FE947A25010986BBD /* Pods_Countries.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC633DB51ECDF4EA0040B8EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3146AC1CE6C117885CA5BE7E /* Pods_CountriesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC633DC01ECDF4EA0040B8EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBC488A21453320CDF32E811 /* Pods_CountriesUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68ECA9AE001128D5ADA6F10C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D9BDF5957242FC193E76737 /* Pods_Countries.framework */,
+				6A604DA18568B3343E664F77 /* Pods_CountriesTests.framework */,
+				4AD2379864D812892CABCA5B /* Pods_CountriesUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA20E4B3CB2321878F1D54C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD7236C0AFF6403EA1537A2A /* Pods-Countries.debug.xcconfig */,
+				CE6FF10CDDCED941FC592AF8 /* Pods-Countries.release.xcconfig */,
+				D6F618152ABEA2C57868C265 /* Pods-CountriesTests.debug.xcconfig */,
+				DFFB83C73ECE6ADE710DB5C4 /* Pods-CountriesTests.release.xcconfig */,
+				830E089FFF85BD051925C3EB /* Pods-CountriesUITests.debug.xcconfig */,
+				F95A951CF1E990B161F07565 /* Pods-CountriesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC4023401ECF84AE006BFBB5 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				EC16ED0A1ECF77E200A5CE2B /* CountriesListFlowController.h */,
+				EC16ED0B1ECF77E200A5CE2B /* CountriesListFlowController.m */,
+			);
+			name = Flow;
+			sourceTree = "<group>";
+		};
+		EC4023411ECF8C3B006BFBB5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EC4023421ECF8C57006BFBB5 /* CountriesListAPI.h */,
+				EC4023431ECF8C57006BFBB5 /* CountriesListAPI.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		EC4023481ED01D5A006BFBB5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				EC4023491ED01D74006BFBB5 /* Country.h */,
+				EC40234A1ED01D74006BFBB5 /* Country.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		EC40234F1ED02B18006BFBB5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EC40234C1ED02B0D006BFBB5 /* ReachabilityAPI.h */,
+				EC40234D1ED02B0D006BFBB5 /* ReachabilityAPI.m */,
+				EC3287291ED1F1E000221C66 /* UIColor+Countries.h */,
+				EC32872A1ED1F1E000221C66 /* UIColor+Countries.m */,
+				EC32872C1ED1F8E400221C66 /* NSArray+Map.h */,
+				EC32872D1ED1F8E400221C66 /* NSArray+Map.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		EC40235C1ED1A59D006BFBB5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC40235D1ED1A5CC006BFBB5 /* CountryCollectionViewCell.h */,
+				EC40235E1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		EC633D961ECDF4EA0040B8EB = {
+			isa = PBXGroup;
+			children = (
+				EC633DA11ECDF4EA0040B8EB /* Countries */,
+				EC633DBB1ECDF4EA0040B8EB /* CountriesTests */,
+				EC633DC61ECDF4EA0040B8EB /* CountriesUITests */,
+				EC633DA01ECDF4EA0040B8EB /* Products */,
+				AA20E4B3CB2321878F1D54C5 /* Pods */,
+				68ECA9AE001128D5ADA6F10C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EC633DA01ECDF4EA0040B8EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC633D9F1ECDF4EA0040B8EB /* Countries.app */,
+				EC633DB81ECDF4EA0040B8EB /* CountriesTests.xctest */,
+				EC633DC31ECDF4EA0040B8EB /* CountriesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC633DA11ECDF4EA0040B8EB /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				EC633DDF1ECE25E60040B8EB /* Over Alls */,
+				EC633DD71ECDF5200040B8EB /* Countries Details */,
+				ECBCC77B1ED20D0000A7AE00 /* Search Countries */,
+				EC633DD61ECDF50F0040B8EB /* Countries List */,
+				EC633DA21ECDF4EA0040B8EB /* Supporting Files */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		EC633DA21ECDF4EA0040B8EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC633DA51ECDF4EA0040B8EB /* AppDelegate.h */,
+				EC633DA61ECDF4EA0040B8EB /* AppDelegate.m */,
+				EC633DAB1ECDF4EA0040B8EB /* Main.storyboard */,
+				EC633DAE1ECDF4EA0040B8EB /* Assets.xcassets */,
+				EC633DB01ECDF4EA0040B8EB /* LaunchScreen.storyboard */,
+				EC633DB31ECDF4EA0040B8EB /* Info.plist */,
+				EC633DA31ECDF4EA0040B8EB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC633DBB1ECDF4EA0040B8EB /* CountriesTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC633DBC1ECDF4EA0040B8EB /* CountriesTests.m */,
+				EC633DBE1ECDF4EA0040B8EB /* Info.plist */,
+			);
+			path = CountriesTests;
+			sourceTree = "<group>";
+		};
+		EC633DC61ECDF4EA0040B8EB /* CountriesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC633DC71ECDF4EA0040B8EB /* CountriesUITests.m */,
+				EC633DC91ECDF4EA0040B8EB /* Info.plist */,
+			);
+			path = CountriesUITests;
+			sourceTree = "<group>";
+		};
+		EC633DD61ECDF50F0040B8EB /* Countries List */ = {
+			isa = PBXGroup;
+			children = (
+				EC4023411ECF8C3B006BFBB5 /* API */,
+				EC4023401ECF84AE006BFBB5 /* Flow */,
+				EC633DD91ECDF5310040B8EB /* Presenters */,
+				EC633DD81ECDF52B0040B8EB /* Views */,
+			);
+			name = "Countries List";
+			sourceTree = "<group>";
+		};
+		EC633DD71ECDF5200040B8EB /* Countries Details */ = {
+			isa = PBXGroup;
+			children = (
+				EC633DDB1ECDF53D0040B8EB /* Models */,
+				EC633DDA1ECDF5360040B8EB /* Views */,
+			);
+			name = "Countries Details";
+			sourceTree = "<group>";
+		};
+		EC633DD81ECDF52B0040B8EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC40235C1ED1A59D006BFBB5 /* Cells */,
+				EC16ED0D1ECF7CD000A5CE2B /* CountriesListViewController.h */,
+				EC16ED0E1ECF7CD000A5CE2B /* CountriesListViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EC633DD91ECDF5310040B8EB /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				EC40233D1ECF8339006BFBB5 /* CountriesListPresenter.h */,
+				EC40233E1ECF8339006BFBB5 /* CountriesListPresenter.m */,
+			);
+			name = Presenters;
+			sourceTree = "<group>";
+		};
+		EC633DDA1ECDF5360040B8EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EC633DDB1ECDF53D0040B8EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EC633DDF1ECE25E60040B8EB /* Over Alls */ = {
+			isa = PBXGroup;
+			children = (
+				EC40234F1ED02B18006BFBB5 /* Helper */,
+				EC4023481ED01D5A006BFBB5 /* Entities */,
+				EC633DE01ECE25EE0040B8EB /* Base Classes */,
+			);
+			name = "Over Alls";
+			sourceTree = "<group>";
+		};
+		EC633DE01ECE25EE0040B8EB /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EC633DF01ECF64490040B8EB /* FlowController.h */,
+				EC633DF11ECF651D0040B8EB /* InitialFlowController.h */,
+				EC633DF21ECF651D0040B8EB /* InitialFlowController.m */,
+				EC4023451ED00E8B006BFBB5 /* BaseViewController.h */,
+				EC4023461ED00E8B006BFBB5 /* BaseViewController.m */,
+			);
+			name = "Base Classes";
+			sourceTree = "<group>";
+		};
+		ECBCC77B1ED20D0000A7AE00 /* Search Countries */ = {
+			isa = PBXGroup;
+			children = (
+				ECBCC7811ED2204300A7AE00 /* Presenters */,
+				ECBCC77D1ED20D1700A7AE00 /* FlowController */,
+			);
+			name = "Search Countries";
+			sourceTree = "<group>";
+		};
+		ECBCC77D1ED20D1700A7AE00 /* FlowController */ = {
+			isa = PBXGroup;
+			children = (
+				ECBCC77E1ED20DA800A7AE00 /* CountriesSearchFlowController.h */,
+				ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */,
+			);
+			name = FlowController;
+			sourceTree = "<group>";
+		};
+		ECBCC7811ED2204300A7AE00 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				ECBCC7821ED2205800A7AE00 /* CountriesSerachPresenter.h */,
+				ECBCC7831ED2205800A7AE00 /* CountriesSerachPresenter.m */,
+			);
+			name = Presenters;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC633D9E1ECDF4EA0040B8EB /* Countries */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC633DCC1ECDF4EA0040B8EB /* Build configuration list for PBXNativeTarget "Countries" */;
+			buildPhases = (
+				FB5002ED890F907BE390C9FD /* [CP] Check Pods Manifest.lock */,
+				EC633D9B1ECDF4EA0040B8EB /* Sources */,
+				EC633D9C1ECDF4EA0040B8EB /* Frameworks */,
+				EC633D9D1ECDF4EA0040B8EB /* Resources */,
+				3B548F460F31E28DD845D4AE /* [CP] Embed Pods Frameworks */,
+				5376FDB1343BF1B107476498 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Countries;
+			productName = Countries;
+			productReference = EC633D9F1ECDF4EA0040B8EB /* Countries.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC633DB71ECDF4EA0040B8EB /* CountriesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC633DCF1ECDF4EA0040B8EB /* Build configuration list for PBXNativeTarget "CountriesTests" */;
+			buildPhases = (
+				D3C7739DEFF53DCA56D06C50 /* [CP] Check Pods Manifest.lock */,
+				EC633DB41ECDF4EA0040B8EB /* Sources */,
+				EC633DB51ECDF4EA0040B8EB /* Frameworks */,
+				EC633DB61ECDF4EA0040B8EB /* Resources */,
+				5ED89D15A0D77DA8C1D30890 /* [CP] Embed Pods Frameworks */,
+				386C7AFD6A6DEA02F312D277 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC633DBA1ECDF4EA0040B8EB /* PBXTargetDependency */,
+			);
+			name = CountriesTests;
+			productName = CountriesTests;
+			productReference = EC633DB81ECDF4EA0040B8EB /* CountriesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC633DC21ECDF4EA0040B8EB /* CountriesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC633DD21ECDF4EA0040B8EB /* Build configuration list for PBXNativeTarget "CountriesUITests" */;
+			buildPhases = (
+				3F8C9083702068B7B99CBFDC /* [CP] Check Pods Manifest.lock */,
+				EC633DBF1ECDF4EA0040B8EB /* Sources */,
+				EC633DC01ECDF4EA0040B8EB /* Frameworks */,
+				EC633DC11ECDF4EA0040B8EB /* Resources */,
+				FD996E3EC196440FD63B1B4E /* [CP] Embed Pods Frameworks */,
+				F7CBFEF8CE3F1DF13D864071 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC633DC51ECDF4EA0040B8EB /* PBXTargetDependency */,
+			);
+			name = CountriesUITests;
+			productName = CountriesUITests;
+			productReference = EC633DC31ECDF4EA0040B8EB /* CountriesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC633D971ECDF4EA0040B8EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "John Raymund Catahay";
+				TargetAttributes = {
+					EC633D9E1ECDF4EA0040B8EB = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3XNDNC2DEH;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					EC633DB71ECDF4EA0040B8EB = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3XNDNC2DEH;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EC633D9E1ECDF4EA0040B8EB;
+					};
+					EC633DC21ECDF4EA0040B8EB = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3XNDNC2DEH;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EC633D9E1ECDF4EA0040B8EB;
+					};
+				};
+			};
+			buildConfigurationList = EC633D9A1ECDF4EA0040B8EB /* Build configuration list for PBXProject "Countries" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC633D961ECDF4EA0040B8EB;
+			productRefGroup = EC633DA01ECDF4EA0040B8EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC633D9E1ECDF4EA0040B8EB /* Countries */,
+				EC633DB71ECDF4EA0040B8EB /* CountriesTests */,
+				EC633DC21ECDF4EA0040B8EB /* CountriesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC633D9D1ECDF4EA0040B8EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC633DB21ECDF4EA0040B8EB /* LaunchScreen.storyboard in Resources */,
+				EC633DAF1ECDF4EA0040B8EB /* Assets.xcassets in Resources */,
+				EC633DAD1ECDF4EA0040B8EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC633DB61ECDF4EA0040B8EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC633DC11ECDF4EA0040B8EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		386C7AFD6A6DEA02F312D277 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountriesTests/Pods-CountriesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B548F460F31E28DD845D4AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Countries/Pods-Countries-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F8C9083702068B7B99CBFDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5376FDB1343BF1B107476498 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Countries/Pods-Countries-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ED89D15A0D77DA8C1D30890 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountriesTests/Pods-CountriesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3C7739DEFF53DCA56D06C50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F7CBFEF8CE3F1DF13D864071 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountriesUITests/Pods-CountriesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB5002ED890F907BE390C9FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD996E3EC196440FD63B1B4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountriesUITests/Pods-CountriesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC633D9B1ECDF4EA0040B8EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBCC7801ED20DA800A7AE00 /* CountriesSearchFlowController.m in Sources */,
+				EC633DF31ECF651D0040B8EB /* InitialFlowController.m in Sources */,
+				EC4023471ED00E8B006BFBB5 /* BaseViewController.m in Sources */,
+				EC32872E1ED1F8E400221C66 /* NSArray+Map.m in Sources */,
+				EC32872B1ED1F1E000221C66 /* UIColor+Countries.m in Sources */,
+				EC16ED0C1ECF77E200A5CE2B /* CountriesListFlowController.m in Sources */,
+				EC40235F1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m in Sources */,
+				ECBCC7841ED2205800A7AE00 /* CountriesSerachPresenter.m in Sources */,
+				EC16ED0F1ECF7CD000A5CE2B /* CountriesListViewController.m in Sources */,
+				EC40233F1ECF8339006BFBB5 /* CountriesListPresenter.m in Sources */,
+				EC633DA71ECDF4EA0040B8EB /* AppDelegate.m in Sources */,
+				EC4023441ECF8C57006BFBB5 /* CountriesListAPI.m in Sources */,
+				EC40234E1ED02B0D006BFBB5 /* ReachabilityAPI.m in Sources */,
+				EC40234B1ED01D74006BFBB5 /* Country.m in Sources */,
+				EC633DA41ECDF4EA0040B8EB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC633DB41ECDF4EA0040B8EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC633DBD1ECDF4EA0040B8EB /* CountriesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC633DBF1ECDF4EA0040B8EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC633DC81ECDF4EA0040B8EB /* CountriesUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC633DBA1ECDF4EA0040B8EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC633D9E1ECDF4EA0040B8EB /* Countries */;
+			targetProxy = EC633DB91ECDF4EA0040B8EB /* PBXContainerItemProxy */;
+		};
+		EC633DC51ECDF4EA0040B8EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC633D9E1ECDF4EA0040B8EB /* Countries */;
+			targetProxy = EC633DC41ECDF4EA0040B8EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC633DAB1ECDF4EA0040B8EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC633DAC1ECDF4EA0040B8EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC633DB01ECDF4EA0040B8EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC633DB11ECDF4EA0040B8EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC633DCA1ECDF4EA0040B8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC633DCB1ECDF4EA0040B8EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC633DCD1ECDF4EA0040B8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD7236C0AFF6403EA1537A2A /* Pods-Countries.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = Countries/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.Countries;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Countries/Countries-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EC633DCE1ECDF4EA0040B8EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE6FF10CDDCED941FC592AF8 /* Pods-Countries.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = Countries/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.Countries;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Countries/Countries-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EC633DD01ECDF4EA0040B8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6F618152ABEA2C57868C265 /* Pods-CountriesTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = CountriesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.CountriesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Countries.app/Countries";
+			};
+			name = Debug;
+		};
+		EC633DD11ECDF4EA0040B8EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFFB83C73ECE6ADE710DB5C4 /* Pods-CountriesTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = CountriesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.CountriesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Countries.app/Countries";
+			};
+			name = Release;
+		};
+		EC633DD31ECDF4EA0040B8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 830E089FFF85BD051925C3EB /* Pods-CountriesUITests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = CountriesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.CountriesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Countries;
+			};
+			name = Debug;
+		};
+		EC633DD41ECDF4EA0040B8EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F95A951CF1E990B161F07565 /* Pods-CountriesUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = CountriesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.CountriesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Countries;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC633D9A1ECDF4EA0040B8EB /* Build configuration list for PBXProject "Countries" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC633DCA1ECDF4EA0040B8EB /* Debug */,
+				EC633DCB1ECDF4EA0040B8EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC633DCC1ECDF4EA0040B8EB /* Build configuration list for PBXNativeTarget "Countries" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC633DCD1ECDF4EA0040B8EB /* Debug */,
+				EC633DCE1ECDF4EA0040B8EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC633DCF1ECDF4EA0040B8EB /* Build configuration list for PBXNativeTarget "CountriesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC633DD01ECDF4EA0040B8EB /* Debug */,
+				EC633DD11ECDF4EA0040B8EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC633DD21ECDF4EA0040B8EB /* Build configuration list for PBXNativeTarget "CountriesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC633DD31ECDF4EA0040B8EB /* Debug */,
+				EC633DD41ECDF4EA0040B8EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC633D971ECDF4EA0040B8EB /* Project object */;
+}
