@@ -11,21 +11,24 @@
 @interface Country ()
 
 @property (nonatomic, strong, readwrite) NSString *numericCode;
-@property (nonatomic, strong, readwrite) NSString *Name;
-@property (nonatomic, strong, readwrite) NSString *NativeName;
-@property (nonatomic, strong, readwrite) NSString *Capital;
-@property (nonatomic, strong, readwrite) NSString *Region;
-@property (nonatomic, strong, readwrite) NSString *SubRegion;
+@property (nonatomic, strong, readwrite) NSString *name;
+@property (nonatomic, strong, readwrite) NSString *nativeName;
+@property (nonatomic, strong, readwrite) NSString *capital;
+@property (nonatomic, strong, readwrite) NSString *region;
+@property (nonatomic, strong, readwrite) NSString *subRegion;
+@property (nonatomic, strong, readwrite) NSString *flag;
 
 @end
 
 @implementation Country
 
 + (Country *)fromJSON: (NSDictionary *)json {
-    
     Country *country = [[Country alloc] init];
+    country.name = [json objectForKey:@"name"];
     country.numericCode = [json objectForKey:@"numericCode"];
-    
+    country.region = [json objectForKey:@"region"];
+    country.subRegion = [json objectForKey:@"subregion"];
+    country.flag = [json objectForKey:@"flag"];
     return country;
 }
 

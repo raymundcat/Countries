@@ -9,10 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface CountriesListPresenter : NSObject
+@protocol CountriesListInput <NSObject>
 
 - (void)viewDidLoad;
 
+@property (nonatomic, strong, readonly) RACSubject *countriesCategoriesSubject;
 @property (nonatomic, strong, readonly) RACSubject *countriesSubject;
+
+@end
+
+@interface CountriesListPresenter : NSObject <CountriesListInput>
 
 @end

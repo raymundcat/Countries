@@ -9,9 +9,12 @@
 #import "CountriesListPresenter.h"
 #import "CountriesListAPI.h"
 #import "RACEXTScope.h"
+#import "NSArray+Map.h"
 
 @interface CountriesListPresenter ()
 
+@property (nonatomic, strong) NSArray<Country *> *countries;
+@property (nonatomic, strong, readwrite) RACSubject *countriesCategoriesSubject;
 @property (nonatomic, strong, readwrite) RACSubject *countriesSubject;
 @property (nonatomic, strong) CountriesListAPI *countriesAPI;
 
@@ -19,8 +22,34 @@
 
 @implementation CountriesListPresenter
 
+@synthesize countries = _countries;
+
 - (void)viewDidLoad {
     [self fetchCountries];
+}
+
+-(NSArray<Country *> *)countries {
+    if (!_countries) {
+        _countries = [[NSArray alloc] init];
+    }
+    return _countries;
+}
+
+-(void)setCountries:(NSArray<Country *> *)countries {
+    _countries = countries;
+    NSArray<NSString *> *categories = [countries mapObjectsUsingBlock:^NSString *(Country *country, NSUInteger idx) {
+        return country.region;
+    }];
+    NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:categories];
+    [self.countriesCategoriesSubject sendNext:[orderedSet array]];
+    
+    NSMutableArray<NSArray<Country *> *> *countriesSet = [[NSMutableArray alloc] init];
+    for (NSString *category in orderedSet) {
+        [countriesSet addObject: [countries objectsAtIndexes: [countries indexesOfObjectsPassingTest:^BOOL(Country * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            return [obj.region isEqualToString:category];
+        }]]];
+    }
+    [self.countriesSubject sendNext:countriesSet];
 }
 
 - (CountriesListAPI *)countriesAPI {
@@ -28,6 +57,13 @@
         _countriesAPI = [[CountriesListAPI alloc] init];
     }
     return _countriesAPI;
+}
+
+- (RACSubject *)countriesCategoriesSubject {
+    if (!_countriesCategoriesSubject) {
+        _countriesCategoriesSubject = [RACSubject subject];
+    }
+    return _countriesCategoriesSubject;
 }
 
 - (RACSubject *)countriesSubject {
@@ -38,8 +74,10 @@
 }
 
 - (void)fetchCountries {
+    @weakify(self)
     [self.countriesAPI fetchCountriesSummariesWithCompletion:^(NSArray<Country *> *countries) {
-        [self.countriesSubject sendNext:countries];
+        @strongify(self)
+        self.countries = [countries copy];
     }];
 }
 

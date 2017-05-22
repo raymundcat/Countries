@@ -32,7 +32,7 @@
 - (CountriesListViewController *)viewController {
     if (!_viewController) {
         _viewController = [[CountriesListViewController alloc] init];
-        _viewController.presenter = self.presenter;
+        _viewController.input = self.presenter;
         _viewController.navigationItem.titleView = self.searchBar;
         _viewController.navigationItem.leftBarButtonItem = nil;
         _viewController.navigationItem.hidesBackButton = YES;

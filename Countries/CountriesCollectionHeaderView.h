@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CountriesCollectionHeaderView : UIView
+@interface CountriesCollectionHeaderView : UICollectionReusableView
+
+@property (nonatomic, strong) NSString *categoryName;
 
 @end

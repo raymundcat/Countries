@@ -27,6 +27,8 @@
         _navigationController.navigationBar.barTintColor = UIColor.peachColor;
         _navigationController.navigationBar.tintColor = UIColor.whiteColor;
         _navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColor.whiteColor};
+        _navigationController.navigationBar.shadowImage = [UIImage new];
+        [_navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics: UIBarMetricsDefault];
     }
     return _navigationController;
 }

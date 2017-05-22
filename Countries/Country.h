@@ -11,11 +11,12 @@
 @interface Country : NSObject
 
 @property (nonatomic, strong, readonly) NSString *numericCode;
-@property (nonatomic, strong, readonly) NSString *Name;
-@property (nonatomic, strong, readonly) NSString *NativeName;
-@property (nonatomic, strong, readonly) NSString *Capital;
-@property (nonatomic, strong, readonly) NSString *Region;
-@property (nonatomic, strong, readonly) NSString *SubRegion;
+@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, strong, readonly) NSString *nativeName;
+@property (nonatomic, strong, readonly) NSString *capital;
+@property (nonatomic, strong, readonly) NSString *region;
+@property (nonatomic, strong, readonly) NSString *subRegion;
+@property (nonatomic, strong, readonly) NSString *flag;
 
 + (Country *)fromJSON: (NSDictionary *)json;
 

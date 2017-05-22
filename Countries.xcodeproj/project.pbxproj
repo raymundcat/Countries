@@ -28,6 +28,18 @@
 		EC633DBD1ECDF4EA0040B8EB /* CountriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DBC1ECDF4EA0040B8EB /* CountriesTests.m */; };
 		EC633DC81ECDF4EA0040B8EB /* CountriesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DC71ECDF4EA0040B8EB /* CountriesUITests.m */; };
 		EC633DF31ECF651D0040B8EB /* InitialFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DF21ECF651D0040B8EB /* InitialFlowController.m */; };
+		EC768F5A1ED349D100FB2748 /* CountriesCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC768F591ED349D100FB2748 /* CountriesCollectionHeaderView.m */; };
+		EC768F5F1ED3871A00FB2748 /* SVGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F5E1ED3871A00FB2748 /* SVGKit.framework */; };
+		EC768F611ED388DE00FB2748 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F601ED388DE00FB2748 /* CoreText.framework */; };
+		EC768F631ED388E900FB2748 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F621ED388E900FB2748 /* CoreImage.framework */; };
+		EC768F651ED388FD00FB2748 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F641ED388FD00FB2748 /* libxml2.tbd */; };
+		EC768F671ED3890400FB2748 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F661ED3890400FB2748 /* QuartzCore.framework */; };
+		EC768F691ED3890C00FB2748 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F681ED3890C00FB2748 /* CoreGraphics.framework */; };
+		EC768F6A1ED389A700FB2748 /* SVGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F5E1ED3871A00FB2748 /* SVGKit.framework */; };
+		EC768F6B1ED389A700FB2748 /* SVGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F5E1ED3871A00FB2748 /* SVGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC768F701ED38A3300FB2748 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F6F1ED38A3300FB2748 /* CocoaLumberjack.framework */; };
+		EC768F711ED38A3900FB2748 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F6F1ED38A3300FB2748 /* CocoaLumberjack.framework */; };
+		EC768F721ED38A3900FB2748 /* CocoaLumberjack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F6F1ED38A3300FB2748 /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ECBCC7801ED20DA800A7AE00 /* CountriesSearchFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */; };
 		ECBCC7841ED2205800A7AE00 /* CountriesSerachPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC7831ED2205800A7AE00 /* CountriesSerachPresenter.m */; };
 /* End PBXBuildFile section */
@@ -48,6 +60,21 @@
 			remoteInfo = Countries;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC768F6C1ED389A800FB2748 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC768F721ED38A3900FB2748 /* CocoaLumberjack.framework in Embed Frameworks */,
+				EC768F6B1ED389A700FB2748 /* SVGKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4AD2379864D812892CABCA5B /* Pods_CountriesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +122,15 @@
 		EC633DF01ECF64490040B8EB /* FlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowController.h; sourceTree = "<group>"; };
 		EC633DF11ECF651D0040B8EB /* InitialFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialFlowController.h; sourceTree = "<group>"; };
 		EC633DF21ECF651D0040B8EB /* InitialFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialFlowController.m; sourceTree = "<group>"; };
+		EC768F581ED349D100FB2748 /* CountriesCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesCollectionHeaderView.h; sourceTree = "<group>"; };
+		EC768F591ED349D100FB2748 /* CountriesCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesCollectionHeaderView.m; sourceTree = "<group>"; };
+		EC768F5E1ED3871A00FB2748 /* SVGKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVGKit.framework; path = Countries/SVGKit.framework; sourceTree = "<group>"; };
+		EC768F601ED388DE00FB2748 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		EC768F621ED388E900FB2748 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		EC768F641ED388FD00FB2748 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		EC768F661ED3890400FB2748 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EC768F681ED3890C00FB2748 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EC768F6F1ED38A3300FB2748 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Countries/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		ECBCC77E1ED20DA800A7AE00 /* CountriesSearchFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchFlowController.h; sourceTree = "<group>"; };
 		ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSearchFlowController.m; sourceTree = "<group>"; };
 		ECBCC7821ED2205800A7AE00 /* CountriesSerachPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSerachPresenter.h; sourceTree = "<group>"; };
@@ -107,6 +143,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC768F691ED3890C00FB2748 /* CoreGraphics.framework in Frameworks */,
+				EC768F701ED38A3300FB2748 /* CocoaLumberjack.framework in Frameworks */,
+				EC768F711ED38A3900FB2748 /* CocoaLumberjack.framework in Frameworks */,
+				EC768F671ED3890400FB2748 /* QuartzCore.framework in Frameworks */,
+				EC768F651ED388FD00FB2748 /* libxml2.tbd in Frameworks */,
+				EC768F631ED388E900FB2748 /* CoreImage.framework in Frameworks */,
+				EC768F6A1ED389A700FB2748 /* SVGKit.framework in Frameworks */,
+				EC768F611ED388DE00FB2748 /* CoreText.framework in Frameworks */,
+				EC768F5F1ED3871A00FB2748 /* SVGKit.framework in Frameworks */,
 				4AEA601FE947A25010986BBD /* Pods_Countries.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +178,13 @@
 		68ECA9AE001128D5ADA6F10C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC768F6F1ED38A3300FB2748 /* CocoaLumberjack.framework */,
+				EC768F5E1ED3871A00FB2748 /* SVGKit.framework */,
+				EC768F681ED3890C00FB2748 /* CoreGraphics.framework */,
+				EC768F661ED3890400FB2748 /* QuartzCore.framework */,
+				EC768F641ED388FD00FB2748 /* libxml2.tbd */,
+				EC768F621ED388E900FB2748 /* CoreImage.framework */,
+				EC768F601ED388DE00FB2748 /* CoreText.framework */,
 				5D9BDF5957242FC193E76737 /* Pods_Countries.framework */,
 				6A604DA18568B3343E664F77 /* Pods_CountriesTests.framework */,
 				4AD2379864D812892CABCA5B /* Pods_CountriesUITests.framework */,
@@ -198,6 +250,8 @@
 			children = (
 				EC40235D1ED1A5CC006BFBB5 /* CountryCollectionViewCell.h */,
 				EC40235E1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m */,
+				EC768F581ED349D100FB2748 /* CountriesCollectionHeaderView.h */,
+				EC768F591ED349D100FB2748 /* CountriesCollectionHeaderView.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -383,6 +437,7 @@
 				EC633D9D1ECDF4EA0040B8EB /* Resources */,
 				3B548F460F31E28DD845D4AE /* [CP] Embed Pods Frameworks */,
 				5376FDB1343BF1B107476498 /* [CP] Copy Pods Resources */,
+				EC768F6C1ED389A800FB2748 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -660,6 +715,7 @@
 				EC32872E1ED1F8E400221C66 /* NSArray+Map.m in Sources */,
 				EC32872B1ED1F1E000221C66 /* UIColor+Countries.m in Sources */,
 				EC16ED0C1ECF77E200A5CE2B /* CountriesListFlowController.m in Sources */,
+				EC768F5A1ED349D100FB2748 /* CountriesCollectionHeaderView.m in Sources */,
 				EC40235F1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m in Sources */,
 				ECBCC7841ED2205800A7AE00 /* CountriesSerachPresenter.m in Sources */,
 				EC16ED0F1ECF7CD000A5CE2B /* CountriesListViewController.m in Sources */,
@@ -824,6 +880,10 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Countries",
+				);
 				INFOPLIST_FILE = Countries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.Countries;
@@ -843,6 +903,10 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Countries",
+				);
 				INFOPLIST_FILE = Countries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.Countries;
