@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "Country.h"
 
 @protocol CountriesListInput <NSObject>
 
 - (void)viewDidLoad;
+- (void)setSelectedCategory: (CountryCategory)category;
 
 @property (nonatomic, strong, readonly) RACSubject *countriesCategoriesSubject;
 @property (nonatomic, strong, readonly) RACSubject *countriesSubject;

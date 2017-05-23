@@ -36,4 +36,15 @@
     return country;
 }
 
+- (NSString *)valueForCategory: (CountryCategory)category{
+    switch (category) {
+        case CountryCategoryAll:
+            return @"All";
+        case CountryCategoryRegion:
+            return self.region;
+        case CountryCategorySubRegion:
+            return self.subRegion;
+    }
+}
+
 @end

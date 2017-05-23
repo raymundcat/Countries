@@ -53,9 +53,13 @@
 
 - (void)start {
     [self.navigationController pushViewController: self.viewController animated: YES];
-    UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"sort" style:UIBarButtonItemStylePlain target:self action:@selector(showSearch)];
+    UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"sort" style:UIBarButtonItemStylePlain target:self action:@selector(sort)];
     UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"search" style:UIBarButtonItemStylePlain target:self action:@selector(showSearch)];
     self.viewController.navigationItem.rightBarButtonItems = @[searchButton, sortButton];
+}
+
+- (void)sort {
+    [self.presenter setSelectedCategory: (CountryCategory)(arc4random() % (int)CountryCategoryAll)];
 }
 
 - (void)showSearch {

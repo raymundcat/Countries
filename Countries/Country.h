@@ -10,6 +10,13 @@
 
 @interface Country : NSObject
 
+typedef enum {
+    CountryCategoryRegion = 0,
+    CountryCategorySubRegion,
+    CountryCategoryAll
+} CountryCategory;
+
+
 @property (nonatomic, strong, readonly) NSString *alpha2Code;
 @property (nonatomic, strong, readonly) NSString *alpha3Code;
 @property (nonatomic, strong, readonly) NSString *numericCode;
@@ -21,5 +28,6 @@
 @property (nonatomic, strong, readonly) NSString *flag;
 
 + (Country *)fromJSON: (NSDictionary *)json;
+- (NSString *)valueForCategory: (CountryCategory)category;
 
 @end

@@ -14,6 +14,7 @@
 @interface CountriesListPresenter ()
 
 @property (nonatomic, strong) NSArray<Country *> *countries;
+@property (nonatomic) CountryCategory selectedCategory;
 @property (nonatomic, strong, readwrite) RACSubject *countriesCategoriesSubject;
 @property (nonatomic, strong, readwrite) RACSubject *countriesSubject;
 @property (nonatomic, strong) CountriesListAPI *countriesAPI;
@@ -23,9 +24,22 @@
 @implementation CountriesListPresenter
 
 @synthesize countries = _countries;
+@synthesize selectedCategory = _selectedCategory;
 
 - (void)viewDidLoad {
     [self fetchCountries];
+}
+
+-(CountryCategory)selectedCategory {
+    if (!_selectedCategory) {
+        _selectedCategory = CountryCategoryAll;
+    }
+    return _selectedCategory;
+}
+
+- (void)setSelectedCategory:(CountryCategory)category {
+    _selectedCategory = category;
+    [self updateDataWithCategory: category];
 }
 
 -(NSArray<Country *> *)countries {
@@ -37,16 +51,21 @@
 
 -(void)setCountries:(NSArray<Country *> *)countries {
     _countries = countries;
-    NSArray<NSString *> *categories = [countries mapObjectsUsingBlock:^NSString *(Country *country, NSUInteger idx) {
-        return country.region;
+    [self updateDataWithCategory: self.selectedCategory];
+}
+
+-(void)updateDataWithCategory: (CountryCategory)category {
+    
+    NSArray<NSString *> *categories = [self.countries mapObjectsUsingBlock:^NSString *(Country *country, NSUInteger idx) {
+        return [country valueForCategory:category];
     }];
     NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:categories];
     [self.countriesCategoriesSubject sendNext:[orderedSet array]];
     
     NSMutableArray<NSArray<Country *> *> *countriesSet = [[NSMutableArray alloc] init];
-    for (NSString *category in orderedSet) {
-        [countriesSet addObject: [countries objectsAtIndexes: [countries indexesOfObjectsPassingTest:^BOOL(Country * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            return [obj.region isEqualToString:category];
+    for (NSString *categoryValue in orderedSet) {
+        [countriesSet addObject: [self.countries objectsAtIndexes: [self.countries indexesOfObjectsPassingTest:^BOOL(Country * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            return [[obj valueForCategory:category] isEqualToString:categoryValue];
         }]]];
     }
     [self.countriesSubject sendNext:countriesSet];
