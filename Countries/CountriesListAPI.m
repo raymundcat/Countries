@@ -19,14 +19,14 @@
 
 @implementation CountriesListAPI
 
--(AFHTTPSessionManager *)manager {
+- (AFHTTPSessionManager *)manager {
     if (!_manager) {
         _manager = [AFHTTPSessionManager manager];
     }
     return _manager;
 }
 
--(void)fetchCountriesSummariesWithCompletion:(void (^)(NSArray<Country *> *))completion {
+- (void)fetchCountriesSummariesWithCompletion:(void (^)(NSArray<Country *> *))completion {
     [self.manager GET:@"https://restcountries.eu/rest/v2/all" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"processing");
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -39,6 +39,10 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"failed");
     }];
+}
+
+- (void)wat{
+    
 }
 
 @end

@@ -124,7 +124,7 @@ static NSString *HeaderIdentifier = @"Cell";
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = (collectionView.frame.size.width) - 6;
+    CGFloat width = (collectionView.frame.size.width * 0.33) - 6;
     return CGSizeMake(width, width);
 }
 

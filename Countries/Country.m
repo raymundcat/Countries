@@ -10,6 +10,8 @@
 
 @interface Country ()
 
+@property (nonatomic, strong, readwrite) NSString *alpha2Code;
+@property (nonatomic, strong, readwrite) NSString *alpha3Code;
 @property (nonatomic, strong, readwrite) NSString *numericCode;
 @property (nonatomic, strong, readwrite) NSString *name;
 @property (nonatomic, strong, readwrite) NSString *nativeName;
@@ -24,6 +26,8 @@
 
 + (Country *)fromJSON: (NSDictionary *)json {
     Country *country = [[Country alloc] init];
+    country.alpha2Code = [json objectForKey:@"alpha2Code"];
+    country.alpha3Code = [json objectForKey:@"alpha3Code"];
     country.name = [json objectForKey:@"name"];
     country.numericCode = [json objectForKey:@"numericCode"];
     country.region = [json objectForKey:@"region"];

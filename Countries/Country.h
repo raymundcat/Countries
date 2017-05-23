@@ -10,6 +10,8 @@
 
 @interface Country : NSObject
 
+@property (nonatomic, strong, readonly) NSString *alpha2Code;
+@property (nonatomic, strong, readonly) NSString *alpha3Code;
 @property (nonatomic, strong, readonly) NSString *numericCode;
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *nativeName;

@@ -11,6 +11,8 @@
 #import "UIColor+Countries.h"
 #import "Masonry.h"
 #import <SVGKit/SVGKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "Geognos.h"
 
 @interface CountryCollectionViewCell ()
 
@@ -27,7 +29,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.layer.shadowRadius = 2;
-        self.layer.shadowColor = UIColor.blackColor.CGColor;
+        self.layer.shadowColor = UIColor.darkGrayColor.CGColor;
         self.layer.shadowOpacity = 0.4;
         self.layer.shadowOffset = CGSizeZero;
         self.backgroundColor = UIColor.peachColor;
@@ -42,13 +44,9 @@
 - (void)setCountry:(Country *)country {
     _country = country;
     self.title.text = country.name;
-//    NSURL *url = [NSURL URLWithString:@"https://restcountries.eu/data/col.svg"];
-//    dispatch_async(dispatch_get_global_queue(0,0), ^{
-//        SVGKImage * svg = [SVGKImage imageWithContentsOfURL:url];
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            self.imageView.image = [svg UIImage];
-//        });
-//    });
+    [self.imageView sd_setImageWithURL: [Geognos flagURLfor: country.alpha2Code]
+                      placeholderImage: [UIImage imageNamed:@"avatar-placeholder.png"]
+                               options: SDWebImageRefreshCached];
 }
 
 - (UILabel *)title {
@@ -66,7 +64,6 @@
         _imageView = [[UIImageView alloc] init];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         _imageView.backgroundColor = UIColor.grayColor;
-        _imageView.image = [UIImage imageNamed:@"PuertoRico"];
         _imageView.clipsToBounds = YES;
     }
     return _imageView;

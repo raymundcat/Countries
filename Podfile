@@ -9,7 +9,7 @@ target 'Countries' do
   pod 'Masonry'
   pod 'AFNetworking', '~> 3.0'
   pod 'ReactiveCocoa', '2.5'
-  pod 'AMScrollingNavbar'
+  pod 'SDWebImage', '~>3.8'
 
   target 'CountriesTests' do
     inherit! :search_paths
