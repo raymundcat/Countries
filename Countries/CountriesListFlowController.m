@@ -59,7 +59,6 @@
 }
 
 - (void)sort {
-//    [self.presenter setSelectedCategory: (CountryCategory)(arc4random() % (int)CountryCategoryAll)];
     [self.viewController showSortOption];
 }
 

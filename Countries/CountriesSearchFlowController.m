@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "CountriesSearchFlowController.h"
 #import "CountriesListViewController.h"
+#import "CountriesSearchPresenter.h"
+#import "CountriesSearchViewController.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface CountriesSearchFlowController ()
 
 @property (nonatomic, strong) UINavigationController *navigationController;
-@property (nonatomic, strong) CountriesListViewController *viewController;
-@property (nonatomic, strong) CountriesListPresenter *presenter;
+@property (nonatomic, strong) CountriesSearchViewController *viewController;
+@property (nonatomic, strong) CountriesSearchPresenter *presenter;
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 
@@ -22,16 +25,16 @@
 
 @implementation CountriesSearchFlowController
 
-- (CountriesListPresenter *)presenter {
+- (CountriesSearchPresenter *)presenter {
     if (!_presenter) {
-        _presenter = [[CountriesListPresenter alloc] init];
+        _presenter = [[CountriesSearchPresenter alloc] init];
     }
     return _presenter;
 }
 
-- (CountriesListViewController *)viewController {
+- (CountriesSearchViewController *)viewController {
     if (!_viewController) {
-        _viewController = [[CountriesListViewController alloc] init];
+        _viewController = [[CountriesSearchViewController alloc] init];
         _viewController.input = self.presenter;
         _viewController.navigationItem.titleView = self.searchBar;
         _viewController.navigationItem.leftBarButtonItem = nil;
@@ -62,6 +65,11 @@
 - (id)initWithNavigationController:(UINavigationController *)navigationController {
     if (self = [self init]){
         self.navigationController = navigationController;
+        [[self rac_signalForSelector:@selector(searchBar:textDidChange:)]
+         subscribeNext:^(RACTuple *x) {
+             NSString *searchText = x.last;
+             [self.presenter.searchTextSubject sendNext:searchText];
+         }];
     }
     return self;
 }

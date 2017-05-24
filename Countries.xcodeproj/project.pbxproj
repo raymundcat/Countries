@@ -13,6 +13,7 @@
 		EC084A131ED4B058006BDFCB /* Geognos.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A121ED4B058006BDFCB /* Geognos.m */; };
 		EC084A201ED5E009006BDFCB /* CountriesHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A1F1ED5E009006BDFCB /* CountriesHTTPSessionManager.m */; };
 		EC084A231ED5FA2E006BDFCB /* SortOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A221ED5FA2E006BDFCB /* SortOptionsViewController.m */; };
+		EC084A271ED62316006BDFCB /* CountriesSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A261ED62316006BDFCB /* CountriesSearchViewController.m */; };
 		EC16ED0C1ECF77E200A5CE2B /* CountriesListFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16ED0B1ECF77E200A5CE2B /* CountriesListFlowController.m */; };
 		EC16ED0F1ECF7CD000A5CE2B /* CountriesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16ED0E1ECF7CD000A5CE2B /* CountriesListViewController.m */; };
 		EC32872B1ED1F1E000221C66 /* UIColor+Countries.m in Sources */ = {isa = PBXBuildFile; fileRef = EC32872A1ED1F1E000221C66 /* UIColor+Countries.m */; };
@@ -47,7 +48,7 @@
 		EC768F801ED4877100FB2748 /* SVGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F7E1ED4870800FB2748 /* SVGKit.framework */; };
 		EC768F811ED4877100FB2748 /* SVGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F7E1ED4870800FB2748 /* SVGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ECBCC7801ED20DA800A7AE00 /* CountriesSearchFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */; };
-		ECBCC7841ED2205800A7AE00 /* CountriesSerachPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC7831ED2205800A7AE00 /* CountriesSerachPresenter.m */; };
+		ECBCC7841ED2205800A7AE00 /* CountriesSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC7831ED2205800A7AE00 /* CountriesSearchPresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		EC084A1F1ED5E009006BDFCB /* CountriesHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesHTTPSessionManager.m; sourceTree = "<group>"; };
 		EC084A211ED5FA2E006BDFCB /* SortOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortOptionsViewController.h; sourceTree = "<group>"; };
 		EC084A221ED5FA2E006BDFCB /* SortOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortOptionsViewController.m; sourceTree = "<group>"; };
+		EC084A251ED62316006BDFCB /* CountriesSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchViewController.h; sourceTree = "<group>"; };
+		EC084A261ED62316006BDFCB /* CountriesSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSearchViewController.m; sourceTree = "<group>"; };
 		EC16ED0A1ECF77E200A5CE2B /* CountriesListFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListFlowController.h; sourceTree = "<group>"; };
 		EC16ED0B1ECF77E200A5CE2B /* CountriesListFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesListFlowController.m; sourceTree = "<group>"; };
 		EC16ED0D1ECF7CD000A5CE2B /* CountriesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListViewController.h; sourceTree = "<group>"; };
@@ -148,8 +151,8 @@
 		EC768F7E1ED4870800FB2748 /* SVGKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SVGKit.framework; sourceTree = "<group>"; };
 		ECBCC77E1ED20DA800A7AE00 /* CountriesSearchFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchFlowController.h; sourceTree = "<group>"; };
 		ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSearchFlowController.m; sourceTree = "<group>"; };
-		ECBCC7821ED2205800A7AE00 /* CountriesSerachPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSerachPresenter.h; sourceTree = "<group>"; };
-		ECBCC7831ED2205800A7AE00 /* CountriesSerachPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSerachPresenter.m; sourceTree = "<group>"; };
+		ECBCC7821ED2205800A7AE00 /* CountriesSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchPresenter.h; sourceTree = "<group>"; };
+		ECBCC7831ED2205800A7AE00 /* CountriesSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSearchPresenter.m; sourceTree = "<group>"; };
 		F95A951CF1E990B161F07565 /* Pods-CountriesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountriesUITests/Pods-CountriesUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,6 +220,15 @@
 				F95A951CF1E990B161F07565 /* Pods-CountriesUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC084A241ED622F5006BDFCB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC084A251ED62316006BDFCB /* CountriesSearchViewController.h */,
+				EC084A261ED62316006BDFCB /* CountriesSearchViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		EC4023401ECF84AE006BFBB5 /* Flow */ = {
@@ -432,8 +444,9 @@
 		ECBCC77B1ED20D0000A7AE00 /* Search Countries */ = {
 			isa = PBXGroup;
 			children = (
-				ECBCC7811ED2204300A7AE00 /* Presenters */,
 				ECBCC77D1ED20D1700A7AE00 /* FlowController */,
+				ECBCC7811ED2204300A7AE00 /* Presenters */,
+				EC084A241ED622F5006BDFCB /* Views */,
 			);
 			name = "Search Countries";
 			sourceTree = "<group>";
@@ -450,8 +463,8 @@
 		ECBCC7811ED2204300A7AE00 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				ECBCC7821ED2205800A7AE00 /* CountriesSerachPresenter.h */,
-				ECBCC7831ED2205800A7AE00 /* CountriesSerachPresenter.m */,
+				ECBCC7821ED2205800A7AE00 /* CountriesSearchPresenter.h */,
+				ECBCC7831ED2205800A7AE00 /* CountriesSearchPresenter.m */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -754,7 +767,8 @@
 				EC16ED0C1ECF77E200A5CE2B /* CountriesListFlowController.m in Sources */,
 				EC768F5A1ED349D100FB2748 /* CountriesCollectionHeaderView.m in Sources */,
 				EC40235F1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m in Sources */,
-				ECBCC7841ED2205800A7AE00 /* CountriesSerachPresenter.m in Sources */,
+				ECBCC7841ED2205800A7AE00 /* CountriesSearchPresenter.m in Sources */,
+				EC084A271ED62316006BDFCB /* CountriesSearchViewController.m in Sources */,
 				EC084A131ED4B058006BDFCB /* Geognos.m in Sources */,
 				EC16ED0F1ECF7CD000A5CE2B /* CountriesListViewController.m in Sources */,
 				EC40233F1ECF8339006BFBB5 /* CountriesListPresenter.m in Sources */,
