@@ -11,12 +11,14 @@
 #import "Country.h"
 #import "CountryCollectionViewCell.h"
 #import "CountriesCollectionHeaderView.h"
+#import "UIColor+Countries.h"
 
 @interface CountriesListViewController ()
 
 @property (nonatomic, strong) NSArray<NSString *> *categories;
 @property (nonatomic, strong) NSArray<NSArray<Country *> *> *countries;
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -39,6 +41,14 @@
     return _countries;
 }
 
+- (UIRefreshControl *)refreshControl {
+    if (!_refreshControl) {
+        _refreshControl = [[UIRefreshControl alloc] init];
+        _refreshControl.tintColor = UIColor.peachColor;
+    }
+    return _refreshControl;
+}
+
 -(void)setCategories:(NSArray *)categories {
     _categories = categories;
     [self.collectionView reloadData];
@@ -59,10 +69,15 @@
     [input.countriesCategoriesSubject subscribeNext:^(NSArray<NSString *> *categories) {
         @strongify(self)
         self.categories = categories;
+        [self.refreshControl endRefreshing];
     }];
     [input.countriesSubject subscribeNext:^(NSArray<NSArray<Country *> *> *countries) {
         @strongify(self)
         self.countries = countries;
+        [self.refreshControl endRefreshing];
+    }];
+    [[self.refreshControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(id x) {
+        [self.input requestRefreshData];
     }];
 }
 
@@ -79,7 +94,8 @@ static NSString *HeaderIdentifier = @"Cell";
         [_collectionView registerClass:[CountriesCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HeaderIdentifier];
         [_collectionView registerClass:[CountryCollectionViewCell class]
             forCellWithReuseIdentifier:CellIdentifier];
-        _collectionView.contentInset = UIEdgeInsetsMake(8, 8, 8, 8);
+        _collectionView.contentInset = UIEdgeInsetsMake(16, 8, 8, 8);
+        [_collectionView addSubview: self.refreshControl];
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;

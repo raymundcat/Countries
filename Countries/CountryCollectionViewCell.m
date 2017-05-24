@@ -88,6 +88,7 @@
         make.bottom.mas_equalTo(self.mas_bottom);
         make.left.mas_equalTo(self.mas_left);
         make.right.mas_equalTo(self.mas_right);
+        make.height.mas_lessThanOrEqualTo(self.mas_height);
     }];
     
     [self.title mas_makeConstraints:^(MASConstraintMaker *make) {

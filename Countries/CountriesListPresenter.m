@@ -30,6 +30,10 @@
     [self fetchCountries];
 }
 
+- (void)requestRefreshData {
+    [self fetchCountries];
+}
+
 -(CountryCategory)selectedCategory {
     if (!_selectedCategory) {
         _selectedCategory = CountryCategoryAll;
