@@ -11,11 +11,10 @@
 @interface Country : NSObject
 
 typedef enum {
-    CountryCategoryRegion = 0,
+    CountryCategoryRegion = 1,
     CountryCategorySubRegion,
     CountryCategoryAll
-} CountryCategory;
-
+}CountryCategory;
 
 @property (nonatomic, strong, readonly) NSString *alpha2Code;
 @property (nonatomic, strong, readonly) NSString *alpha3Code;

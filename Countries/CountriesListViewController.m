@@ -12,6 +12,7 @@
 #import "CountryCollectionViewCell.h"
 #import "CountriesCollectionHeaderView.h"
 #import "UIColor+Countries.h"
+#import "SortOptionsViewController.h"
 
 @interface CountriesListViewController ()
 
@@ -19,6 +20,7 @@
 @property (nonatomic, strong) NSArray<NSArray<Country *> *> *countries;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) SortOptionsViewController *sortOptionsAlertController;
 
 @end
 
@@ -45,11 +47,20 @@
     if (!_refreshControl) {
         _refreshControl = [[UIRefreshControl alloc] init];
         _refreshControl.tintColor = UIColor.peachColor;
-        NSAttributedString *title = [[NSAttributedString alloc] initWithString:@"Loading Countries.."
+        NSAttributedString *title = [[NSAttributedString alloc] initWithString: @"Loading Countries.."
                                                                     attributes: @{NSForegroundColorAttributeName:UIColor.peachColor}];
         _refreshControl.attributedTitle = title;
     }
     return _refreshControl;
+}
+
+- (SortOptionsViewController *)sortOptionsAlertController {
+    if (!_sortOptionsAlertController) {
+        _sortOptionsAlertController = [SortOptionsViewController alertControllerWithTitle: @"Countries's Categories"
+                                                                          message: @"select an option for sorting"
+                                                                   preferredStyle: UIAlertControllerStyleActionSheet];
+    }
+    return _sortOptionsAlertController;
 }
 
 -(void)setCategories:(NSArray *)categories {
@@ -82,6 +93,10 @@
     [[self.refreshControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(id x) {
         @strongify(self)
         [self.input requestRefreshData];
+    }];
+    [self.sortOptionsAlertController.selectedCategorySubject subscribeNext:^(NSString *x) {
+        @strongify(self)
+        [self.input setSelectedCategory:(CountryCategory)([x intValue])];
     }];
 }
 
@@ -121,6 +136,12 @@ static NSString *HeaderIdentifier = @"Cell";
         make.right.mas_equalTo(self.view.mas_right);
         make.bottom.mas_equalTo(self.view.mas_bottom);
     }];
+}
+
+- (void)showSortOption {
+    [self presentViewController: self.sortOptionsAlertController
+                       animated: YES
+                     completion: nil];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

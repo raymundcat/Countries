@@ -58,10 +58,6 @@
     [self updateDataWithCategory: self.selectedCategory];
 }
 
-- (void)showSortOption {
-    
-}
-
 -(void)updateDataWithCategory: (CountryCategory)category {
     
     NSArray<NSString *> *categories = [self.countries mapObjectsUsingBlock:^NSString *(Country *country, NSUInteger idx) {

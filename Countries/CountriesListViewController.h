@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) id <CountriesListInput> input;
 
+- (void)showSortOption;
+
 @end
