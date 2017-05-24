@@ -10,18 +10,19 @@
 #import "AFNetworking.h"
 #import "NSArray+Map.h"
 #import "Country.h"
+#import "CountriesHTTPSessionManager.h"
 
 @interface CountriesListAPI ()
 
-@property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) CountriesHTTPSessionManager *manager;
 
 @end
 
 @implementation CountriesListAPI
 
-- (AFHTTPSessionManager *)manager {
+- (CountriesHTTPSessionManager *)manager {
     if (!_manager) {
-        _manager = [AFHTTPSessionManager manager];
+        _manager = [CountriesHTTPSessionManager manager];
     }
     return _manager;
 }
