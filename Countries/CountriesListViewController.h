@@ -12,6 +12,8 @@
 
 @interface CountriesListViewController : BaseViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) CountriesListPresenter *presenter;
+@property (nonatomic, strong) id <CountriesListInput> input;
+
+- (void)showSortOption;
 
 @end

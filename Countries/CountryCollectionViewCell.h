@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Country.h"
 
 @interface CountryCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic, strong) Country *country;
 
 @end

@@ -32,7 +32,7 @@
     if (!_viewController) {
         _viewController = [[CountriesListViewController alloc] init];
         _viewController.title = @"Countries";
-        _viewController.presenter = self.presenter;
+        _viewController.input = self.presenter;
     }
     return _viewController;
 }
@@ -47,13 +47,19 @@
 - (id)initWithNavigationController:(UINavigationController *)navigationController {
     if (self = [self init]){
         self.navigationController = navigationController;
+        UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"sort" style:UIBarButtonItemStylePlain target:self action:@selector(sort)];
+        UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"search" style:UIBarButtonItemStylePlain target:self action:@selector(showSearch)];
+        self.viewController.navigationItem.rightBarButtonItems = @[searchButton, sortButton];
     }
     return self;
 }
 
 - (void)start {
     [self.navigationController pushViewController: self.viewController animated: YES];
-    self.viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"search" style:UIBarButtonItemStylePlain target:self action:@selector(showSearch)];
+}
+
+- (void)sort {
+    [self.viewController showSortOption];
 }
 
 - (void)showSearch {

@@ -10,23 +10,41 @@
 
 @interface Country ()
 
+@property (nonatomic, strong, readwrite) NSString *alpha2Code;
+@property (nonatomic, strong, readwrite) NSString *alpha3Code;
 @property (nonatomic, strong, readwrite) NSString *numericCode;
-@property (nonatomic, strong, readwrite) NSString *Name;
-@property (nonatomic, strong, readwrite) NSString *NativeName;
-@property (nonatomic, strong, readwrite) NSString *Capital;
-@property (nonatomic, strong, readwrite) NSString *Region;
-@property (nonatomic, strong, readwrite) NSString *SubRegion;
+@property (nonatomic, strong, readwrite) NSString *name;
+@property (nonatomic, strong, readwrite) NSString *nativeName;
+@property (nonatomic, strong, readwrite) NSString *capital;
+@property (nonatomic, strong, readwrite) NSString *region;
+@property (nonatomic, strong, readwrite) NSString *subRegion;
+@property (nonatomic, strong, readwrite) NSString *flag;
 
 @end
 
 @implementation Country
 
 + (Country *)fromJSON: (NSDictionary *)json {
-    
     Country *country = [[Country alloc] init];
+    country.alpha2Code = [json objectForKey:@"alpha2Code"];
+    country.alpha3Code = [json objectForKey:@"alpha3Code"];
+    country.name = [json objectForKey:@"name"];
     country.numericCode = [json objectForKey:@"numericCode"];
-    
+    country.region = [json objectForKey:@"region"];
+    country.subRegion = [json objectForKey:@"subregion"];
+    country.flag = [json objectForKey:@"flag"];
     return country;
+}
+
+- (NSString *)valueForCategory: (CountryCategory)category{
+    switch (category) {
+        case CountryCategoryAll:
+            return @"All";
+        case CountryCategoryRegion:
+            return self.region;
+        case CountryCategorySubRegion:
+            return self.subRegion;
+    }
 }
 
 @end
