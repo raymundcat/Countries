@@ -45,6 +45,9 @@
     if (!_refreshControl) {
         _refreshControl = [[UIRefreshControl alloc] init];
         _refreshControl.tintColor = UIColor.peachColor;
+        NSAttributedString *title = [[NSAttributedString alloc] initWithString:@"Loading Countries.."
+                                                                    attributes: @{NSForegroundColorAttributeName:UIColor.peachColor}];
+        _refreshControl.attributedTitle = title;
     }
     return _refreshControl;
 }
@@ -77,6 +80,7 @@
         [self.refreshControl endRefreshing];
     }];
     [[self.refreshControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(id x) {
+        @strongify(self)
         [self.input requestRefreshData];
     }];
 }
@@ -86,7 +90,7 @@ static NSString *HeaderIdentifier = @"Cell";
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.headerReferenceSize = CGSizeMake(_collectionView.frame.size.width, 40);
+        flowLayout.headerReferenceSize = CGSizeMake(_collectionView.frame.size.width, 50);
         _collectionView = [[UICollectionView alloc] initWithFrame: CGRectZero
                                              collectionViewLayout: flowLayout];
         _collectionView.backgroundColor = UIColor.clearColor;
