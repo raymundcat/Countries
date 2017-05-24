@@ -8,6 +8,7 @@
 
 #import "CountriesHTTPSessionManager.h"
 
+//helper logic from http://www.hpique.com/2014/03/how-to-cache-server-responses-in-ios-apps/
 @implementation CountriesHTTPSessionManager
 
 - (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request
