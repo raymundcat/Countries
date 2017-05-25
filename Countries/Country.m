@@ -41,9 +41,9 @@
         case CountryCategoryAll:
             return @"All";
         case CountryCategoryRegion:
-            return self.region;
+            return [self.region length] > 0 ? self.region : @"None";
         case CountryCategorySubRegion:
-            return self.subRegion;
+            return [self.subRegion length] > 0 ? self.subRegion : @"None";
     }
 }
 

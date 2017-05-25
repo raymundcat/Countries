@@ -10,12 +10,13 @@
 #import "CountryCollectionViewCell.h"
 #import "UIColor+Countries.h"
 #import "Masonry.h"
-#import <SVGKit/SVGKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Geognos.h"
+#import <SVGgh/SVGgh.h>
 
 @interface CountryCollectionViewCell ()
 
+@property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) UIVisualEffectView *blurView;
 @property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) UIImageView *imageView;
@@ -68,6 +69,17 @@
         _imageView.clipsToBounds = YES;
     }
     return _imageView;
+}
+
+-(UIWebView *)webView {
+    if (!_webView) {
+        _webView = [[UIWebView alloc] init];
+        _webView.delegate = self;
+        _webView.scalesPageToFit = NO;
+        _webView.scrollView.scrollEnabled = NO;
+        _webView.suppressesIncrementalRendering = YES;
+    }
+    return _webView;
 }
 
 -(UIVisualEffectView *)blurView {

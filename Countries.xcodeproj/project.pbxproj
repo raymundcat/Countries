@@ -33,20 +33,6 @@
 		EC633DC81ECDF4EA0040B8EB /* CountriesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DC71ECDF4EA0040B8EB /* CountriesUITests.m */; };
 		EC633DF31ECF651D0040B8EB /* InitialFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DF21ECF651D0040B8EB /* InitialFlowController.m */; };
 		EC768F5A1ED349D100FB2748 /* CountriesCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC768F591ED349D100FB2748 /* CountriesCollectionHeaderView.m */; };
-		EC768F611ED388DE00FB2748 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F601ED388DE00FB2748 /* CoreText.framework */; };
-		EC768F631ED388E900FB2748 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F621ED388E900FB2748 /* CoreImage.framework */; };
-		EC768F651ED388FD00FB2748 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F641ED388FD00FB2748 /* libxml2.tbd */; };
-		EC768F671ED3890400FB2748 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F661ED3890400FB2748 /* QuartzCore.framework */; };
-		EC768F691ED3890C00FB2748 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F681ED3890C00FB2748 /* CoreGraphics.framework */; };
-		EC768F781ED396DF00FB2748 /* C8F542F0-5DE9-3E06-AD55-EFC5E64C6D06.bcsymbolmap in Resources */ = {isa = PBXBuildFile; fileRef = EC768F741ED396DF00FB2748 /* C8F542F0-5DE9-3E06-AD55-EFC5E64C6D06.bcsymbolmap */; };
-		EC768F791ED396DF00FB2748 /* CBCCBFAB-2074-328B-96C3-72FF2F15563F.bcsymbolmap in Resources */ = {isa = PBXBuildFile; fileRef = EC768F751ED396DF00FB2748 /* CBCCBFAB-2074-328B-96C3-72FF2F15563F.bcsymbolmap */; };
-		EC768F7A1ED396DF00FB2748 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F761ED396DF00FB2748 /* CocoaLumberjack.framework */; };
-		EC768F7B1ED396DF00FB2748 /* CocoaLumberjack.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = EC768F771ED396DF00FB2748 /* CocoaLumberjack.framework.dSYM */; };
-		EC768F7C1ED396EF00FB2748 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F761ED396DF00FB2748 /* CocoaLumberjack.framework */; };
-		EC768F7D1ED396EF00FB2748 /* CocoaLumberjack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F761ED396DF00FB2748 /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EC768F7F1ED4870800FB2748 /* SVGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F7E1ED4870800FB2748 /* SVGKit.framework */; };
-		EC768F801ED4877100FB2748 /* SVGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F7E1ED4870800FB2748 /* SVGKit.framework */; };
-		EC768F811ED4877100FB2748 /* SVGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F7E1ED4870800FB2748 /* SVGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ECBCC7801ED20DA800A7AE00 /* CountriesSearchFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */; };
 		ECBCC7841ED2205800A7AE00 /* CountriesSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC7831ED2205800A7AE00 /* CountriesSearchPresenter.m */; };
 /* End PBXBuildFile section */
@@ -75,8 +61,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EC768F811ED4877100FB2748 /* SVGKit.framework in Embed Frameworks */,
-				EC768F7D1ED396EF00FB2748 /* CocoaLumberjack.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,11 +128,6 @@
 		EC768F641ED388FD00FB2748 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		EC768F661ED3890400FB2748 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EC768F681ED3890C00FB2748 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		EC768F741ED396DF00FB2748 /* C8F542F0-5DE9-3E06-AD55-EFC5E64C6D06.bcsymbolmap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "C8F542F0-5DE9-3E06-AD55-EFC5E64C6D06.bcsymbolmap"; sourceTree = "<group>"; };
-		EC768F751ED396DF00FB2748 /* CBCCBFAB-2074-328B-96C3-72FF2F15563F.bcsymbolmap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "CBCCBFAB-2074-328B-96C3-72FF2F15563F.bcsymbolmap"; sourceTree = "<group>"; };
-		EC768F761ED396DF00FB2748 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaLumberjack.framework; sourceTree = "<group>"; };
-		EC768F771ED396DF00FB2748 /* CocoaLumberjack.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = CocoaLumberjack.framework.dSYM; sourceTree = "<group>"; };
-		EC768F7E1ED4870800FB2748 /* SVGKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SVGKit.framework; sourceTree = "<group>"; };
 		ECBCC77E1ED20DA800A7AE00 /* CountriesSearchFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchFlowController.h; sourceTree = "<group>"; };
 		ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSearchFlowController.m; sourceTree = "<group>"; };
 		ECBCC7821ED2205800A7AE00 /* CountriesSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchPresenter.h; sourceTree = "<group>"; };
@@ -161,15 +140,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC768F7F1ED4870800FB2748 /* SVGKit.framework in Frameworks */,
-				EC768F691ED3890C00FB2748 /* CoreGraphics.framework in Frameworks */,
-				EC768F801ED4877100FB2748 /* SVGKit.framework in Frameworks */,
-				EC768F7A1ED396DF00FB2748 /* CocoaLumberjack.framework in Frameworks */,
-				EC768F7C1ED396EF00FB2748 /* CocoaLumberjack.framework in Frameworks */,
-				EC768F671ED3890400FB2748 /* QuartzCore.framework in Frameworks */,
-				EC768F651ED388FD00FB2748 /* libxml2.tbd in Frameworks */,
-				EC768F631ED388E900FB2748 /* CoreImage.framework in Frameworks */,
-				EC768F611ED388DE00FB2748 /* CoreText.framework in Frameworks */,
 				4AEA601FE947A25010986BBD /* Pods_Countries.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +166,6 @@
 		68ECA9AE001128D5ADA6F10C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC768F7E1ED4870800FB2748 /* SVGKit.framework */,
 				EC768F681ED3890C00FB2748 /* CoreGraphics.framework */,
 				EC768F661ED3890400FB2748 /* QuartzCore.framework */,
 				EC768F641ED388FD00FB2748 /* libxml2.tbd */,
@@ -311,7 +280,6 @@
 		EC633DA11ECDF4EA0040B8EB /* Countries */ = {
 			isa = PBXGroup;
 			children = (
-				EC768F731ED396DF00FB2748 /* iOS */,
 				EC633DDF1ECE25E60040B8EB /* Over Alls */,
 				EC633DD71ECDF5200040B8EB /* Countries Details */,
 				ECBCC77B1ED20D0000A7AE00 /* Search Countries */,
@@ -356,7 +324,6 @@
 		EC633DD61ECDF50F0040B8EB /* Countries List */ = {
 			isa = PBXGroup;
 			children = (
-				EC4023411ECF8C3B006BFBB5 /* API */,
 				EC4023401ECF84AE006BFBB5 /* Flow */,
 				EC633DD91ECDF5310040B8EB /* Presenters */,
 				EC633DD81ECDF52B0040B8EB /* Views */,
@@ -411,6 +378,7 @@
 		EC633DDF1ECE25E60040B8EB /* Over Alls */ = {
 			isa = PBXGroup;
 			children = (
+				EC4023411ECF8C3B006BFBB5 /* API */,
 				EC40234F1ED02B18006BFBB5 /* Helper */,
 				EC4023481ED01D5A006BFBB5 /* Entities */,
 				EC633DE01ECE25EE0040B8EB /* Base Classes */,
@@ -428,17 +396,6 @@
 				EC4023461ED00E8B006BFBB5 /* BaseViewController.m */,
 			);
 			name = "Base Classes";
-			sourceTree = "<group>";
-		};
-		EC768F731ED396DF00FB2748 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				EC768F741ED396DF00FB2748 /* C8F542F0-5DE9-3E06-AD55-EFC5E64C6D06.bcsymbolmap */,
-				EC768F751ED396DF00FB2748 /* CBCCBFAB-2074-328B-96C3-72FF2F15563F.bcsymbolmap */,
-				EC768F761ED396DF00FB2748 /* CocoaLumberjack.framework */,
-				EC768F771ED396DF00FB2748 /* CocoaLumberjack.framework.dSYM */,
-			);
-			path = iOS;
 			sourceTree = "<group>";
 		};
 		ECBCC77B1ED20D0000A7AE00 /* Search Countries */ = {
@@ -589,11 +546,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC768F7B1ED396DF00FB2748 /* CocoaLumberjack.framework.dSYM in Resources */,
 				EC633DB21ECDF4EA0040B8EB /* LaunchScreen.storyboard in Resources */,
 				EC633DAF1ECDF4EA0040B8EB /* Assets.xcassets in Resources */,
-				EC768F791ED396DF00FB2748 /* CBCCBFAB-2074-328B-96C3-72FF2F15563F.bcsymbolmap in Resources */,
-				EC768F781ED396DF00FB2748 /* C8F542F0-5DE9-3E06-AD55-EFC5E64C6D06.bcsymbolmap in Resources */,
 				EC633DAD1ECDF4EA0040B8EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

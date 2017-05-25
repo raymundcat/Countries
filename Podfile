@@ -11,7 +11,7 @@ target 'Countries' do
   pod 'ReactiveCocoa', '2.5'
   pod 'SDWebImage', '~>3.8'
   pod 'Hero'
-  
+
   target 'CountriesTests' do
     inherit! :search_paths
     # Pods for testing
