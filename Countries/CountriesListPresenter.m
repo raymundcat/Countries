@@ -36,7 +36,7 @@
 
 -(CountryCategory)selectedCategory {
     if (!_selectedCategory) {
-        _selectedCategory = CountryCategoryAll;
+        _selectedCategory = CountryCategorySubRegion;
     }
     return _selectedCategory;
 }

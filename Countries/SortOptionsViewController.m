@@ -28,7 +28,7 @@
                                                     style: UIAlertActionStyleDefault
                                                   handler:^(UIAlertAction * _Nonnull action) {
                                                       @strongify(self)
-                                                      [self.selectedCategorySubject sendNext: [NSString stringWithFormat:@"%@", @(CountryCategoryAll)]];
+                                                      [self.selectedCategorySubject sendNext: @(CountryCategoryAll)];
                                                   }];
     }
     return _allOption;
@@ -41,7 +41,7 @@
                                                  style: UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * _Nonnull action) {
                                                    @strongify(self)
-                                                   [self.selectedCategorySubject sendNext: [NSString stringWithFormat:@"%@", @(CountryCategoryRegion)]];
+                                                   [self.selectedCategorySubject sendNext: @(CountryCategoryRegion)];
                                                }];
     }
     return _regionOption;
@@ -54,7 +54,7 @@
                                                  style: UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * _Nonnull action) {
                                                    @strongify(self)
-                                                   [self.selectedCategorySubject sendNext: [NSString stringWithFormat:@"%@", @(CountryCategorySubRegion)]];
+                                                   [self.selectedCategorySubject sendNext: @(CountryCategorySubRegion)];
                                                }];
     }
     return _subRegionOption;

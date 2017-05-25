@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIVisualEffectView *blurView;
 @property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
