@@ -9,6 +9,7 @@
 #import "CountriesListFlowController.h"
 #import "CountriesListViewController.h"
 #import "CountriesSearchFlowController.h"
+@import Hero;
 
 @interface CountriesListFlowController()
 
@@ -50,6 +51,7 @@
         UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"sort" style:UIBarButtonItemStylePlain target:self action:@selector(sort)];
         UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"search" style:UIBarButtonItemStylePlain target:self action:@selector(showSearch)];
         self.viewController.navigationItem.rightBarButtonItems = @[searchButton, sortButton];
+        self.viewController.view.heroID = @"wat";
     }
     return self;
 }

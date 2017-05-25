@@ -12,6 +12,7 @@
 #import "CountriesSearchPresenter.h"
 #import "CountriesSearchViewController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+@import Hero;
 
 @interface CountriesSearchFlowController ()
 
@@ -70,6 +71,7 @@
              NSString *searchText = x.last;
              [self.presenter.searchTextSubject sendNext:searchText];
          }];
+        self.viewController.view.heroID = @"wat";
     }
     return self;
 }

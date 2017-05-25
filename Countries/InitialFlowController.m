@@ -9,6 +9,7 @@
 #import "InitialFlowController.h"
 #import "CountriesListFlowController.h"
 #import "UIColor+Countries.h"
+@import Hero;
 
 @interface InitialFlowController()
 
@@ -26,6 +27,7 @@
         _navigationController.navigationBar.barTintColor = UIColor.peachColor;
         _navigationController.navigationBar.tintColor = UIColor.whiteColor;
         _navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColor.whiteColor};
+        _navigationController.isHeroEnabled = YES;
     }
     return _navigationController;
 }
