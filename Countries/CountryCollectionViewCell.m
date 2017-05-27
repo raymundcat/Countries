@@ -12,7 +12,6 @@
 #import "Masonry.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Geognos.h"
-#import <SVGgh/SVGgh.h>
 
 @interface CountryCollectionViewCell ()
 

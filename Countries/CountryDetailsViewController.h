@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface CountryDetailsViewController : BaseViewController
+@interface CountryDetailsViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end

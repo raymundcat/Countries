@@ -42,7 +42,7 @@
         _viewController.navigationItem.hidesBackButton = YES;
         [_viewController.view addGestureRecognizer: self.tapGesture];
         @weakify(self)
-        [[_viewController rac_signalForSelector:@selector(viewDidAppear:)] subscribeNext:^(id x) {
+        [[_viewController rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(id x) {
             @strongify(self)
             [self.searchBar becomeFirstResponder];
         }];

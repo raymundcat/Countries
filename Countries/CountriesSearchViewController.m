@@ -69,7 +69,7 @@ static NSString *CellIdentifier = @"Cell";
         _collectionView.alwaysBounceVertical = YES;
         [_collectionView registerClass:[CountryCollectionViewCell class]
             forCellWithReuseIdentifier:CellIdentifier];
-        _collectionView.contentInset = UIEdgeInsetsMake(16, 8, 8, 8);
+        _collectionView.contentInset = UIEdgeInsetsMake(58, 8, 8, 8);
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;

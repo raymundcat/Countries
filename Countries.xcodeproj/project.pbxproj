@@ -16,6 +16,7 @@
 		EC084A271ED62316006BDFCB /* CountriesSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A261ED62316006BDFCB /* CountriesSearchViewController.m */; };
 		EC084A2C1ED95A43006BDFCB /* CountryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A2B1ED95A43006BDFCB /* CountryDetailsViewController.m */; };
 		EC084A2F1ED95A5F006BDFCB /* CountryDetailsFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A2E1ED95A5F006BDFCB /* CountryDetailsFlowController.m */; };
+		EC084A331ED9A20D006BDFCB /* CountryDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A321ED9A20D006BDFCB /* CountryDetailTableViewCell.m */; };
 		EC16ED0C1ECF77E200A5CE2B /* CountriesListFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16ED0B1ECF77E200A5CE2B /* CountriesListFlowController.m */; };
 		EC16ED0F1ECF7CD000A5CE2B /* CountriesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16ED0E1ECF7CD000A5CE2B /* CountriesListViewController.m */; };
 		EC32872B1ED1F1E000221C66 /* UIColor+Countries.m in Sources */ = {isa = PBXBuildFile; fileRef = EC32872A1ED1F1E000221C66 /* UIColor+Countries.m */; };
@@ -90,6 +91,8 @@
 		EC084A2B1ED95A43006BDFCB /* CountryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryDetailsViewController.m; sourceTree = "<group>"; };
 		EC084A2D1ED95A5F006BDFCB /* CountryDetailsFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryDetailsFlowController.h; sourceTree = "<group>"; };
 		EC084A2E1ED95A5F006BDFCB /* CountryDetailsFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryDetailsFlowController.m; sourceTree = "<group>"; };
+		EC084A311ED9A20D006BDFCB /* CountryDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryDetailTableViewCell.h; sourceTree = "<group>"; };
+		EC084A321ED9A20D006BDFCB /* CountryDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryDetailTableViewCell.m; sourceTree = "<group>"; };
 		EC16ED0A1ECF77E200A5CE2B /* CountriesListFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListFlowController.h; sourceTree = "<group>"; };
 		EC16ED0B1ECF77E200A5CE2B /* CountriesListFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesListFlowController.m; sourceTree = "<group>"; };
 		EC16ED0D1ECF7CD000A5CE2B /* CountriesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListViewController.h; sourceTree = "<group>"; };
@@ -204,6 +207,15 @@
 				EC084A261ED62316006BDFCB /* CountriesSearchViewController.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		EC084A301ED9A1EF006BDFCB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC084A311ED9A20D006BDFCB /* CountryDetailTableViewCell.h */,
+				EC084A321ED9A20D006BDFCB /* CountryDetailTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		EC4023401ECF84AE006BFBB5 /* Flow */ = {
@@ -370,6 +382,7 @@
 		EC633DDA1ECDF5360040B8EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EC084A301ED9A1EF006BDFCB /* Cells */,
 				EC084A2A1ED95A43006BDFCB /* CountryDetailsViewController.h */,
 				EC084A2B1ED95A43006BDFCB /* CountryDetailsViewController.m */,
 			);
@@ -735,6 +748,7 @@
 				EC084A2C1ED95A43006BDFCB /* CountryDetailsViewController.m in Sources */,
 				EC084A271ED62316006BDFCB /* CountriesSearchViewController.m in Sources */,
 				EC084A2F1ED95A5F006BDFCB /* CountryDetailsFlowController.m in Sources */,
+				EC084A331ED9A20D006BDFCB /* CountryDetailTableViewCell.m in Sources */,
 				EC084A131ED4B058006BDFCB /* Geognos.m in Sources */,
 				EC16ED0F1ECF7CD000A5CE2B /* CountriesListViewController.m in Sources */,
 				EC40233F1ECF8339006BFBB5 /* CountriesListPresenter.m in Sources */,

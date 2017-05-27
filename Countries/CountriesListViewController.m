@@ -124,10 +124,7 @@
     [[self rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:)] subscribeNext:^(RACTuple* x) {
         @strongify(self)
         if ([x[1] isKindOfClass: [NSIndexPath class]]){
-            NSLog(@"holla");
             NSIndexPath *selectedIndexPath = (NSIndexPath *)x[1];
-            CountryCollectionViewCell *cell = (CountryCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
-            cell.heroID = @"cell";
             [self.input selectedCountry:self.countries[selectedIndexPath.section][selectedIndexPath.row]];
         }
     }];
@@ -210,7 +207,6 @@ static NSString *HeaderIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CountryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.country = self.countries[indexPath.section][indexPath.row];
-    cell.heroID = @"notcell";
     return cell;
 }
 
