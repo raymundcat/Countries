@@ -14,7 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Hero (0.3.6)
   - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -28,16 +30,20 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - Hero
   - Masonry
+  - MBProgressHUD (~> 1.0.0)
   - ReactiveCocoa (= 2.5)
   - SDWebImage (~> 3.8)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 88332ee3326a9449f15f03f6227cac5105d77364
+PODFILE CHECKSUM: 50141e46c9b4891b805e30e23c3a8e376a62cdf3
 
 COCOAPODS: 1.2.0

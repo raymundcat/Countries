@@ -14,6 +14,7 @@
 @property (nonatomic, strong, readwrite) RACSubject *selectedCategorySubject;
 @property (nonatomic, strong) UIAlertAction *regionOption;
 @property (nonatomic, strong) UIAlertAction *subRegionOption;
+@property (nonatomic, strong) UIAlertAction *regionalBlockOption;
 @property (nonatomic, strong) UIAlertAction *allOption;
 @property (nonatomic, strong) UIAlertAction *cancelnOption;
 
@@ -28,7 +29,7 @@
                                                     style: UIAlertActionStyleDefault
                                                   handler:^(UIAlertAction * _Nonnull action) {
                                                       @strongify(self)
-                                                      [self.selectedCategorySubject sendNext: [NSString stringWithFormat:@"%@", @(CountryCategoryAll)]];
+                                                      [self.selectedCategorySubject sendNext: @(CountryCategoryAll)];
                                                   }];
     }
     return _allOption;
@@ -41,7 +42,7 @@
                                                  style: UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * _Nonnull action) {
                                                    @strongify(self)
-                                                   [self.selectedCategorySubject sendNext: [NSString stringWithFormat:@"%@", @(CountryCategoryRegion)]];
+                                                   [self.selectedCategorySubject sendNext: @(CountryCategoryRegion)];
                                                }];
     }
     return _regionOption;
@@ -54,10 +55,23 @@
                                                  style: UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * _Nonnull action) {
                                                    @strongify(self)
-                                                   [self.selectedCategorySubject sendNext: [NSString stringWithFormat:@"%@", @(CountryCategorySubRegion)]];
+                                                   [self.selectedCategorySubject sendNext: @(CountryCategorySubRegion)];
                                                }];
     }
     return _subRegionOption;
+}
+
+- (UIAlertAction *)regionalBlockOption {
+    if (!_regionalBlockOption) {
+        @weakify(self)
+        _regionalBlockOption = [UIAlertAction actionWithTitle:@"Region Blocks"
+                                                    style: UIAlertActionStyleDefault
+                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                      @strongify(self)
+                                                      [self.selectedCategorySubject sendNext: @(CountryCategoryRegionalBlock)];
+                                                  }];
+    }
+    return _regionalBlockOption;
 }
 
 -(UIAlertAction *)cancelnOption {
@@ -82,6 +96,7 @@
     [self addAction:self.allOption];
     [self addAction:self.regionOption];
     [self addAction:self.subRegionOption];
+    [self addAction:self.regionalBlockOption];
     [self addAction:self.cancelnOption];
 }
 

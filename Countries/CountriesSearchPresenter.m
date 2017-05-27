@@ -12,6 +12,7 @@
 @interface CountriesSearchPresenter ()
 
 @property (nonatomic, strong) CountriesListAPI *countriesAPI;
+@property (nonatomic, strong, readwrite) RACSubject *selectedCountrySubject;
 
 @end
 
@@ -44,6 +45,18 @@
     }
     return _countriesAPI;
 }
+
+-(RACSubject *)selectedCountrySubject {
+    if (!_selectedCountrySubject) {
+        _selectedCountrySubject = [RACSubject subject];
+    }
+    return _selectedCountrySubject;
+}
+
+- (void)selectedCountry:(Country *)country {
+    [self.selectedCountrySubject sendNext:country];
+}
+
 
 - (instancetype)init
 {

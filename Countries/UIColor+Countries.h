@@ -11,6 +11,15 @@
 @interface UIColor (Countries)
 
 + (UIColor *)colorWithFractionedRed: (CGFloat)red green: (CGFloat)green blue: (CGFloat)blue;
++ (UIColor *)colorFromHexString:(NSString *)hexString;
 + (UIColor *)peachColor;
++ (UIColor *)lemonColor;
++ (UIColor *)yelloOrangeColor;
++ (UIColor *)blueGreenColor;
++ (UIColor *)darkBlueGreenColor;
++ (UIColor *)lightBlueGreenColor;
++ (UIColor *)skyBlueColor;
+
++ (CAGradientLayer *)gradientWithColors: (NSArray *)colors forRect: (CGRect)rect;
 
 @end
