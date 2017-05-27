@@ -23,11 +23,14 @@ static NSString *CellIdentifier = @"Cell";
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] init];
+        _tableView.alwaysBounceHorizontal = NO;
+        _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
         _tableView.backgroundColor = UIColor.clearColor;
         _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.estimatedRowHeight = 20;
         [_tableView registerClass:[CountryDetailTableViewCell class]
            forCellReuseIdentifier:CellIdentifier];
+        _tableView.contentInset = UIEdgeInsetsMake(24, 0, 24, 0);
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }
