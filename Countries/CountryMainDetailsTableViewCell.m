@@ -27,7 +27,7 @@
     if (!_countryNameLabel) {
         _countryNameLabel = [[UILabel alloc] init];
         _countryNameLabel.numberOfLines = 0;
-        _countryNameLabel.font = [UIFont boldSystemFontOfSize: 30];
+        _countryNameLabel.font = [UIFont boldSystemFontOfSize: 33];
         _countryNameLabel.textColor = UIColor.whiteColor;
         _countryNameLabel.layer.shadowColor = UIColor.grayColor.CGColor;
         _countryNameLabel.layer.shadowOpacity = 0.9;
@@ -41,7 +41,7 @@
     if (!_countryOtherNamesLabel) {
         _countryOtherNamesLabel = [[UILabel alloc] init];
         _countryOtherNamesLabel.numberOfLines = 0;
-        _countryOtherNamesLabel.font = [UIFont systemFontOfSize: 17];
+        _countryOtherNamesLabel.font = [UIFont systemFontOfSize: 20];
         _countryOtherNamesLabel.textColor = UIColor.whiteColor;
         _countryOtherNamesLabel.layer.shadowColor = UIColor.grayColor.CGColor;
         _countryOtherNamesLabel.layer.shadowOpacity = 0.9;
@@ -60,6 +60,7 @@
         _flagView.layer.shadowColor = UIColor.grayColor.CGColor;
         _flagView.layer.shadowOpacity = 0.9;
         _flagView.layer.shadowOffset = CGSizeZero;
+        _flagView.userInteractionEnabled = NO;
     }
     return _flagView;
 }
@@ -85,8 +86,7 @@
         [self.contentView addSubview: self.countryOtherNamesLabel];
         
         @weakify(self)
-        [[[self rac_signalForSelector:@selector(webViewDidFinishLoad:)]
-         throttle:1]
+        [[self rac_signalForSelector:@selector(webViewDidFinishLoad:)]
          subscribeNext:^(id x) {
              @strongify(self)
              CGSize contentSize = self.flagView.scrollView.contentSize;
@@ -96,8 +96,8 @@
              self.flagView.scrollView.minimumZoomScale = scaleFactor;
              self.flagView.scrollView.maximumZoomScale = scaleFactor;
              self.flagView.scrollView.zoomScale = scaleFactor;
-             [self.flagView.scrollView scrollRectToVisible:CGRectZero animated:YES];
-        }];
+             [self.flagView.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+         }];
     }
     return self;
 }
@@ -121,7 +121,7 @@
         make.top.mas_equalTo(self.countryOtherNamesLabel.mas_bottom).offset(16);
         make.right.mas_equalTo(self.contentView.mas_right).offset(-16);
         make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-16);
-        make.width.mas_equalTo(self.contentView).multipliedBy(0.6);
+        make.width.mas_equalTo(self.contentView).multipliedBy(0.7);
         make.height.mas_equalTo(180);
     }];
 }
