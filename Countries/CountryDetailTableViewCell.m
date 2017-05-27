@@ -12,15 +12,13 @@
 
 @interface CountryDetailTableViewCell()
 
-@property (nonatomic, strong) UILabel *detailLabel;
-@property (nonatomic, strong) UILabel *detailValueLabel;
+@property (nonatomic, strong, readwrite) UILabel *detailLabel;
+@property (nonatomic, strong, readwrite) UILabel *detailValueLabel;
 @property (nonatomic, strong) UIView *containerView;
 
 @end
 
 @implementation CountryDetailTableViewCell
-
-@synthesize country = _country;
 
 - (UIView *)containerView {
     if (!_containerView) {
@@ -57,10 +55,6 @@
     return _detailValueLabel;
 }
 
--(void)setCountry:(Country *)country {
-    _country = country;
-}
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -83,18 +77,17 @@
         make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-4);
         make.right.mas_equalTo(self.contentView.mas_right).offset(-8);
     }];
-    
     [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.contentView.mas_top).offset(16);
         make.left.mas_equalTo(self.contentView.mas_left).offset(24);
         make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-16);
-        make.width.mas_lessThanOrEqualTo(self.contentView).multipliedBy(0.4);
+        make.width.mas_lessThanOrEqualTo(self.contentView).multipliedBy(0.45);
     }];
     [self.detailValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.contentView.mas_top).offset(16);
         make.right.mas_equalTo(self.contentView.mas_right).offset(-24);
         make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-16);
-        make.width.mas_lessThanOrEqualTo(self.contentView).multipliedBy(0.4);
+        make.width.mas_lessThanOrEqualTo(self.contentView).multipliedBy(0.45);
     }];
 }
 

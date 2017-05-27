@@ -11,24 +11,47 @@
 @interface Country : NSObject
 
 typedef enum {
-    CountryCategoryRegion = 1,
+    CountryCategoryRegion = 0,
     CountryCategorySubRegion,
     CountryCategoryRegionalBlock,
     CountryCategoryAll
 }CountryCategory;
 
+typedef enum {
+    CountryDetailTypeNativeName = 0,
+    CountryDetailTypeDemonym,
+    CountryDetailTypeCapital,
+    CountryDetailTypePopulation,
+    CountryDetailTypeLanguages,
+    CountryDetailTypeCurrencies,
+    CountryDetailTypeTimezone,
+    CountryDetailTypeRegion,
+    CountryDetailTypeSubRegion,
+    CountryDetailTypeBorders,
+    CountryDetailTypeRegionalBlocks
+}CountryDetailType;
+
 @property (nonatomic, strong, readonly) NSString *alpha2Code;
 @property (nonatomic, strong, readonly) NSString *alpha3Code;
 @property (nonatomic, strong, readonly) NSString *numericCode;
 @property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, strong, readonly) NSString *nativeName;
 @property (nonatomic, strong, readonly) NSMutableArray<NSString *> *otherNames;
 @property (nonatomic, strong, readonly) NSString *capital;
 @property (nonatomic, strong, readonly) NSString *region;
 @property (nonatomic, strong, readonly) NSString *subRegion;
 @property (nonatomic, strong, readonly) NSString *flag;
+@property (nonatomic, strong, readonly) NSString *demonym;
 @property (nonatomic, strong, readonly) NSMutableArray<NSString *> *regionalBlocks;
+@property (nonatomic, strong, readonly) NSNumber *population;
+@property (nonatomic, strong, readonly) NSMutableArray<NSString *> *languages;
+@property (nonatomic, strong, readonly) NSMutableArray<NSString *> *currencies;
+@property (nonatomic, strong, readonly) NSMutableArray<NSString *> *timeZones;
+@property (nonatomic, strong, readonly) NSMutableArray<NSString *> *borders;
 
 + (Country *)fromJSON: (NSDictionary *)json;
 - (NSArray<NSString *> *)valuesForCategory: (CountryCategory)category;
++ (NSString *)readableNameOfDetailType: (CountryDetailType)detailType;
+- (NSArray<NSString *> *)valuesForDetail: (CountryDetailType)detailType;
 
 @end

@@ -73,14 +73,7 @@
     [self.flagView loadRequest: cacheRequest];
     
     self.countryNameLabel.text = country.name;
-    NSMutableString *namesString = [[NSMutableString alloc] init];
-    for (NSString *name in country.otherNames) {
-        [namesString appendString:name];
-        if (![[country.otherNames lastObject] isEqualToString:name]) {
-            [namesString appendString:@", "];
-        }
-    }
-    self.countryOtherNamesLabel.text = namesString;
+    self.countryOtherNamesLabel.text = [country.otherNames componentsJoinedByString:@", "];
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -120,7 +113,7 @@
     }];
     
     [self.countryOtherNamesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.countryNameLabel.mas_bottom).offset(8);
+        make.top.mas_equalTo(self.countryNameLabel.mas_bottom).offset(4);
         make.left.mas_equalTo(self.contentView.mas_left).offset(24);
         make.width.mas_lessThanOrEqualTo(self.contentView).multipliedBy(0.7);
     }];

@@ -16,12 +16,24 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIImageView *mapView;
+@property (nonatomic, strong) NSArray<NSNumber *> *detailTypes;
 
 @end
 
 @implementation CountryDetailsViewController
 
 @synthesize country = _country;
+
+- (NSArray<NSNumber *> *)detailTypes {
+    if (!_detailTypes) {
+        NSMutableArray<NSNumber *> *detailTypesMutable = [[NSMutableArray<NSNumber *> alloc] init];
+        for (int i = CountryDetailTypeNativeName; i<= CountryDetailTypeRegionalBlocks; i++) {
+            [detailTypesMutable addObject: [NSNumber numberWithInt:i]];
+        }
+        _detailTypes = [NSArray arrayWithArray:detailTypesMutable];
+    }
+    return _detailTypes;
+}
 
 static NSString *HeaderCellIdentifier = @"HeaderCell";
 static NSString *DetailCellIdentifier = @"DetailCell";
@@ -74,7 +86,7 @@ static NSString *DetailCellIdentifier = @"DetailCell";
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.blueGreenColor.CGColor,
+    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.darkBlueGreenColor.CGColor,
                                                               (id)UIColor.lightBlueGreenColor.CGColor]
                                                     forRect:self.view.bounds];
     [self.view.layer insertSublayer:gradient atIndex:0];
@@ -85,20 +97,29 @@ static NSString *DetailCellIdentifier = @"DetailCell";
     [self.tableView reloadData];
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 7;
+    if (section == 0) {
+        return 1;
+    }else{
+        return [self.detailTypes count];
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         CountryMainDetailsTableViewCell *cell = (CountryMainDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier
-                                                                                                         forIndexPath:indexPath];
+                                                                                                                   forIndexPath:indexPath];
         cell.country = self.country;
         return cell;
     }else{
         CountryDetailTableViewCell *cell = (CountryDetailTableViewCell *)[tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier
                                                                                                          forIndexPath:indexPath];
-        cell.country = self.country;
+        cell.detailLabel.text = [Country readableNameOfDetailType:(CountryDetailType)[self.detailTypes[indexPath.row] intValue]];
+        cell.detailValueLabel.text = [[self.country valuesForDetail: (CountryDetailType)[self.detailTypes[indexPath.row] intValue]] componentsJoinedByString:@", "];
         return cell;
     }
 }

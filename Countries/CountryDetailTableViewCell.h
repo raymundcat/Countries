@@ -11,6 +11,7 @@
 
 @interface CountryDetailTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) Country *country;
+@property (nonatomic, strong, readonly) UILabel *detailLabel;
+@property (nonatomic, strong, readonly) UILabel *detailValueLabel;
 
 @end
