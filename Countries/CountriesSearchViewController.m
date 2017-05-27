@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) NSArray<Country *> *countries;
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UIImageView *mapView;
 
 @end
 
@@ -48,8 +49,17 @@
     }];
 }
 
+-(UIImageView *)mapView {
+    if (!_mapView) {
+        _mapView = [[UIImageView alloc] init];
+        _mapView.image = [UIImage imageNamed:@"worldmap"];
+        _mapView.contentMode = UIViewContentModeScaleAspectFill;
+        _mapView.alpha = 0.3;
+    }
+    return _mapView;
+}
+
 static NSString *CellIdentifier = @"Cell";
-static NSString *HeaderIdentifier = @"Cell";
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -70,11 +80,23 @@ static NSString *HeaderIdentifier = @"Cell";
 -(void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
+    [self.view addSubview: self.mapView];
     [self.view addSubview: self.collectionView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.blueGreenColor.CGColor,
+                                                              (id)UIColor.lightBlueGreenColor.CGColor]
+                                                    forRect:self.view.bounds];
+    [self.view.layer insertSublayer:gradient atIndex:0];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
+    [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+    }];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view.mas_top);
         make.left.mas_equalTo(self.view.mas_left);

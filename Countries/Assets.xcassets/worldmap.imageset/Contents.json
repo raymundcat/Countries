@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "World-Map-Polygonal-Wireframe.png",
       "scale" : "1x"
     },
     {
@@ -10,7 +11,6 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "300px-Patillas_Puerto_Rico.jpg",
       "scale" : "3x"
     }
   ],

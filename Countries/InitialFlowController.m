@@ -24,7 +24,7 @@
 - (UINavigationController *)navigationController {
     if (!_navigationController) {
         _navigationController = [[UINavigationController alloc] init];
-        _navigationController.navigationBar.barTintColor = UIColor.peachColor;
+        _navigationController.navigationBar.barTintColor = UIColor.skyBlueColor;
         _navigationController.navigationBar.tintColor = UIColor.whiteColor;
         _navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColor.whiteColor};
         _navigationController.isHeroEnabled = YES;

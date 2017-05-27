@@ -24,6 +24,7 @@
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) SortOptionsViewController *sortOptionsAlertController;
+@property (nonatomic, strong) UIImageView *mapView;
 
 @end
 
@@ -56,9 +57,9 @@
 - (UIRefreshControl *)refreshControl {
     if (!_refreshControl) {
         _refreshControl = [[UIRefreshControl alloc] init];
-        _refreshControl.tintColor = UIColor.peachColor;
+        _refreshControl.tintColor = UIColor.darkBlueGreenColor;
         NSAttributedString *title = [[NSAttributedString alloc] initWithString: @"Loading Countries.."
-                                                                    attributes: @{NSForegroundColorAttributeName:UIColor.peachColor}];
+                                                                    attributes: @{NSForegroundColorAttributeName:UIColor.darkBlueGreenColor}];
         _refreshControl.attributedTitle = title;
     }
     return _refreshControl;
@@ -71,6 +72,16 @@
                                                                    preferredStyle: UIAlertControllerStyleActionSheet];
     }
     return _sortOptionsAlertController;
+}
+
+-(UIImageView *)mapView {
+    if (!_mapView) {
+        _mapView = [[UIImageView alloc] init];
+        _mapView.image = [UIImage imageNamed:@"worldmap"];
+        _mapView.contentMode = UIViewContentModeScaleAspectFill;
+        _mapView.alpha = 0.3;
+    }
+    return _mapView;
 }
 
 -(void)setCategories:(NSArray *)categories {
@@ -135,7 +146,7 @@ static NSString *HeaderIdentifier = @"Cell";
         [_collectionView registerClass:[CountriesCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HeaderIdentifier];
         [_collectionView registerClass:[CountryCollectionViewCell class]
             forCellWithReuseIdentifier:CellIdentifier];
-        _collectionView.contentInset = UIEdgeInsetsMake(16, 8, 8, 8);
+        _collectionView.contentInset = UIEdgeInsetsMake(58, 8, 8, 8);
         [_collectionView addSubview: self.refreshControl];
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.delegate = self;
@@ -146,12 +157,24 @@ static NSString *HeaderIdentifier = @"Cell";
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.whiteColor;
+    self.view.backgroundColor = UIColor.lightGrayColor;
+    [self.view addSubview: self.mapView];
     [self.view addSubview: self.collectionView];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.blueGreenColor.CGColor,
+                                                              (id)UIColor.lightBlueGreenColor.CGColor]
+                                                    forRect:self.view.bounds];
+    [self.view.layer insertSublayer:gradient atIndex:0];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
+    [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+    }];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view.mas_top);
         make.left.mas_equalTo(self.view.mas_left);

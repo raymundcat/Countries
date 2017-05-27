@@ -22,7 +22,7 @@
 -(UILabel *)title {
     if (!_title) {
         _title = [[UILabel alloc] init];
-        _title.textColor = UIColor.peachColor;
+        _title.textColor = UIColor.whiteColor;
         _title.font = [UIFont boldSystemFontOfSize:18];
         _title.numberOfLines = 0;
         _title.text = @"Title";
@@ -34,7 +34,7 @@
     if (!_dropDownButton) {
         _dropDownButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [_dropDownButton setTitle:@"▼" forState:UIControlStateNormal];
-        [_dropDownButton setTitleColor:UIColor.peachColor forState:UIControlStateNormal];
+        [_dropDownButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     }
     return _dropDownButton;
 }

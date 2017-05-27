@@ -29,11 +29,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.layer.shadowRadius = 2;
-        self.layer.shadowColor = UIColor.darkGrayColor.CGColor;
-        self.layer.shadowOpacity = 0.4;
+        self.layer.shadowRadius = 3;
+        self.layer.shadowColor = UIColor.darkBlueGreenColor.CGColor;
+        self.layer.shadowOpacity = 0.9;
         self.layer.shadowOffset = CGSizeZero;
-        self.backgroundColor = UIColor.peachColor;
+        self.backgroundColor = UIColor.clearColor;
         
         [self addSubview: self.imageView];
         [self addSubview: self.blurView];
@@ -46,7 +46,7 @@
     _country = country;
     self.title.text = country.name;
     [self.imageView sd_setImageWithURL: [Geognos flagURLfor: country.alpha2Code]
-                      placeholderImage: [UIImage imageNamed:@"avatar-placeholder.png"]
+                      placeholderImage: [UIImage imageNamed:@"worldmap"]
                                options: SDWebImageRefreshCached];
 }
 
@@ -55,6 +55,11 @@
         _title = [[UILabel alloc] initWithFrame:CGRectZero];
         _title.numberOfLines = 0;
         _title.font = [UIFont systemFontOfSize:15];
+        _title.textColor = UIColor.whiteColor;
+        _title.layer.shadowRadius = 2;
+        _title.layer.shadowColor = UIColor.grayColor.CGColor;
+        _title.layer.shadowOpacity = 0.9;
+        _title.layer.shadowOffset = CGSizeZero;
     }
     return _title;
 }
@@ -63,7 +68,7 @@
     if (!_imageView) {
         _imageView = [[UIImageView alloc] init];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
-        _imageView.backgroundColor = UIColor.grayColor;
+        _imageView.backgroundColor = UIColor.darkBlueGreenColor;
         _imageView.clipsToBounds = YES;
     }
     return _imageView;
