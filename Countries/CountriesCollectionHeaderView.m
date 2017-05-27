@@ -12,7 +12,7 @@
 
 @interface CountriesCollectionHeaderView ()
 
-@property (nonatomic, strong) UILabel *title;
+@property (nonatomic, strong, readwrite) UILabel *title;
 @property (nonatomic, strong, readwrite) UIButton *dropDownButton;
 
 @end
@@ -24,6 +24,7 @@
         _title = [[UILabel alloc] init];
         _title.textColor = UIColor.peachColor;
         _title.font = [UIFont boldSystemFontOfSize:18];
+        _title.numberOfLines = 0;
         _title.text = @"Title";
     }
     return _title;
@@ -56,6 +57,7 @@
     }];
     [self.dropDownButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.title.mas_right);
+        make.right.mas_lessThanOrEqualTo(self.mas_right).mas_offset(12);
         make.width.mas_equalTo(50);
         make.centerY.mas_equalTo(self.title);
     }];

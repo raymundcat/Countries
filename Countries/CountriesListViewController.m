@@ -112,7 +112,7 @@
     }];
     [[self rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:)] subscribeNext:^(RACTuple* x) {
         @strongify(self)
-        if ([x[1] class] == [NSIndexPath class]){
+        if ([x[1] isKindOfClass: [NSIndexPath class]]){
             NSLog(@"holla");
             NSIndexPath *selectedIndexPath = (NSIndexPath *)x[1];
             CountryCollectionViewCell *cell = (CountryCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
@@ -127,7 +127,7 @@ static NSString *HeaderIdentifier = @"Cell";
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.headerReferenceSize = CGSizeMake(_collectionView.frame.size.width, 50);
+        flowLayout.headerReferenceSize = CGSizeMake(_collectionView.frame.size.width, 70);
         _collectionView = [[UICollectionView alloc] initWithFrame: CGRectZero
                                              collectionViewLayout: flowLayout];
         _collectionView.backgroundColor = UIColor.clearColor;

@@ -13,6 +13,7 @@
 typedef enum {
     CountryCategoryRegion = 1,
     CountryCategorySubRegion,
+    CountryCategoryRegionalBlock,
     CountryCategoryAll
 }CountryCategory;
 
@@ -25,8 +26,9 @@ typedef enum {
 @property (nonatomic, strong, readonly) NSString *region;
 @property (nonatomic, strong, readonly) NSString *subRegion;
 @property (nonatomic, strong, readonly) NSString *flag;
+@property (nonatomic, strong, readonly) NSMutableArray<NSString *> *regionalBlocks;
 
 + (Country *)fromJSON: (NSDictionary *)json;
-- (NSString *)valueForCategory: (CountryCategory)category;
+- (NSArray<NSString *> *)valuesForCategory: (CountryCategory)category;
 
 @end

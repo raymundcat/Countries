@@ -14,6 +14,7 @@
 @property (nonatomic, strong, readwrite) RACSubject *selectedCategorySubject;
 @property (nonatomic, strong) UIAlertAction *regionOption;
 @property (nonatomic, strong) UIAlertAction *subRegionOption;
+@property (nonatomic, strong) UIAlertAction *regionalBlockOption;
 @property (nonatomic, strong) UIAlertAction *allOption;
 @property (nonatomic, strong) UIAlertAction *cancelnOption;
 
@@ -60,6 +61,19 @@
     return _subRegionOption;
 }
 
+- (UIAlertAction *)regionalBlockOption {
+    if (!_regionalBlockOption) {
+        @weakify(self)
+        _regionalBlockOption = [UIAlertAction actionWithTitle:@"Region Blocks"
+                                                    style: UIAlertActionStyleDefault
+                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                      @strongify(self)
+                                                      [self.selectedCategorySubject sendNext: @(CountryCategoryRegionalBlock)];
+                                                  }];
+    }
+    return _regionalBlockOption;
+}
+
 -(UIAlertAction *)cancelnOption {
     if (!_cancelnOption) {
         _cancelnOption = [UIAlertAction actionWithTitle:@"Cancel"
@@ -82,6 +96,7 @@
     [self addAction:self.allOption];
     [self addAction:self.regionOption];
     [self addAction:self.subRegionOption];
+    [self addAction:self.regionalBlockOption];
     [self addAction:self.cancelnOption];
 }
 

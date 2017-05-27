@@ -19,6 +19,7 @@
 @property (nonatomic, strong, readwrite) NSString *region;
 @property (nonatomic, strong, readwrite) NSString *subRegion;
 @property (nonatomic, strong, readwrite) NSString *flag;
+@property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *regionalBlocks;
 
 @end
 
@@ -33,17 +34,28 @@
     country.region = [json objectForKey:@"region"];
     country.subRegion = [json objectForKey:@"subregion"];
     country.flag = [json objectForKey:@"flag"];
+    
+    country.regionalBlocks = [[NSMutableArray alloc] init];
+    if ([[json objectForKey:@"regionalBlocs"] isKindOfClass:[NSArray<NSDictionary *> class]]) {
+        NSArray<NSDictionary *> *blocs = (NSArray<NSDictionary *> *)[json objectForKey:@"regionalBlocs"];
+        for (NSDictionary *blocDict in blocs) {
+            [country.regionalBlocks addObject:[blocDict objectForKey:@"name"]];
+        }
+    }
+    
     return country;
 }
 
-- (NSString *)valueForCategory: (CountryCategory)category{
+- (NSArray<NSString *> *)valuesForCategory: (CountryCategory)category{
     switch (category) {
         case CountryCategoryAll:
-            return @"All";
+            return @[@"All"];
         case CountryCategoryRegion:
-            return [self.region length] > 0 ? self.region : @"None";
+            return [self.region length] > 0 ? @[self.region] : @[@"None"];
         case CountryCategorySubRegion:
-            return [self.subRegion length] > 0 ? self.subRegion : @"None";
+            return [self.subRegion length] > 0 ? @[self.subRegion] : @[@"None"];
+        case CountryCategoryRegionalBlock:
+            return [self.regionalBlocks count] > 0 ? self.regionalBlocks : @[@"None"];
     }
 }
 

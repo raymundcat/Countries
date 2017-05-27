@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSString *categoryName;
 @property (nonatomic, strong, readonly) UIButton *dropDownButton;
+@property (nonatomic, strong, readonly) UILabel *title;
 
 @end

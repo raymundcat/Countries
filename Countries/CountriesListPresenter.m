@@ -72,16 +72,17 @@
 
 -(void)updateDataWithCategory: (CountryCategory)category {
     
-    NSArray<NSString *> *categories = [self.countries mapObjectsUsingBlock:^NSString *(Country *country, NSUInteger idx) {
-        return [country valueForCategory:category];
-    }];
+    NSMutableArray<NSString *> *categories = [[NSMutableArray alloc] init];
+    for (Country *country in self.countries) {
+        [categories addObjectsFromArray: [country valuesForCategory:category]];
+    }
     NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:categories];
     [self.countriesCategoriesSubject sendNext:[orderedSet array]];
     
     NSMutableArray<NSArray<Country *> *> *countriesSet = [[NSMutableArray alloc] init];
     for (NSString *categoryValue in orderedSet) {
         [countriesSet addObject: [self.countries objectsAtIndexes: [self.countries indexesOfObjectsPassingTest:^BOOL(Country * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            return [[obj valueForCategory:category] isEqualToString:categoryValue];
+            return [[obj valuesForCategory:category] containsObject:categoryValue];
         }]]];
     }
     [self.countriesSubject sendNext:countriesSet];
