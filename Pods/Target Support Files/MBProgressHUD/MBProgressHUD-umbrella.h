@@ -10,12 +10,8 @@
 #endif
 #endif
 
-//
-//  Prefix header
-//
-//  The contents of this file are implicitly included at the beginning of every source file.
-//
+#import "MBProgressHUD.h"
 
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif
+FOUNDATION_EXPORT double MBProgressHUDVersionNumber;
+FOUNDATION_EXPORT const unsigned char MBProgressHUDVersionString[];
+

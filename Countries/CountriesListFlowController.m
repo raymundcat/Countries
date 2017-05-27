@@ -31,9 +31,9 @@
     if (!_presenter) {
         _presenter = [[CountriesListPresenter alloc] init];
         @weakify(self)
-        [_presenter.selectedCountrySubject subscribeNext:^(Country *x) {
+        [_presenter.selectedCountrySubject subscribeNext:^(Country *country) {
             @strongify(self)
-            [self.countryDetailsFlowwController startWithCountry:x];
+            [self.countryDetailsFlowwController startWithCountry: country];
         }];
     }
     return _presenter;

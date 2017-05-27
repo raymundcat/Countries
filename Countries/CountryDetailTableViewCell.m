@@ -22,7 +22,7 @@
 
 - (UIView *)containerView {
     if (!_containerView) {
-        _containerView = [[UIView alloc] init];
+        _containerView = [[UIView alloc] initWithFrame:CGRectZero];
         _containerView.backgroundColor = UIColor.whiteColor;
         _containerView.layer.cornerRadius = 3;
         _containerView.layer.shadowColor = UIColor.grayColor.CGColor;
@@ -45,7 +45,7 @@
 
 -(UILabel *)detailValueLabel {
     if (!_detailValueLabel) {
-        _detailValueLabel = [[UILabel alloc] init];
+        _detailValueLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _detailValueLabel.numberOfLines = 0;
         _detailValueLabel.font = [UIFont systemFontOfSize:17];
         _detailValueLabel.textColor = UIColor.darkBlueGreenColor;

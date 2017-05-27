@@ -25,7 +25,7 @@
 
 -(UILabel *)countryNameLabel {
     if (!_countryNameLabel) {
-        _countryNameLabel = [[UILabel alloc] init];
+        _countryNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _countryNameLabel.numberOfLines = 0;
         _countryNameLabel.font = [UIFont boldSystemFontOfSize: 33];
         _countryNameLabel.textColor = UIColor.whiteColor;
@@ -39,7 +39,7 @@
 
 -(UILabel *)countryOtherNamesLabel {
     if (!_countryOtherNamesLabel) {
-        _countryOtherNamesLabel = [[UILabel alloc] init];
+        _countryOtherNamesLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _countryOtherNamesLabel.numberOfLines = 0;
         _countryOtherNamesLabel.font = [UIFont systemFontOfSize: 20];
         _countryOtherNamesLabel.textColor = UIColor.whiteColor;
@@ -53,7 +53,7 @@
 
 -(UIWebView *)flagView {
     if (!_flagView) {
-        _flagView = [[UIWebView alloc] init];
+        _flagView = [[UIWebView alloc] initWithFrame:CGRectZero];
         _flagView.backgroundColor = UIColor.clearColor;
         _flagView.opaque = NO;
         _flagView.delegate = self;
@@ -111,13 +111,11 @@
         make.left.mas_equalTo(self.contentView.mas_left).offset(24);
         make.width.mas_lessThanOrEqualTo(self.contentView).multipliedBy(0.7);
     }];
-    
     [self.countryOtherNamesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.countryNameLabel.mas_bottom).offset(4);
         make.left.mas_equalTo(self.contentView.mas_left).offset(24);
         make.width.mas_lessThanOrEqualTo(self.contentView).multipliedBy(0.7);
     }];
-    
     [self.flagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.countryOtherNamesLabel.mas_bottom).offset(16);
         make.right.mas_equalTo(self.contentView.mas_right).offset(-16);
@@ -125,6 +123,11 @@
         make.width.mas_equalTo(self.contentView).multipliedBy(0.7);
         make.height.mas_equalTo(180);
     }];
+}
+
+- (void)dealloc {
+    [self.flagView stopLoading];
+    self.flagView.delegate = nil;
 }
 
 @end

@@ -47,6 +47,13 @@
         @strongify(self)
         self.countries = countries;
     }];
+    [[self rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:)] subscribeNext:^(RACTuple* x) {
+        @strongify(self)
+        if ([x[1] isKindOfClass: [NSIndexPath class]]){
+            NSIndexPath *selectedIndexPath = (NSIndexPath *)x[1];
+            [self.input selectedCountry: self.countries[selectedIndexPath.row]];
+        }
+    }];
 }
 
 -(UIImageView *)mapView {
@@ -69,7 +76,7 @@ static NSString *CellIdentifier = @"Cell";
         _collectionView.alwaysBounceVertical = YES;
         [_collectionView registerClass:[CountryCollectionViewCell class]
             forCellWithReuseIdentifier:CellIdentifier];
-        _collectionView.contentInset = UIEdgeInsetsMake(58, 8, 8, 8);
+        _collectionView.contentInset = UIEdgeInsetsMake(68, 8, 8, 8);
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;

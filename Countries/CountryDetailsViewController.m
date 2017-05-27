@@ -39,7 +39,7 @@ static NSString *HeaderCellIdentifier = @"HeaderCell";
 static NSString *DetailCellIdentifier = @"DetailCell";
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] init];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero];
         _tableView.alwaysBounceHorizontal = NO;
         _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
         _tableView.backgroundColor = UIColor.clearColor;
@@ -59,7 +59,7 @@ static NSString *DetailCellIdentifier = @"DetailCell";
 
 -(UIImageView *)mapView {
     if (!_mapView) {
-        _mapView = [[UIImageView alloc] init];
+        _mapView = [[UIImageView alloc] initWithFrame:CGRectZero];
         _mapView.image = [UIImage imageNamed:@"worldmap"];
         _mapView.contentMode = UIViewContentModeScaleAspectFill;
         _mapView.alpha = 0.3;

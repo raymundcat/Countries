@@ -12,6 +12,7 @@
 #import "CountriesSearchPresenter.h"
 #import "CountriesSearchViewController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "CountryDetailsFlowController.h"
 @import Hero;
 
 @interface CountriesSearchFlowController ()
@@ -21,6 +22,7 @@
 @property (nonatomic, strong) CountriesSearchPresenter *presenter;
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
+@property (nonatomic, strong) CountryDetailsFlowController *countryDetailsFlowwController;
 
 @end
 
@@ -29,6 +31,11 @@
 - (CountriesSearchPresenter *)presenter {
     if (!_presenter) {
         _presenter = [[CountriesSearchPresenter alloc] init];
+        @weakify(self)
+        [_presenter.selectedCountrySubject subscribeNext:^(Country *country) {
+            @strongify(self)
+            [self.countryDetailsFlowwController startWithCountry:country];
+        }];
     }
     return _presenter;
 }
@@ -48,6 +55,13 @@
         }];
     }
     return _viewController;
+}
+
+-(CountryDetailsFlowController *)countryDetailsFlowwController {
+    if (!_countryDetailsFlowwController) {
+        _countryDetailsFlowwController = [[CountryDetailsFlowController alloc] initWithNavigationController:self.navigationController];
+    }
+    return _countryDetailsFlowwController;
 }
 
 - (UITapGestureRecognizer *)tapGesture {
