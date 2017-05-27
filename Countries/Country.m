@@ -44,10 +44,10 @@
     }
     
     country.otherNames = [[NSMutableArray alloc] init];
-    if ([[json objectForKey:@"regionalBlocs"] isKindOfClass:[NSArray<NSDictionary *> class]]) {
-        NSArray<NSDictionary *> *blocs = (NSArray<NSDictionary *> *)[json objectForKey:@"regionalBlocs"];
-        for (NSDictionary *blocDict in blocs) {
-            [country.regionalBlocks addObject:[blocDict objectForKey:@"name"]];
+    if ([[json objectForKey:@"altSpellings"] isKindOfClass:[NSArray<NSString *> class]]) {
+        NSArray<NSString *> *names = (NSArray<NSString *> *)[json objectForKey:@"altSpellings"];
+        for (NSString *name in names) {
+            [country.otherNames addObject:name];
         }
     }
     
