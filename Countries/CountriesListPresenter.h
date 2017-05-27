@@ -14,10 +14,12 @@
 
 - (void)viewDidLoad;
 - (void)setSelectedCategory: (CountryCategory)category;
+- (void)selectedCountry: (Country *) country;
 - (void)requestRefreshData;
 
 @property (nonatomic, strong, readonly) RACSubject *countriesCategoriesSubject;
 @property (nonatomic, strong, readonly) RACSubject *countriesSubject;
+@property (nonatomic, strong, readonly) RACSubject *selectedCountrySubject;
 
 @end
 

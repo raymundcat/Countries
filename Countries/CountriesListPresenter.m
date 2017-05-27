@@ -17,6 +17,7 @@
 @property (nonatomic) CountryCategory selectedCategory;
 @property (nonatomic, strong, readwrite) RACSubject *countriesCategoriesSubject;
 @property (nonatomic, strong, readwrite) RACSubject *countriesSubject;
+@property (nonatomic, strong, readwrite) RACSubject *selectedCountrySubject;
 @property (nonatomic, strong) CountriesListAPI *countriesAPI;
 
 @end
@@ -44,6 +45,17 @@
 - (void)setSelectedCategory:(CountryCategory)category {
     _selectedCategory = category;
     [self updateDataWithCategory: category];
+}
+
+-(RACSubject *)selectedCountrySubject {
+    if (!_selectedCountrySubject) {
+        _selectedCountrySubject = [RACSubject subject];
+    }
+    return _selectedCountrySubject;
+}
+
+- (void)selectedCountry:(Country *)country {
+    [self.selectedCountrySubject sendNext:country];
 }
 
 -(NSArray<Country *> *)countries {

@@ -16,7 +16,6 @@
 
 @interface CountryCollectionViewCell ()
 
-@property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) UIVisualEffectView *blurView;
 @property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) UIImageView *imageView;
@@ -54,7 +53,6 @@
 - (UILabel *)title {
     if (!_title) {
         _title = [[UILabel alloc] initWithFrame:CGRectZero];
-        _title.textColor = UIColor.whiteColor;
         _title.numberOfLines = 0;
         _title.font = [UIFont systemFontOfSize:15];
     }
@@ -69,17 +67,6 @@
         _imageView.clipsToBounds = YES;
     }
     return _imageView;
-}
-
--(UIWebView *)webView {
-    if (!_webView) {
-        _webView = [[UIWebView alloc] init];
-        _webView.delegate = self;
-        _webView.scalesPageToFit = NO;
-        _webView.scrollView.scrollEnabled = NO;
-        _webView.suppressesIncrementalRendering = YES;
-    }
-    return _webView;
 }
 
 -(UIVisualEffectView *)blurView {
