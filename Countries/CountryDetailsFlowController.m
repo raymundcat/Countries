@@ -9,6 +9,7 @@
 #import "CountryDetailsFlowController.h"
 #import "CountryDetailsViewController.h"
 #import "UIColor+Countries.h"
+#import "Country.h"
 @import Hero;
 
 @interface CountryDetailsFlowController ()
@@ -34,6 +35,11 @@
         self.navigationController = navigationController;
     }
     return self;
+}
+
+- (void)startWithCountry: (Country *)country {
+    self.viewController.country = country;
+    [self.navigationController pushViewController: self.viewController animated: YES];
 }
 
 - (void)start {

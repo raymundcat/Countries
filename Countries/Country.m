@@ -14,7 +14,7 @@
 @property (nonatomic, strong, readwrite) NSString *alpha3Code;
 @property (nonatomic, strong, readwrite) NSString *numericCode;
 @property (nonatomic, strong, readwrite) NSString *name;
-@property (nonatomic, strong, readwrite) NSString *nativeName;
+@property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *otherNames;
 @property (nonatomic, strong, readwrite) NSString *capital;
 @property (nonatomic, strong, readwrite) NSString *region;
 @property (nonatomic, strong, readwrite) NSString *subRegion;
@@ -36,6 +36,14 @@
     country.flag = [json objectForKey:@"flag"];
     
     country.regionalBlocks = [[NSMutableArray alloc] init];
+    if ([[json objectForKey:@"regionalBlocs"] isKindOfClass:[NSArray<NSDictionary *> class]]) {
+        NSArray<NSDictionary *> *blocs = (NSArray<NSDictionary *> *)[json objectForKey:@"regionalBlocs"];
+        for (NSDictionary *blocDict in blocs) {
+            [country.regionalBlocks addObject:[blocDict objectForKey:@"name"]];
+        }
+    }
+    
+    country.otherNames = [[NSMutableArray alloc] init];
     if ([[json objectForKey:@"regionalBlocs"] isKindOfClass:[NSArray<NSDictionary *> class]]) {
         NSArray<NSDictionary *> *blocs = (NSArray<NSDictionary *> *)[json objectForKey:@"regionalBlocs"];
         for (NSDictionary *blocDict in blocs) {

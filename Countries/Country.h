@@ -21,7 +21,7 @@ typedef enum {
 @property (nonatomic, strong, readonly) NSString *alpha3Code;
 @property (nonatomic, strong, readonly) NSString *numericCode;
 @property (nonatomic, strong, readonly) NSString *name;
-@property (nonatomic, strong, readonly) NSString *nativeName;
+@property (nonatomic, strong, readonly) NSMutableArray<NSString *> *otherNames;
 @property (nonatomic, strong, readonly) NSString *capital;
 @property (nonatomic, strong, readonly) NSString *region;
 @property (nonatomic, strong, readonly) NSString *subRegion;

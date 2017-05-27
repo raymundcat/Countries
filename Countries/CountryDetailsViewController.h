@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "Country.h"
 
 @interface CountryDetailsViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) Country *country;
 
 @end

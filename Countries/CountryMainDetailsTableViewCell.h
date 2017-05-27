@@ -1,5 +1,5 @@
 //
-//  CountryDetailTableViewCell.h
+//  CountryMainDetailsTableViewCell.h
 //  Countries
 //
 //  Created by John Raymund Catahay on 27/05/2017.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Country.h"
 
-@interface CountryDetailTableViewCell : UITableViewCell
+@interface CountryMainDetailsTableViewCell : UITableViewCell<UIWebViewDelegate>
 
 @property (nonatomic, strong) Country *country;
 

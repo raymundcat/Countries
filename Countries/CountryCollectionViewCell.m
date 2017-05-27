@@ -28,6 +28,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.layer.cornerRadius = 3;
         self.layer.shadowRadius = 3;
         self.layer.shadowColor = UIColor.darkBlueGreenColor.CGColor;
         self.layer.shadowOpacity = 0.9;
@@ -66,6 +67,7 @@
 -(UIImageView *)imageView {
     if (!_imageView) {
         _imageView = [[UIImageView alloc] init];
+        _imageView.layer.cornerRadius = 3;
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         _imageView.backgroundColor = UIColor.darkBlueGreenColor;
         _imageView.clipsToBounds = YES;

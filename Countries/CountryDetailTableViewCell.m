@@ -20,6 +20,8 @@
 
 @implementation CountryDetailTableViewCell
 
+@synthesize country = _country;
+
 - (UIView *)containerView {
     if (!_containerView) {
         _containerView = [[UIView alloc] init];
@@ -53,6 +55,10 @@
         _detailValueLabel.text = @"lorem lorem lorem lorem lorem lorem lorem";
     }
     return _detailValueLabel;
+}
+
+-(void)setCountry:(Country *)country {
+    _country = country;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {

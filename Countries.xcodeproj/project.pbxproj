@@ -17,6 +17,7 @@
 		EC084A2C1ED95A43006BDFCB /* CountryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A2B1ED95A43006BDFCB /* CountryDetailsViewController.m */; };
 		EC084A2F1ED95A5F006BDFCB /* CountryDetailsFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A2E1ED95A5F006BDFCB /* CountryDetailsFlowController.m */; };
 		EC084A331ED9A20D006BDFCB /* CountryDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A321ED9A20D006BDFCB /* CountryDetailTableViewCell.m */; };
+		EC084A361ED9BE87006BDFCB /* CountryMainDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A351ED9BE87006BDFCB /* CountryMainDetailsTableViewCell.m */; };
 		EC16ED0C1ECF77E200A5CE2B /* CountriesListFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16ED0B1ECF77E200A5CE2B /* CountriesListFlowController.m */; };
 		EC16ED0F1ECF7CD000A5CE2B /* CountriesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16ED0E1ECF7CD000A5CE2B /* CountriesListViewController.m */; };
 		EC32872B1ED1F1E000221C66 /* UIColor+Countries.m in Sources */ = {isa = PBXBuildFile; fileRef = EC32872A1ED1F1E000221C66 /* UIColor+Countries.m */; };
@@ -93,6 +94,8 @@
 		EC084A2E1ED95A5F006BDFCB /* CountryDetailsFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryDetailsFlowController.m; sourceTree = "<group>"; };
 		EC084A311ED9A20D006BDFCB /* CountryDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryDetailTableViewCell.h; sourceTree = "<group>"; };
 		EC084A321ED9A20D006BDFCB /* CountryDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryDetailTableViewCell.m; sourceTree = "<group>"; };
+		EC084A341ED9BE87006BDFCB /* CountryMainDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryMainDetailsTableViewCell.h; sourceTree = "<group>"; };
+		EC084A351ED9BE87006BDFCB /* CountryMainDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryMainDetailsTableViewCell.m; sourceTree = "<group>"; };
 		EC16ED0A1ECF77E200A5CE2B /* CountriesListFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListFlowController.h; sourceTree = "<group>"; };
 		EC16ED0B1ECF77E200A5CE2B /* CountriesListFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesListFlowController.m; sourceTree = "<group>"; };
 		EC16ED0D1ECF7CD000A5CE2B /* CountriesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListViewController.h; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 			children = (
 				EC084A311ED9A20D006BDFCB /* CountryDetailTableViewCell.h */,
 				EC084A321ED9A20D006BDFCB /* CountryDetailTableViewCell.m */,
+				EC084A341ED9BE87006BDFCB /* CountryMainDetailsTableViewCell.h */,
+				EC084A351ED9BE87006BDFCB /* CountryMainDetailsTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -736,6 +741,7 @@
 			files = (
 				EC084A231ED5FA2E006BDFCB /* SortOptionsViewController.m in Sources */,
 				ECBCC7801ED20DA800A7AE00 /* CountriesSearchFlowController.m in Sources */,
+				EC084A361ED9BE87006BDFCB /* CountryMainDetailsTableViewCell.m in Sources */,
 				EC633DF31ECF651D0040B8EB /* InitialFlowController.m in Sources */,
 				EC4023471ED00E8B006BFBB5 /* BaseViewController.m in Sources */,
 				EC32872E1ED1F8E400221C66 /* NSArray+Map.m in Sources */,

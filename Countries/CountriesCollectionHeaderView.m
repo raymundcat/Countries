@@ -43,6 +43,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.layer.shadowRadius = 2;
+        self.layer.shadowColor = UIColor.grayColor.CGColor;
+        self.layer.shadowOpacity = 0.9;
+        self.layer.shadowOffset = CGSizeZero;
         [self addSubview:self.title];
         [self addSubview:self.dropDownButton];
     }

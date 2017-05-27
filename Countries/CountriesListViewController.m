@@ -173,10 +173,7 @@ static NSString *HeaderIdentifier = @"Cell";
         make.edges.mas_equalTo(self.view);
     }];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top);
-        make.left.mas_equalTo(self.view.mas_left);
-        make.right.mas_equalTo(self.view.mas_right);
-        make.bottom.mas_equalTo(self.view.mas_bottom);
+        make.edges.mas_equalTo(self.view);
     }];
 }
 
