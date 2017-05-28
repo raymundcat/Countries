@@ -11,6 +11,7 @@
 #import <Masonry/Masonry.h>
 #import "CountryDetailTableViewCell.h"
 #import "CountryMainDetailsTableViewCell.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface CountryDetailsViewController ()
 
@@ -50,7 +51,7 @@ static NSString *DetailCellIdentifier = @"DetailCell";
            forCellReuseIdentifier:DetailCellIdentifier];
         [_tableView registerClass:[CountryMainDetailsTableViewCell class]
            forCellReuseIdentifier:HeaderCellIdentifier];
-        _tableView.contentInset = UIEdgeInsetsMake(68, 0, 24, 0);
+        _tableView.contentInset = UIEdgeInsetsMake(58, 0, 24, 0);
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }
@@ -69,9 +70,13 @@ static NSString *DetailCellIdentifier = @"DetailCell";
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.lightBlueGreenColor;
+    self.view.backgroundColor = UIColor.skyBlueColor;
     [self.view addSubview: self.mapView];
     [self.view addSubview: self.tableView];
+    self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom
+                                                      withFrame:self.view.frame
+                                                      andColors:@[UIColor.skyBlueColor,
+                                                                  UIColor.lightBlueGreenColor]];
 }
 
 -(void)viewWillLayoutSubviews {
@@ -82,14 +87,6 @@ static NSString *DetailCellIdentifier = @"DetailCell";
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.skyBlueColor.CGColor,
-                                                              (id)UIColor.lightBlueGreenColor.CGColor]
-                                                    forRect:self.view.bounds];
-    [self.view.layer insertSublayer:gradient atIndex:0];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

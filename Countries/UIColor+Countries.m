@@ -48,11 +48,4 @@
     return [UIColor colorFromHexString:@"4697E4"];
 }
 
-+ (CAGradientLayer *)gradientWithColors: (NSArray *)colors forRect: (CGRect)rect {
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.colors = colors;
-    gradient.frame = rect;
-    return gradient;
-}
-
 @end

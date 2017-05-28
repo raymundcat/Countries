@@ -122,7 +122,7 @@
     [super layoutSubviews];
     
     [self.countryNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.contentView.mas_top).offset(20);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(8);
         make.left.mas_equalTo(self.contentView.mas_left).offset(24);
         make.width.mas_lessThanOrEqualTo(self.contentView).multipliedBy(0.7);
     }];

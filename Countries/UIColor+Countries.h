@@ -20,6 +20,4 @@
 + (UIColor *)lightBlueGreenColor;
 + (UIColor *)skyBlueColor;
 
-+ (CAGradientLayer *)gradientWithColors: (NSArray *)colors forRect: (CGRect)rect;
-
 @end

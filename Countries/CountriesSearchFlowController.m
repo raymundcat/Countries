@@ -52,11 +52,6 @@
         _viewController.navigationItem.leftBarButtonItem = nil;
         _viewController.navigationItem.hidesBackButton = YES;
         [_viewController.view addGestureRecognizer: self.tapGesture];
-        @weakify(self)
-        [[_viewController rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(id x) {
-            @strongify(self)
-            [self.searchBar becomeFirstResponder];
-        }];
     }
     return _viewController;
 }
@@ -100,6 +95,7 @@
 
 - (void)start {
     [self.navigationController pushViewController: self.viewController animated: YES];
+    [self.searchBar becomeFirstResponder];
 }
 
 - (void) didTap{

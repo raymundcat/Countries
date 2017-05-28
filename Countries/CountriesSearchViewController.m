@@ -11,12 +11,14 @@
 #import "UIColor+Countries.h"
 #import "CountryCollectionViewCell.h"
 #import <Masonry/Masonry.h>
+#import <ChameleonFramework/Chameleon.h>
 
 @interface CountriesSearchViewController ()
 
 @property (nonatomic, strong) NSArray<Country *> *countries;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UIImageView *mapView;
+@property (nonatomic, strong) UILabel *searchInstructionsLabel;
 
 @end
 
@@ -34,6 +36,8 @@
 -(void)setCountries:(NSArray<Country*> *)countries {
     _countries = countries;
     [self.collectionView reloadData];
+    self.collectionView.hidden = _countries.count == 0;
+    self.searchInstructionsLabel.hidden = _countries.count != 0;
 }
 
 - (void)setInput:(id<CountriesSearchInput>)input {
@@ -83,25 +87,35 @@ static NSString *CellIdentifier = @"Cell";
             forCellWithReuseIdentifier:CellIdentifier];
         _collectionView.contentInset = UIEdgeInsetsMake(78, 8, 8, 8);
         _collectionView.showsVerticalScrollIndicator = NO;
+        _collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+        _collectionView.hidden = YES;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
     }
     return _collectionView;
 }
 
+-(UILabel *)searchInstructionsLabel {
+    if (!_searchInstructionsLabel) {
+        _searchInstructionsLabel = [[UILabel alloc] init];
+        _searchInstructionsLabel.textAlignment = NSTextAlignmentCenter;
+        _searchInstructionsLabel.numberOfLines = 0;
+        _searchInstructionsLabel.textColor = UIColor.darkGrayColor;
+        _searchInstructionsLabel.text = @"Search for a Country.";
+    }
+    return _searchInstructionsLabel;
+}
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     [self.view addSubview: self.mapView];
+    [self.view addSubview: self.searchInstructionsLabel];
     [self.view addSubview: self.collectionView];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.whiteColor.CGColor,
-                                                              (id)UIColor.lightGrayColor.CGColor]
-                                                    forRect:self.view.bounds];
-    [self.view.layer insertSublayer:gradient atIndex:0];
+    self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom
+                                                      withFrame:self.view.frame
+                                                      andColors:@[UIColor.darkGrayColor,
+                                                                  UIColor.whiteColor]];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -115,11 +129,11 @@ static NSString *CellIdentifier = @"Cell";
         make.right.mas_equalTo(self.view.mas_right);
         make.bottom.mas_equalTo(self.view.mas_bottom);
     }];
-}
-
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    [self.collectionView.collectionViewLayout invalidateLayout];
+    [self.searchInstructionsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.centerY.mas_equalTo(self.view).mas_offset(-30);
+        make.width.mas_equalTo(self.view).multipliedBy(0.8);
+    }];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

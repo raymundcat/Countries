@@ -30,7 +30,7 @@
     if (self) {
         self.layer.cornerRadius = 3;
         self.layer.shadowRadius = 3;
-        self.layer.shadowColor = UIColor.darkBlueGreenColor.CGColor;
+        self.layer.shadowColor = UIColor.darkGrayColor.CGColor;
         self.layer.shadowOpacity = 0.9;
         self.layer.shadowOffset = CGSizeZero;
         self.backgroundColor = UIColor.clearColor;

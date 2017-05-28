@@ -24,7 +24,6 @@
 -(CountryDetailsViewController *)viewController {
     if (!_viewController) {
         _viewController = [[CountryDetailsViewController alloc] init];
-        _viewController.title = @"Details";
     }
     return _viewController;
 }

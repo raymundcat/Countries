@@ -14,6 +14,7 @@
 #import "UIColor+Countries.h"
 #import "SortOptionsViewController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ChameleonFramework/Chameleon.h>
 
 @interface CountriesListViewController ()
 
@@ -154,17 +155,12 @@ static NSString *HeaderIdentifier = @"Cell";
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.lightGrayColor;
+    self.view.backgroundColor = UIColor.lightBlueGreenColor;
     [self.view addSubview: self.mapView];
     [self.view addSubview: self.collectionView];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.blueGreenColor.CGColor,
-                                                              (id)UIColor.lightBlueGreenColor.CGColor]
-                                                    forRect:self.view.bounds];
-    [self.view.layer insertSublayer:gradient atIndex:0];
+    self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom
+                                                      withFrame:self.view.frame
+                                                      andColors:@[UIColor.darkBlueGreenColor, UIColor.lightBlueGreenColor]];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -175,11 +171,6 @@ static NSString *HeaderIdentifier = @"Cell";
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];
-}
-
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    [self.collectionView.collectionViewLayout invalidateLayout];
 }
 
 - (void)showSortOption {

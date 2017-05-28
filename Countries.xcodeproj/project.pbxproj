@@ -22,6 +22,8 @@
 		EC16ED0F1ECF7CD000A5CE2B /* CountriesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16ED0E1ECF7CD000A5CE2B /* CountriesListViewController.m */; };
 		EC32872B1ED1F1E000221C66 /* UIColor+Countries.m in Sources */ = {isa = PBXBuildFile; fileRef = EC32872A1ED1F1E000221C66 /* UIColor+Countries.m */; };
 		EC32872E1ED1F8E400221C66 /* NSArray+Map.m in Sources */ = {isa = PBXBuildFile; fileRef = EC32872D1ED1F8E400221C66 /* NSArray+Map.m */; };
+		EC3AFFE21EDAEF3000775584 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F661ED3890400FB2748 /* QuartzCore.framework */; };
+		EC3AFFE31EDAEF3600775584 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC768F681ED3890C00FB2748 /* CoreGraphics.framework */; };
 		EC40233F1ECF8339006BFBB5 /* CountriesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = EC40233E1ECF8339006BFBB5 /* CountriesListPresenter.m */; };
 		EC4023441ECF8C57006BFBB5 /* CountriesListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4023431ECF8C57006BFBB5 /* CountriesListAPI.m */; };
 		EC4023471ED00E8B006BFBB5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4023461ED00E8B006BFBB5 /* BaseViewController.m */; };
@@ -152,6 +154,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC3AFFE31EDAEF3600775584 /* CoreGraphics.framework in Frameworks */,
+				EC3AFFE21EDAEF3000775584 /* QuartzCore.framework in Frameworks */,
 				4AEA601FE947A25010986BBD /* Pods_Countries.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
