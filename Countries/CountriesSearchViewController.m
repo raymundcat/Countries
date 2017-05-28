@@ -102,6 +102,7 @@ static NSString *CellIdentifier = @"Cell";
         _searchInstructionsLabel.numberOfLines = 0;
         _searchInstructionsLabel.textColor = UIColor.darkGrayColor;
         _searchInstructionsLabel.text = @"Search for a Country.";
+        _searchInstructionsLabel.textColor = UIColor.whiteColor;
     }
     return _searchInstructionsLabel;
 }
@@ -131,7 +132,7 @@ static NSString *CellIdentifier = @"Cell";
     }];
     [self.searchInstructionsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view);
-        make.centerY.mas_equalTo(self.view).mas_offset(-30);
+        make.centerY.mas_equalTo(self.view).mas_offset(-0.8);
         make.width.mas_equalTo(self.view).multipliedBy(0.8);
     }];
 }

@@ -57,9 +57,9 @@
 - (UIRefreshControl *)refreshControl {
     if (!_refreshControl) {
         _refreshControl = [[UIRefreshControl alloc] init];
-        _refreshControl.tintColor = UIColor.darkBlueGreenColor;
+        _refreshControl.tintColor = UIColor.whiteColor;
         NSAttributedString *title = [[NSAttributedString alloc] initWithString: @"Loading Countries.."
-                                                                    attributes: @{NSForegroundColorAttributeName:UIColor.darkBlueGreenColor}];
+                                                                    attributes: @{NSForegroundColorAttributeName:UIColor.whiteColor}];
         _refreshControl.attributedTitle = title;
     }
     return _refreshControl;
