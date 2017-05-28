@@ -69,7 +69,7 @@
         _imageView = [[UIImageView alloc] init];
         _imageView.layer.cornerRadius = 3;
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
-        _imageView.backgroundColor = UIColor.darkBlueGreenColor;
+        _imageView.backgroundColor = UIColor.skyBlueColor;
         _imageView.clipsToBounds = YES;
     }
     return _imageView;

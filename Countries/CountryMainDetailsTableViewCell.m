@@ -151,6 +151,7 @@
     self.flagView.scrollView.minimumZoomScale = scaleFactor;
     self.flagView.scrollView.maximumZoomScale = scaleFactor;
     self.flagView.scrollView.zoomScale = scaleFactor;
+    
     [self.flagView.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 

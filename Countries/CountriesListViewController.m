@@ -185,7 +185,7 @@ static NSString *HeaderIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSNumber *sectionNumber = [NSNumber numberWithInteger:section];
-    if ([self.droppedSections containsObject:sectionNumber]) {
+    if ([self.droppedSections containsObject:sectionNumber] || self.categories.count == 1) {
         return [self.countries[section] count];
     }else{
         return MIN([self.countries[section] count], 3);

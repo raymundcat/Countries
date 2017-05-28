@@ -42,10 +42,7 @@
 - (void)startWithCountry: (Country *)country {
     self.viewController.country = country;
     [self.navigationController pushViewController: self.viewController animated: YES];
-}
-
-- (void)start {
-    [self.navigationController pushViewController:self.viewController animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 @end
