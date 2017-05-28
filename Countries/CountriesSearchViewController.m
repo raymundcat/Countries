@@ -46,6 +46,11 @@
     [input.countriesSubject subscribeNext:^(NSArray<Country *> *countries) {
         @strongify(self)
         self.countries = countries;
+        [self hideProgress];
+    }];
+    [input.searchTextSubject subscribeNext:^(id x) {
+       @strongify(self)
+        [self showProgress];
     }];
     [[self rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:)] subscribeNext:^(RACTuple* x) {
         @strongify(self)

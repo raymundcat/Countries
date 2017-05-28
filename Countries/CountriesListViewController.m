@@ -106,16 +106,17 @@
     [input.countriesCategoriesSubject subscribeNext:^(NSArray<NSString *> *categories) {
         @strongify(self)
         self.categories = categories;
-        [self.refreshControl endRefreshing];
     }];
     [input.countriesSubject subscribeNext:^(NSArray<NSArray<Country *> *> *countries) {
         @strongify(self)
         self.countries = countries;
-        [self.refreshControl endRefreshing];
+        [self hideProgress];
     }];
     [[self.refreshControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(id x) {
         @strongify(self)
         [self.input requestRefreshData];
+        [self.refreshControl endRefreshing];
+        [self showProgress];
     }];
     [self.sortOptionsAlertController.selectedCategorySubject subscribeNext:^(NSNumber *x) {
         @strongify(self)

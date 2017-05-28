@@ -67,6 +67,7 @@ static NSString *CountriesNameEndPoint = @"name";
                  }
              } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                  NSLog(@"failed");
+                 completion(@[]);
              }];
 }
 

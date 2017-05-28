@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 @import Hero;
 
 @interface BaseViewController ()
@@ -25,6 +26,21 @@
         _viewDidLoadSignal = [self rac_signalForSelector:@selector(viewDidLoad)];
     }
     return _viewDidLoadSignal;
+}
+
+- (void)showProgress {
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    });
+}
+
+- (void)hideProgress {
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.03 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
 }
 
 @end
