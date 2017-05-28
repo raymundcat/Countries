@@ -15,14 +15,14 @@
 @property (nonatomic, strong, readwrite) NSString *numericCode;
 @property (nonatomic, strong, readwrite) NSString *name;
 @property (nonatomic, strong, readwrite) NSString *nativeName;
-@property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *otherNames;
 @property (nonatomic, strong, readwrite) NSString *capital;
 @property (nonatomic, strong, readwrite) NSString *region;
 @property (nonatomic, strong, readwrite) NSString *subRegion;
 @property (nonatomic, strong, readwrite) NSString *flag;
 @property (nonatomic, strong, readwrite) NSString *demonym;
-@property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *regionalBlocks;
 @property (nonatomic, strong, readwrite) NSNumber *population;
+@property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *otherNames;
+@property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *regionalBlocks;
 @property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *languages;
 @property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *currencies;
 @property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *timeZones;

@@ -15,10 +15,10 @@
 
 @interface CountryCollectionViewCell ()
 
-@property (nonatomic, strong) UIVisualEffectView *blurView;
-@property (nonatomic, strong) UILabel *title;
-@property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) NSTimer *timer;
+@property (strong, nonatomic) UIVisualEffectView *blurView;
+@property (strong, nonatomic) UILabel *title;
+@property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) NSTimer *timer;
 
 @end
 

@@ -15,9 +15,9 @@
 
 @interface CountryDetailsViewController ()
 
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UIImageView *mapView;
-@property (nonatomic, strong) NSArray<NSNumber *> *detailTypes;
+@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) UIImageView *mapView;
+@property (strong, nonatomic) NSArray<NSNumber *> *detailTypes;
 
 @end
 

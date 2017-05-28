@@ -15,10 +15,10 @@
 
 @interface CountryDetailsFlowController ()
 
-@property (nonatomic, strong) UINavigationController *navigationController;
-@property (nonatomic, strong) CountryDetailsViewController *viewController;
-@property (nonatomic, strong) FlagWebViewController *flagViewController;
-@property (nonatomic, strong) Country *country;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) CountryDetailsViewController *viewController;
+@property (strong, nonatomic) FlagWebViewController *flagViewController;
+@property (strong, nonatomic) Country *country;
 
 @end
 
@@ -34,6 +34,7 @@
         [[_viewController.didPressFlagSubject throttle:0.5]
          subscribeNext:^(id x) {
             [self.flagViewController loadCountry:self. country];
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
             [self.navigationController pushViewController:self.flagViewController animated:YES];
         }];
     }
@@ -43,6 +44,8 @@
 -(FlagWebViewController *)flagViewController {
     if (!_flagViewController) {
         _flagViewController = [[FlagWebViewController alloc] init];
+        _flagViewController.isHeroEnabled = YES;
+        _flagViewController.view.heroID = @"view";
     }
     return _flagViewController;
 }

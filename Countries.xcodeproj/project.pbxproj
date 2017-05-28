@@ -29,7 +29,6 @@
 		EC4023441ECF8C57006BFBB5 /* CountriesListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4023431ECF8C57006BFBB5 /* CountriesListAPI.m */; };
 		EC4023471ED00E8B006BFBB5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4023461ED00E8B006BFBB5 /* BaseViewController.m */; };
 		EC40234B1ED01D74006BFBB5 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = EC40234A1ED01D74006BFBB5 /* Country.m */; };
-		EC40234E1ED02B0D006BFBB5 /* ReachabilityAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EC40234D1ED02B0D006BFBB5 /* ReachabilityAPI.m */; };
 		EC40235F1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC40235E1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m */; };
 		EC633DA41ECDF4EA0040B8EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DA31ECDF4EA0040B8EB /* main.m */; };
 		EC633DA71ECDF4EA0040B8EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC633DA61ECDF4EA0040B8EB /* AppDelegate.m */; };
@@ -117,8 +116,6 @@
 		EC4023461ED00E8B006BFBB5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		EC4023491ED01D74006BFBB5 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
 		EC40234A1ED01D74006BFBB5 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
-		EC40234C1ED02B0D006BFBB5 /* ReachabilityAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityAPI.h; sourceTree = "<group>"; };
-		EC40234D1ED02B0D006BFBB5 /* ReachabilityAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityAPI.m; sourceTree = "<group>"; };
 		EC40235D1ED1A5CC006BFBB5 /* CountryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryCollectionViewCell.h; sourceTree = "<group>"; };
 		EC40235E1ED1A5CC006BFBB5 /* CountryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryCollectionViewCell.m; sourceTree = "<group>"; };
 		EC633D9F1ECDF4EA0040B8EB /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,8 +259,6 @@
 		EC40234F1ED02B18006BFBB5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				EC40234C1ED02B0D006BFBB5 /* ReachabilityAPI.h */,
-				EC40234D1ED02B0D006BFBB5 /* ReachabilityAPI.m */,
 				EC3287291ED1F1E000221C66 /* UIColor+Countries.h */,
 				EC32872A1ED1F1E000221C66 /* UIColor+Countries.m */,
 				EC32872C1ED1F8E400221C66 /* NSArray+Map.h */,
@@ -770,7 +765,6 @@
 				EC633DA71ECDF4EA0040B8EB /* AppDelegate.m in Sources */,
 				EC4023441ECF8C57006BFBB5 /* CountriesListAPI.m in Sources */,
 				EC3AFFE61EDB1CF300775584 /* FlagWebViewController.m in Sources */,
-				EC40234E1ED02B0D006BFBB5 /* ReachabilityAPI.m in Sources */,
 				EC40234B1ED01D74006BFBB5 /* Country.m in Sources */,
 				EC633DA41ECDF4EA0040B8EB /* main.m in Sources */,
 			);

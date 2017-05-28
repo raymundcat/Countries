@@ -16,8 +16,7 @@
     
     NSMutableURLRequest *modifiedRequest = request.mutableCopy;
     AFNetworkReachabilityManager *reachability = self.reachabilityManager;
-    if (!reachability.isReachable)
-    {
+    if (!reachability.isReachable) {
         modifiedRequest.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
     }
     return [super dataTaskWithRequest:modifiedRequest
@@ -28,12 +27,12 @@
           dataTask:(NSURLSessionDataTask *)dataTask
  willCacheResponse:(NSCachedURLResponse *)proposedResponse
  completionHandler:(void (^)(NSCachedURLResponse * _Nullable))completionHandler {
+    
     NSURLResponse *response = proposedResponse.response;
     NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse*)response;
     NSDictionary *headers = HTTPResponse.allHeaderFields;
     
-    if (headers[@"Cache-Control"])
-    {
+    if (headers[@"Cache-Control"]) {
         NSMutableDictionary *modifiedHeaders = headers.mutableCopy;
         modifiedHeaders[@"Cache-Control"] = @"max-age=60";
         NSHTTPURLResponse *modifiedHTTPResponse = [[NSHTTPURLResponse alloc]
@@ -48,7 +47,10 @@
                                                            storagePolicy:proposedResponse.storagePolicy];
     }
     
-    [super URLSession:session dataTask:dataTask willCacheResponse:proposedResponse completionHandler:completionHandler];
+    [super URLSession:session
+             dataTask:dataTask
+    willCacheResponse:proposedResponse
+    completionHandler:completionHandler];
 }
 
 @end

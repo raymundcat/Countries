@@ -17,12 +17,12 @@
 
 @interface CountriesSearchFlowController ()
 
-@property (nonatomic, strong) UINavigationController *navigationController;
-@property (nonatomic, strong) CountriesSearchViewController *viewController;
-@property (nonatomic, strong) CountriesSearchPresenter *presenter;
-@property (nonatomic, strong) UISearchBar *searchBar;
-@property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
-@property (nonatomic, strong) CountryDetailsFlowController *countryDetailsFlowwController;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) CountriesSearchViewController *viewController;
+@property (strong, nonatomic) CountriesSearchPresenter *presenter;
+@property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (strong, nonatomic) CountryDetailsFlowController *countryDetailsFlowwController;
 
 @end
 

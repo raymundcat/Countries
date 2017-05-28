@@ -18,13 +18,13 @@
 
 @interface CountriesListViewController ()
 
-@property (nonatomic, strong) NSArray<NSString *> *categories;
-@property (nonatomic, strong) NSArray<NSArray<Country *> *> *countries;
-@property (nonatomic, strong) NSMutableArray<NSNumber *> *droppedSections;
-@property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (nonatomic, strong) SortOptionsViewController *sortOptionsAlertController;
-@property (nonatomic, strong) UIImageView *mapView;
+@property (strong, nonatomic) NSArray<NSString *> *categories;
+@property (strong, nonatomic) NSArray<NSArray<Country *> *> *countries;
+@property (strong, nonatomic) NSMutableArray<NSNumber *> *droppedSections;
+@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) SortOptionsViewController *sortOptionsAlertController;
+@property (strong, nonatomic) UIImageView *mapView;
 
 @end
 

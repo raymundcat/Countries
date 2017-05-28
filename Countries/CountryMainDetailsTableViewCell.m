@@ -10,14 +10,15 @@
 #import "UIColor+Countries.h"
 #import <Masonry/Masonry.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+@import Hero;
 
 @interface CountryMainDetailsTableViewCell ()
 
-@property (nonatomic, strong) UILabel *countryNameLabel;
-@property (nonatomic, strong) UILabel *countryOtherNamesLabel;
-@property (nonatomic, strong) UIWebView *flagView;
-@property (nonatomic, strong) UIActivityIndicatorView *flagIndicatorView;
-@property (nonatomic, strong) UITapGestureRecognizer *flagTapRecognizer;
+@property (strong, nonatomic) UILabel *countryNameLabel;
+@property (strong, nonatomic) UILabel *countryOtherNamesLabel;
+@property (strong, nonatomic) UIWebView *flagView;
+@property (strong, nonatomic) UIActivityIndicatorView *flagIndicatorView;
+@property (strong, nonatomic) UITapGestureRecognizer *flagTapRecognizer;
 
 @end
 

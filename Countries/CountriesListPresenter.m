@@ -13,12 +13,12 @@
 
 @interface CountriesListPresenter ()
 
-@property (nonatomic, strong) NSArray<Country *> *countries;
+@property (strong, nonatomic) NSArray<Country *> *countries;
 @property (nonatomic) CountryCategory selectedCategory;
 @property (nonatomic, strong, readwrite) RACSubject *countriesCategoriesSubject;
 @property (nonatomic, strong, readwrite) RACSubject *countriesSubject;
 @property (nonatomic, strong, readwrite) RACSubject *selectedCountrySubject;
-@property (nonatomic, strong) CountriesListAPI *countriesAPI;
+@property (strong, nonatomic) CountriesListAPI *countriesAPI;
 
 @end
 

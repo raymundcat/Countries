@@ -15,10 +15,10 @@
 
 @interface CountriesSearchViewController ()
 
-@property (nonatomic, strong) NSArray<Country *> *countries;
-@property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) UIImageView *mapView;
-@property (nonatomic, strong) UILabel *searchInstructionsLabel;
+@property (strong, nonatomic) NSArray<Country *> *countries;
+@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) UIImageView *mapView;
+@property (strong, nonatomic) UILabel *searchInstructionsLabel;
 
 @end
 

@@ -11,7 +11,7 @@
 
 @interface CountriesSearchPresenter ()
 
-@property (nonatomic, strong) CountriesListAPI *countriesAPI;
+@property (strong, nonatomic) CountriesListAPI *countriesAPI;
 @property (nonatomic, strong, readwrite) RACSubject *selectedCountrySubject;
 
 @end

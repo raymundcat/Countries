@@ -13,4 +13,5 @@
 
 - (void)fetchCountriesSummariesWithCompletion: (void (^)(NSArray<Country *> *countriesArray))completion;
 - (void)searchCountriesWithName: (NSString *)searchText WithCompletion: (void (^)(NSArray<Country *> *countriesArray))completion;
+
 @end

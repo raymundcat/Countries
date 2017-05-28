@@ -11,6 +11,6 @@
 
 @interface CountriesSearchViewController : BaseViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) id <CountriesSearchInput> input;
+@property (strong, nonatomic) id <CountriesSearchInput> input;
 
 @end

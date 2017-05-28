@@ -12,11 +12,11 @@
 @interface SortOptionsViewController ()
 
 @property (nonatomic, strong, readwrite) RACSubject *selectedCategorySubject;
-@property (nonatomic, strong) UIAlertAction *regionOption;
-@property (nonatomic, strong) UIAlertAction *subRegionOption;
-@property (nonatomic, strong) UIAlertAction *regionalBlockOption;
-@property (nonatomic, strong) UIAlertAction *allOption;
-@property (nonatomic, strong) UIAlertAction *cancelnOption;
+@property (strong, nonatomic) UIAlertAction *regionOption;
+@property (strong, nonatomic) UIAlertAction *subRegionOption;
+@property (strong, nonatomic) UIAlertAction *regionalBlockOption;
+@property (strong, nonatomic) UIAlertAction *allOption;
+@property (strong, nonatomic) UIAlertAction *cancelnOption;
 
 @end
 

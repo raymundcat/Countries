@@ -13,9 +13,9 @@
 
 @interface InitialFlowController()
 
-@property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) UINavigationController *navigationController;
-@property (nonatomic, strong) CountriesListFlowController *countriesListFlowController;
+@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) CountriesListFlowController *countriesListFlowController;
 
 @end
 

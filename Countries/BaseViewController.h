@@ -11,7 +11,7 @@
 
 @interface BaseViewController : UIViewController
 
-@property (nonatomic, strong) RACSignal *viewDidLoadSignal;
+@property (strong, nonatomic) RACSignal *viewDidLoadSignal;
 
 - (void)showProgress;
 - (void)hideProgress;
