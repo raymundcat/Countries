@@ -86,7 +86,7 @@ static NSString *DetailCellIdentifier = @"DetailCell";
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.darkBlueGreenColor.CGColor,
+    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.skyBlueColor.CGColor,
                                                               (id)UIColor.lightBlueGreenColor.CGColor]
                                                     forRect:self.view.bounds];
     [self.view.layer insertSublayer:gradient atIndex:0];

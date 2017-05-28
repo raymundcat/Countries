@@ -44,6 +44,10 @@
         _viewController = [[CountriesListViewController alloc] init];
         _viewController.title = @"Countries";
         _viewController.input = self.presenter;
+        _viewController.isHeroEnabled = YES;
+        UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithCustomView:self.sortButton];
+        UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithCustomView:self.searchButton];
+        _viewController.navigationItem.rightBarButtonItems = @[searchButton, sortButton];
     }
     return _viewController;
 }
@@ -97,10 +101,6 @@
 - (id)initWithNavigationController:(UINavigationController *)navigationController {
     if (self = [self init]){
         self.navigationController = navigationController;
-        UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithCustomView:self.sortButton];
-        UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithCustomView:self.searchButton];
-        self.viewController.navigationItem.rightBarButtonItems = @[searchButton, sortButton];
-        self.viewController.view.heroID = @"wat";
     }
     return self;
 }

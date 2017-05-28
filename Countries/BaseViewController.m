@@ -8,18 +8,12 @@
 
 #import "BaseViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
-@import Hero;
 
 @interface BaseViewController ()
 
 @end
 
 @implementation BaseViewController
-
--(void)viewDidLoad {
-    [super viewDidLoad];
-    self.isHeroEnabled = YES;
-}
 
 - (RACSignal *)viewDidLoadSignal {
     if (!_viewDidLoadSignal) {

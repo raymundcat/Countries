@@ -10,7 +10,6 @@
 #import "CountryDetailsViewController.h"
 #import "UIColor+Countries.h"
 #import "Country.h"
-@import Hero;
 
 @interface CountryDetailsFlowController ()
 

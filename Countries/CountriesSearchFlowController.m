@@ -34,7 +34,11 @@
         @weakify(self)
         [_presenter.selectedCountrySubject subscribeNext:^(Country *country) {
             @strongify(self)
-            [self.countryDetailsFlowwController startWithCountry:country];
+            if ([self.searchBar isFirstResponder]) {
+                [self.searchBar endEditing: YES];
+            }else{
+                [self.countryDetailsFlowwController startWithCountry:country];
+            }
         }];
     }
     return _presenter;
@@ -90,7 +94,6 @@
              NSString *searchText = x.last;
              [self.presenter.searchTextSubject sendNext:searchText];
          }];
-        self.viewController.view.heroID = @"wat";
     }
     return self;
 }

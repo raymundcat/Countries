@@ -81,7 +81,7 @@ static NSString *CellIdentifier = @"Cell";
         _collectionView.alwaysBounceVertical = YES;
         [_collectionView registerClass:[CountryCollectionViewCell class]
             forCellWithReuseIdentifier:CellIdentifier];
-        _collectionView.contentInset = UIEdgeInsetsMake(68, 8, 8, 8);
+        _collectionView.contentInset = UIEdgeInsetsMake(78, 8, 8, 8);
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
@@ -98,8 +98,8 @@ static NSString *CellIdentifier = @"Cell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.blueGreenColor.CGColor,
-                                                              (id)UIColor.lightBlueGreenColor.CGColor]
+    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.whiteColor.CGColor,
+                                                              (id)UIColor.lightGrayColor.CGColor]
                                                     forRect:self.view.bounds];
     [self.view.layer insertSublayer:gradient atIndex:0];
 }

@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UILabel *countryNameLabel;
 @property (nonatomic, strong) UILabel *countryOtherNamesLabel;
 @property (nonatomic, strong) UIWebView *flagView;
+@property (nonatomic, strong) UIActivityIndicatorView *flagIndicatorView;
 
 @end
 
@@ -65,6 +66,13 @@
     return _flagView;
 }
 
+-(UIActivityIndicatorView *)flagIndicatorView {
+    if (!_flagIndicatorView) {
+        _flagIndicatorView = [[UIActivityIndicatorView alloc] init];
+    }
+    return _flagIndicatorView;
+}
+
 - (void)setCountry:(Country *)country {
     _country = country;
     
@@ -85,20 +93,27 @@
         [self.contentView addSubview: self.flagView];
         [self.contentView addSubview: self.countryNameLabel];
         [self.contentView addSubview: self.countryOtherNamesLabel];
+        [self.flagView addSubview: self.flagIndicatorView];
         
         @weakify(self)
         [[self rac_signalForSelector:@selector(webViewDidFinishLoad:)]
          subscribeNext:^(id x) {
              @strongify(self)
-             CGSize contentSize = self.flagView.scrollView.contentSize;
-             CGSize webViewSize = self.flagView.bounds.size;
-             CGFloat scaleFactor = webViewSize.width / contentSize.width;
-             
-             self.flagView.scrollView.minimumZoomScale = scaleFactor;
-             self.flagView.scrollView.maximumZoomScale = scaleFactor;
-             self.flagView.scrollView.zoomScale = scaleFactor;
-             [self.flagView.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+             [self relayOutFlagView];
+             [self.flagIndicatorView stopAnimating];
          }];
+        
+        [[self rac_signalForSelector:@selector(webViewDidStartLoad:)]
+         subscribeNext:^(id x) {
+             @strongify(self)
+             [self.flagIndicatorView startAnimating];
+        }];
+        
+        [[self rac_signalForSelector:@selector(webView:didFailLoadWithError:)]
+         subscribeNext:^(id x) {
+             @strongify(self)
+             [self.flagIndicatorView stopAnimating];
+        }];
     }
     return self;
 }
@@ -123,6 +138,20 @@
         make.width.mas_equalTo(self.contentView).multipliedBy(0.7);
         make.height.mas_equalTo(180);
     }];
+    [self.flagIndicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(self.flagView);
+    }];
+}
+
+- (void)relayOutFlagView {
+    CGSize contentSize = self.flagView.scrollView.contentSize;
+    CGSize webViewSize = self.flagView.bounds.size;
+    CGFloat scaleFactor = webViewSize.width < webViewSize.height ? webViewSize.width / contentSize.width : webViewSize.height / contentSize.height;
+    
+    self.flagView.scrollView.minimumZoomScale = scaleFactor;
+    self.flagView.scrollView.maximumZoomScale = scaleFactor;
+    self.flagView.scrollView.zoomScale = scaleFactor;
+    [self.flagView.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 - (void)dealloc {

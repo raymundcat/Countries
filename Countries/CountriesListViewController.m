@@ -14,7 +14,6 @@
 #import "UIColor+Countries.h"
 #import "SortOptionsViewController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
-@import Hero;
 
 @interface CountriesListViewController ()
 
