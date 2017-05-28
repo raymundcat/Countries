@@ -165,7 +165,7 @@
 - (void)relayOutFlagView {
     CGSize contentSize = self.flagView.scrollView.contentSize;
     CGSize webViewSize = self.flagView.bounds.size;
-    CGFloat scaleFactor = webViewSize.width < webViewSize.height ? webViewSize.width / contentSize.width : webViewSize.height / contentSize.height;
+    CGFloat scaleFactor = webViewSize.width / contentSize.width;
     
     self.flagView.scrollView.minimumZoomScale = scaleFactor;
     self.flagView.scrollView.maximumZoomScale = scaleFactor;
