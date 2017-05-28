@@ -25,6 +25,13 @@
 
 @synthesize country = _country;
 
+- (RACSubject *)didPressFlagSubject {
+    if (!_didPressFlagSubject) {
+        _didPressFlagSubject = [RACSubject subject];
+    }
+    return _didPressFlagSubject;
+}
+
 - (NSArray<NSNumber *> *)detailTypes {
     if (!_detailTypes) {
         NSMutableArray<NSNumber *> *detailTypesMutable = [[NSMutableArray<NSNumber *> alloc] init];
@@ -111,6 +118,7 @@ static NSString *DetailCellIdentifier = @"DetailCell";
         CountryMainDetailsTableViewCell *cell = (CountryMainDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier
                                                                                                                    forIndexPath:indexPath];
         cell.country = self.country;
+        [cell.didTapFlagSubject subscribe:self.didPressFlagSubject];
         return cell;
     }else{
         CountryDetailTableViewCell *cell = (CountryDetailTableViewCell *)[tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier

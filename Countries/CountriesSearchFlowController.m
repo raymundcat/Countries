@@ -34,11 +34,7 @@
         @weakify(self)
         [_presenter.selectedCountrySubject subscribeNext:^(Country *country) {
             @strongify(self)
-            if ([self.searchBar isFirstResponder]) {
-                [self.searchBar endEditing: YES];
-            }else{
-                [self.countryDetailsFlowwController startWithCountry:country];
-            }
+            [self.countryDetailsFlowwController startWithCountry:country];
         }];
     }
     return _presenter;

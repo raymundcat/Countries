@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Country.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface CountryMainDetailsTableViewCell : UITableViewCell<UIWebViewDelegate>
+@interface CountryMainDetailsTableViewCell : UITableViewCell<UIWebViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) Country *country;
+@property (nonatomic, strong) RACSubject *didTapFlagSubject;
 
 @end

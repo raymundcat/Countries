@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UILabel *countryOtherNamesLabel;
 @property (nonatomic, strong) UIWebView *flagView;
 @property (nonatomic, strong) UIActivityIndicatorView *flagIndicatorView;
+@property (nonatomic, strong) UITapGestureRecognizer *flagTapRecognizer;
 
 @end
 
@@ -33,7 +34,7 @@
         _countryNameLabel.layer.shadowColor = UIColor.grayColor.CGColor;
         _countryNameLabel.layer.shadowOpacity = 0.9;
         _countryNameLabel.layer.shadowOffset = CGSizeZero;
-        _countryNameLabel.text = @"lorem lorem lorem";
+        _countryNameLabel.textAlignment = NSTextAlignmentRight;
     }
     return _countryNameLabel;
 }
@@ -47,7 +48,7 @@
         _countryOtherNamesLabel.layer.shadowColor = UIColor.grayColor.CGColor;
         _countryOtherNamesLabel.layer.shadowOpacity = 0.9;
         _countryOtherNamesLabel.layer.shadowOffset = CGSizeZero;
-        _countryOtherNamesLabel.text = @"lorem lorem lorem lorem lorem lorem lorem";
+        _countryOtherNamesLabel.textAlignment = NSTextAlignmentRight;
     }
     return _countryOtherNamesLabel;
 }
@@ -61,7 +62,9 @@
         _flagView.layer.shadowColor = UIColor.grayColor.CGColor;
         _flagView.layer.shadowOpacity = 0.9;
         _flagView.layer.shadowOffset = CGSizeZero;
-        _flagView.userInteractionEnabled = NO;
+        _flagView.userInteractionEnabled = YES;
+        _flagView.scrollView.scrollEnabled = NO;
+        [_flagView addGestureRecognizer:self.flagTapRecognizer];
     }
     return _flagView;
 }
@@ -71,6 +74,22 @@
         _flagIndicatorView = [[UIActivityIndicatorView alloc] init];
     }
     return _flagIndicatorView;
+}
+
+- (UITapGestureRecognizer *)flagTapRecognizer {
+    if (!_flagTapRecognizer) {
+        _flagTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapFlagView)];
+        _flagTapRecognizer.numberOfTapsRequired = 1;
+        _flagTapRecognizer.delegate = self;
+    }
+    return _flagTapRecognizer;
+}
+
+- (RACSubject *)didTapFlagSubject {
+    if (!_didTapFlagSubject) {
+        _didTapFlagSubject = [RACSubject subject];
+    }
+    return _didTapFlagSubject;
 }
 
 - (void)setCountry:(Country *)country {
@@ -123,17 +142,17 @@
     
     [self.countryNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.contentView.mas_top).offset(8);
-        make.left.mas_equalTo(self.contentView.mas_left).offset(24);
+        make.right.mas_equalTo(self.contentView.mas_right).offset(-16);
         make.width.mas_lessThanOrEqualTo(self.contentView).multipliedBy(0.7);
     }];
     [self.countryOtherNamesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.countryNameLabel.mas_bottom).offset(4);
-        make.left.mas_equalTo(self.contentView.mas_left).offset(24);
+        make.right.mas_equalTo(self.contentView.mas_right).offset(-16);
         make.width.mas_lessThanOrEqualTo(self.contentView).multipliedBy(0.7);
     }];
     [self.flagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.countryOtherNamesLabel.mas_bottom).offset(16);
-        make.right.mas_equalTo(self.contentView.mas_right).offset(-16);
+        make.left.mas_equalTo(self.contentView.mas_left).offset(24);
         make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-16);
         make.width.mas_equalTo(self.contentView).multipliedBy(0.7);
         make.height.mas_equalTo(180);
@@ -153,6 +172,15 @@
     self.flagView.scrollView.zoomScale = scaleFactor;
     
     [self.flagView.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+}
+
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+- (void)didTapFlagView {
+    [self.didTapFlagSubject sendNext:nil];
 }
 
 - (void)dealloc {
