@@ -10,6 +10,7 @@
 #import "CountryDetailsViewController.h"
 #import "UIColor+Countries.h"
 #import "Country.h"
+@import Hero;
 
 @interface CountryDetailsFlowController ()
 
@@ -24,6 +25,9 @@
 -(CountryDetailsViewController *)viewController {
     if (!_viewController) {
         _viewController = [[CountryDetailsViewController alloc] init];
+        
+        _viewController.isHeroEnabled = YES;
+        _viewController.view.heroID = @"view";
     }
     return _viewController;
 }

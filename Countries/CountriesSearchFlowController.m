@@ -52,6 +52,9 @@
         _viewController.navigationItem.leftBarButtonItem = nil;
         _viewController.navigationItem.hidesBackButton = YES;
         [_viewController.view addGestureRecognizer: self.tapGesture];
+        
+        _viewController.isHeroEnabled = YES;
+        _viewController.view.heroID = @"view";
     }
     return _viewController;
 }
