@@ -14,7 +14,7 @@
 #import "UIColor+Countries.h"
 #import "SortOptionsViewController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
-@import Hero;
+#import <ChameleonFramework/Chameleon.h>
 
 @interface CountriesListViewController ()
 
@@ -57,9 +57,9 @@
 - (UIRefreshControl *)refreshControl {
     if (!_refreshControl) {
         _refreshControl = [[UIRefreshControl alloc] init];
-        _refreshControl.tintColor = UIColor.darkBlueGreenColor;
+        _refreshControl.tintColor = UIColor.whiteColor;
         NSAttributedString *title = [[NSAttributedString alloc] initWithString: @"Loading Countries.."
-                                                                    attributes: @{NSForegroundColorAttributeName:UIColor.darkBlueGreenColor}];
+                                                                    attributes: @{NSForegroundColorAttributeName:UIColor.whiteColor}];
         _refreshControl.attributedTitle = title;
     }
     return _refreshControl;
@@ -106,16 +106,17 @@
     [input.countriesCategoriesSubject subscribeNext:^(NSArray<NSString *> *categories) {
         @strongify(self)
         self.categories = categories;
-        [self.refreshControl endRefreshing];
     }];
     [input.countriesSubject subscribeNext:^(NSArray<NSArray<Country *> *> *countries) {
         @strongify(self)
         self.countries = countries;
-        [self.refreshControl endRefreshing];
+        [self hideProgress];
     }];
     [[self.refreshControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(id x) {
         @strongify(self)
         [self.input requestRefreshData];
+        [self.refreshControl endRefreshing];
+        [self showProgress];
     }];
     [self.sortOptionsAlertController.selectedCategorySubject subscribeNext:^(NSNumber *x) {
         @strongify(self)
@@ -154,17 +155,12 @@ static NSString *HeaderIdentifier = @"Cell";
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.lightGrayColor;
+    self.view.backgroundColor = UIColor.lightBlueGreenColor;
     [self.view addSubview: self.mapView];
     [self.view addSubview: self.collectionView];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    CAGradientLayer *gradient = [UIColor gradientWithColors:@[(id)UIColor.blueGreenColor.CGColor,
-                                                              (id)UIColor.lightBlueGreenColor.CGColor]
-                                                    forRect:self.view.bounds];
-    [self.view.layer insertSublayer:gradient atIndex:0];
+    self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom
+                                                      withFrame:self.view.frame
+                                                      andColors:@[UIColor.darkBlueGreenColor, UIColor.lightBlueGreenColor]];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -175,11 +171,6 @@ static NSString *HeaderIdentifier = @"Cell";
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];
-}
-
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    [self.collectionView.collectionViewLayout invalidateLayout];
 }
 
 - (void)showSortOption {
@@ -194,7 +185,7 @@ static NSString *HeaderIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSNumber *sectionNumber = [NSNumber numberWithInteger:section];
-    if ([self.droppedSections containsObject:sectionNumber]) {
+    if ([self.droppedSections containsObject:sectionNumber] || self.categories.count == 1) {
         return [self.countries[section] count];
     }else{
         return MIN([self.countries[section] count], 3);

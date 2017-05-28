@@ -28,6 +28,14 @@
         _navigationController.navigationBar.tintColor = UIColor.whiteColor;
         _navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColor.whiteColor};
         _navigationController.isHeroEnabled = YES;
+        _navigationController.hidesBarsOnSwipe = YES;
+
+            
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                          forBarMetrics:UIBarMetricsDefault];
+        _navigationController.navigationBar.shadowImage = [UIImage new];
+        _navigationController.navigationBar.translucent = YES;
+        _navigationController.view.backgroundColor = [UIColor clearColor];
     }
     return _navigationController;
 }

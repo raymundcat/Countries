@@ -31,7 +31,8 @@
     if (!_presenter) {
         _presenter = [[CountriesListPresenter alloc] init];
         @weakify(self)
-        [_presenter.selectedCountrySubject subscribeNext:^(Country *country) {
+        [[_presenter.selectedCountrySubject throttle:0.5]
+         subscribeNext:^(Country *country) {
             @strongify(self)
             [self.countryDetailsFlowwController startWithCountry: country];
         }];
@@ -44,6 +45,12 @@
         _viewController = [[CountriesListViewController alloc] init];
         _viewController.title = @"Countries";
         _viewController.input = self.presenter;
+        UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithCustomView:self.sortButton];
+        UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithCustomView:self.searchButton];
+        _viewController.navigationItem.rightBarButtonItems = @[searchButton, sortButton];
+        
+        _viewController.isHeroEnabled = YES;
+        _viewController.view.heroID = @"view";
     }
     return _viewController;
 }
@@ -97,10 +104,6 @@
 - (id)initWithNavigationController:(UINavigationController *)navigationController {
     if (self = [self init]){
         self.navigationController = navigationController;
-        UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithCustomView:self.sortButton];
-        UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithCustomView:self.searchButton];
-        self.viewController.navigationItem.rightBarButtonItems = @[searchButton, sortButton];
-        self.viewController.view.heroID = @"wat";
     }
     return self;
 }

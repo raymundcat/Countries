@@ -13,4 +13,7 @@
 
 @property (nonatomic, strong) RACSignal *viewDidLoadSignal;
 
+- (void)showProgress;
+- (void)hideProgress;
+
 @end

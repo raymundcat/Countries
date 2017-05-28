@@ -12,5 +12,6 @@
 @interface CountryDetailsViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) Country *country;
+@property (nonatomic, strong) RACSubject *didPressFlagSubject;
 
 @end

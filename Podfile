@@ -12,6 +12,7 @@ target 'Countries' do
   pod 'SDWebImage', '~>3.8'
   pod 'Hero'
   pod 'MBProgressHUD', '~> 1.0.0'
+  pod 'ChameleonFramework'
 
   target 'CountriesTests' do
     inherit! :search_paths

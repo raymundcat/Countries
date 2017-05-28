@@ -32,7 +32,8 @@
     if (!_presenter) {
         _presenter = [[CountriesSearchPresenter alloc] init];
         @weakify(self)
-        [_presenter.selectedCountrySubject subscribeNext:^(Country *country) {
+        [[_presenter.selectedCountrySubject throttle:0.5]
+         subscribeNext:^(Country *country) {
             @strongify(self)
             [self.countryDetailsFlowwController startWithCountry:country];
         }];
@@ -48,11 +49,9 @@
         _viewController.navigationItem.leftBarButtonItem = nil;
         _viewController.navigationItem.hidesBackButton = YES;
         [_viewController.view addGestureRecognizer: self.tapGesture];
-        @weakify(self)
-        [[_viewController rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(id x) {
-            @strongify(self)
-            [self.searchBar becomeFirstResponder];
-        }];
+        
+        _viewController.isHeroEnabled = YES;
+        _viewController.view.heroID = @"view";
     }
     return _viewController;
 }
@@ -90,13 +89,13 @@
              NSString *searchText = x.last;
              [self.presenter.searchTextSubject sendNext:searchText];
          }];
-        self.viewController.view.heroID = @"wat";
     }
     return self;
 }
 
 - (void)start {
     [self.navigationController pushViewController: self.viewController animated: YES];
+    [self.searchBar becomeFirstResponder];
 }
 
 - (void) didTap{
