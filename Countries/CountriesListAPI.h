@@ -7,14 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Country.h"
-
-@protocol CountriesAPIProtocol <NSObject>
-
-- (void)fetchCountriesSummariesWithCompletion: (void (^)(NSArray<Country *> *countriesArray))completion;
-- (void)searchCountriesWithName: (NSString *)searchText WithCompletion: (void (^)(NSArray<Country *> *countriesArray))completion;
-
-@end
+#import "CountriesAPIProtocol.h"
 
 @interface CountriesListAPI : NSObject<CountriesAPIProtocol>
 

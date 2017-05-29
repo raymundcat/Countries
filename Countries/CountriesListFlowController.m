@@ -12,6 +12,8 @@
 #import "CountryDetailsFlowController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "CountriesListAPI.h"
+#import "CountriesListInput.h"
+#import "CountriesListPresenter.h"
 @import Hero;
 
 @interface CountriesListFlowController()
