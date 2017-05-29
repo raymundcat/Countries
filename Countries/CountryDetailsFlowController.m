@@ -11,6 +11,7 @@
 #import "UIColor+Countries.h"
 #import "Country.h"
 #import "FlagWebViewController.h"
+#import "Constants.h"
 @import Hero;
 
 @interface CountryDetailsFlowController ()
@@ -31,7 +32,7 @@
         _viewController = [[CountryDetailsViewController alloc] init];
         
         _viewController.isHeroEnabled = YES;
-        _viewController.view.heroID = @"view";
+        _viewController.view.heroID = HeroViewID;
         
         [[_viewController.didPressFlagSubject throttle:0.5]
          subscribeNext:^(id x) {
@@ -47,7 +48,7 @@
     if (!_flagViewController) {
         _flagViewController = [[FlagWebViewController alloc] init];
         _flagViewController.isHeroEnabled = YES;
-        _flagViewController.view.heroID = @"view";
+        _flagViewController.view.heroID = HeroViewID;
     }
     return _flagViewController;
 }

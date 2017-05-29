@@ -85,6 +85,7 @@
 		EC0824B71EDCAFDB00B51459 /* CountriesAPIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesAPIProtocol.h; sourceTree = "<group>"; };
 		EC0824B81EDCB04B00B51459 /* CountriesListInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListInput.h; sourceTree = "<group>"; };
 		EC0824B91EDCB0D100B51459 /* CountriesSearchInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchInput.h; sourceTree = "<group>"; };
+		EC0824BA1EDCB62100B51459 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		EC084A111ED4B058006BDFCB /* Geognos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geognos.h; sourceTree = "<group>"; };
 		EC084A121ED4B058006BDFCB /* Geognos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geognos.m; sourceTree = "<group>"; };
 		EC084A1E1ED5E009006BDFCB /* CountriesHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -327,6 +328,7 @@
 				EC633DB01ECDF4EA0040B8EB /* LaunchScreen.storyboard */,
 				EC633DB31ECDF4EA0040B8EB /* Info.plist */,
 				EC633DA31ECDF4EA0040B8EB /* main.m */,
+				EC0824BA1EDCB62100B51459 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

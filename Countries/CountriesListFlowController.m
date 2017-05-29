@@ -14,6 +14,7 @@
 #import "CountriesListAPI.h"
 #import "CountriesListInput.h"
 #import "CountriesListPresenter.h"
+#import "Constants.h"
 @import Hero;
 
 @interface CountriesListFlowController()
@@ -56,7 +57,7 @@
         _viewController.navigationItem.rightBarButtonItems = @[searchButton, sortButton];
         
         _viewController.isHeroEnabled = YES;
-        _viewController.view.heroID = @"view";
+        _viewController.view.heroID = HeroViewID;
     }
     return _viewController;
 }

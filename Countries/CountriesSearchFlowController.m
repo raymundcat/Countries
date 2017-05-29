@@ -14,6 +14,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "CountryDetailsFlowController.h"
 #import "CountriesListAPI.h"
+#import "Constants.h"
 @import Hero;
 
 @interface CountriesSearchFlowController ()
@@ -55,7 +56,7 @@
         [_viewController.view addGestureRecognizer: self.viewTapGesture];
         
         _viewController.isHeroEnabled = YES;
-        _viewController.view.heroID = @"view";
+        _viewController.view.heroID = HeroViewID;
     }
     return _viewController;
 }
