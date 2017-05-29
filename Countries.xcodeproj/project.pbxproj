@@ -10,6 +10,7 @@
 		3146AC1CE6C117885CA5BE7E /* Pods_CountriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A604DA18568B3343E664F77 /* Pods_CountriesTests.framework */; };
 		4AEA601FE947A25010986BBD /* Pods_Countries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9BDF5957242FC193E76737 /* Pods_Countries.framework */; };
 		CBC488A21453320CDF32E811 /* Pods_CountriesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD2379864D812892CABCA5B /* Pods_CountriesUITests.framework */; };
+		EC0824BF1EDCBA8600B51459 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0824BE1EDCBA8600B51459 /* Constants.m */; };
 		EC084A131ED4B058006BDFCB /* Geognos.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A121ED4B058006BDFCB /* Geognos.m */; };
 		EC084A201ED5E009006BDFCB /* CountriesHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A1F1ED5E009006BDFCB /* CountriesHTTPSessionManager.m */; };
 		EC084A231ED5FA2E006BDFCB /* SortOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A221ED5FA2E006BDFCB /* SortOptionsViewController.m */; };
@@ -85,7 +86,8 @@
 		EC0824B71EDCAFDB00B51459 /* CountriesAPIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesAPIProtocol.h; sourceTree = "<group>"; };
 		EC0824B81EDCB04B00B51459 /* CountriesListInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListInput.h; sourceTree = "<group>"; };
 		EC0824B91EDCB0D100B51459 /* CountriesSearchInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchInput.h; sourceTree = "<group>"; };
-		EC0824BA1EDCB62100B51459 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		EC0824BD1EDCBA8600B51459 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		EC0824BE1EDCBA8600B51459 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		EC084A111ED4B058006BDFCB /* Geognos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geognos.h; sourceTree = "<group>"; };
 		EC084A121ED4B058006BDFCB /* Geognos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geognos.m; sourceTree = "<group>"; };
 		EC084A1E1ED5E009006BDFCB /* CountriesHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -328,7 +330,8 @@
 				EC633DB01ECDF4EA0040B8EB /* LaunchScreen.storyboard */,
 				EC633DB31ECDF4EA0040B8EB /* Info.plist */,
 				EC633DA31ECDF4EA0040B8EB /* main.m */,
-				EC0824BA1EDCB62100B51459 /* Constants.h */,
+				EC0824BD1EDCBA8600B51459 /* Constants.h */,
+				EC0824BE1EDCBA8600B51459 /* Constants.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				EC084A361ED9BE87006BDFCB /* CountryMainDetailsTableViewCell.m in Sources */,
 				EC633DF31ECF651D0040B8EB /* InitialFlowController.m in Sources */,
 				EC4023471ED00E8B006BFBB5 /* BaseViewController.m in Sources */,
+				EC0824BF1EDCBA8600B51459 /* Constants.m in Sources */,
 				EC32872E1ED1F8E400221C66 /* NSArray+Map.m in Sources */,
 				EC32872B1ED1F1E000221C66 /* UIColor+Countries.m in Sources */,
 				EC084A201ED5E009006BDFCB /* CountriesHTTPSessionManager.m in Sources */,

@@ -1,15 +1,15 @@
 //
-//  Constants.h
+//  Constants.m
 //  Countries
 //
 //  Created by John Raymund Catahay on 30/05/2017.
 //  Copyright © 2017 John Raymund Catahay. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Constants.h"
 
-@interface Constants : NSObject
+@implementation Constants
 
-extern NSString *const HeroViewID;
+NSString *const HeroViewID = @"HeroViewID";
 
 @end
