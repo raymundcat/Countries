@@ -15,7 +15,7 @@
 
 @property (strong, nonatomic) NSArray<Country *> *countries;
 @property (nonatomic) CountryCategory selectedCategory;
-@property (strong, nonatomic) CountriesListAPI *countriesAPI;
+@property (strong, nonatomic) id<CountriesAPIProtocol> countriesAPI;
 
 @property (nonatomic, strong, readwrite) RACSubject *countriesCategoriesSubject;
 @property (nonatomic, strong, readwrite) RACSubject *countriesSubject;
@@ -47,13 +47,6 @@
 - (void)setCountries:(NSArray<Country *> *)countries {
     _countries = countries;
     [self updateDataWithCategory: self.selectedCategory];
-}
-
-- (CountriesListAPI *)countriesAPI {
-    if (!_countriesAPI) {
-        _countriesAPI = [[CountriesListAPI alloc] init];
-    }
-    return _countriesAPI;
 }
 
 #pragma mark - Public
@@ -94,6 +87,16 @@
         _countriesSubject = [RACSubject subject];
     }
     return _countriesSubject;
+}
+
+#pragma mark - Lifecycle
+
+- (instancetype)initWithCountriesAPI: (id<CountriesAPIProtocol>)countriesAPI {
+    self = [super init];
+    if (self) {
+        self.countriesAPI = countriesAPI;
+    }
+    return self;
 }
 
 #pragma mark - API calls

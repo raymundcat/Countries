@@ -13,6 +13,7 @@
 #import "CountriesSearchViewController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "CountryDetailsFlowController.h"
+#import "CountriesListAPI.h"
 @import Hero;
 
 @interface CountriesSearchFlowController ()
@@ -32,7 +33,8 @@
 
 - (CountriesSearchPresenter *)presenter {
     if (!_presenter) {
-        _presenter = [[CountriesSearchPresenter alloc] init];
+        _presenter = [[CountriesSearchPresenter alloc]
+                      initWithCountriesAPI:[[CountriesListAPI alloc] init]];
         @weakify(self)
         [[_presenter.selectedCountrySubject throttle:0.5]
          subscribeNext:^(Country *country) {

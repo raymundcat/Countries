@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "Country.h"
+#import "CountriesListAPI.h"
 
 @protocol CountriesListInput <NSObject>
 
@@ -24,5 +25,7 @@
 @end
 
 @interface CountriesListPresenter : NSObject <CountriesListInput>
+
+- (instancetype)initWithCountriesAPI: (id<CountriesAPIProtocol>)countriesAPI;
 
 @end

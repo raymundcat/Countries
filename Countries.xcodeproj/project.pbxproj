@@ -358,7 +358,7 @@
 		EC633DD71ECDF5200040B8EB /* Countries Details */ = {
 			isa = PBXGroup;
 			children = (
-				EC633DDB1ECDF53D0040B8EB /* FlowController */,
+				EC633DDB1ECDF53D0040B8EB /* Flow */,
 				EC633DDA1ECDF5360040B8EB /* Views */,
 			);
 			name = "Countries Details";
@@ -397,13 +397,13 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		EC633DDB1ECDF53D0040B8EB /* FlowController */ = {
+		EC633DDB1ECDF53D0040B8EB /* Flow */ = {
 			isa = PBXGroup;
 			children = (
 				EC084A2D1ED95A5F006BDFCB /* CountryDetailsFlowController.h */,
 				EC084A2E1ED95A5F006BDFCB /* CountryDetailsFlowController.m */,
 			);
-			name = FlowController;
+			name = Flow;
 			sourceTree = "<group>";
 		};
 		EC633DDF1ECE25E60040B8EB /* Over Alls */ = {
@@ -431,20 +431,20 @@
 		ECBCC77B1ED20D0000A7AE00 /* Search Countries */ = {
 			isa = PBXGroup;
 			children = (
-				ECBCC77D1ED20D1700A7AE00 /* FlowController */,
+				ECBCC77D1ED20D1700A7AE00 /* Flow */,
 				ECBCC7811ED2204300A7AE00 /* Presenters */,
 				EC084A241ED622F5006BDFCB /* Views */,
 			);
 			name = "Search Countries";
 			sourceTree = "<group>";
 		};
-		ECBCC77D1ED20D1700A7AE00 /* FlowController */ = {
+		ECBCC77D1ED20D1700A7AE00 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
 				ECBCC77E1ED20DA800A7AE00 /* CountriesSearchFlowController.h */,
 				ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */,
 			);
-			name = FlowController;
+			name = Flow;
 			sourceTree = "<group>";
 		};
 		ECBCC7811ED2204300A7AE00 /* Presenters */ = {

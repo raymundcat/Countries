@@ -9,14 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "Country.h"
+#import "CountriesListAPI.h"
 
 @protocol CountriesSearchInput <NSObject>
-
-- (void)didSelectCountry: (Country *) country;
 
 @property (nonatomic, strong, readonly) RACSubject *searchTextSubject;
 @property (nonatomic, strong, readonly) RACSubject *countriesSubject;
 @property (nonatomic, strong, readonly) RACSubject *selectedCountrySubject;
+
+- (instancetype)initWithCountriesAPI: (id<CountriesAPIProtocol>)countriesAPI;
+- (void)didSelectCountry: (Country *)country;
 
 @end
 

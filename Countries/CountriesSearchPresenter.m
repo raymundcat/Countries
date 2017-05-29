@@ -11,7 +11,7 @@
 
 @interface CountriesSearchPresenter ()
 
-@property (strong, nonatomic) CountriesListAPI *countriesAPI;
+@property (strong, nonatomic) id <CountriesAPIProtocol> countriesAPI;
 @property (nonatomic, strong, readwrite) RACSubject *selectedCountrySubject;
 
 @end
@@ -20,15 +20,6 @@
 
 @synthesize searchTextSubject = _searchTextSubject;
 @synthesize countriesSubject = _countriesSubject;
-
-#pragma mark - Private
-
-- (CountriesListAPI *)countriesAPI {
-    if (!_countriesAPI) {
-        _countriesAPI = [[CountriesListAPI alloc] init];
-    }
-    return _countriesAPI;
-}
 
 #pragma mark - Public
 
@@ -59,9 +50,10 @@
 
 #pragma mark - Lifecycle
 
-- (instancetype)init {
+- (instancetype)initWithCountriesAPI: (id<CountriesAPIProtocol>)countriesAPI {
     self = [super init];
     if (self) {
+        self.countriesAPI = countriesAPI;
         [[self.searchTextSubject throttle:0.5]
          subscribeNext:^(NSString *x) {
              [self searchCountriesWithText:x];
