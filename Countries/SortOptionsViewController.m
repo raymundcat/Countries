@@ -22,6 +22,8 @@
 
 @implementation SortOptionsViewController
 
+#pragma mark - Private
+
 - (UIAlertAction *)allOption {
     if (!_allOption) {
         @weakify(self)
@@ -83,6 +85,7 @@
     return _cancelnOption;
 }
 
+#pragma mark - Public
 
 -(RACSubject *)selectedCategorySubject {
     if (!_selectedCategorySubject) {
@@ -90,6 +93,8 @@
     }
     return _selectedCategorySubject;
 }
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];

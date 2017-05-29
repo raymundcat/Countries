@@ -23,25 +23,22 @@
 
 @implementation CountryDetailsViewController
 
-@synthesize country = _country;
+#pragma mark - Private
 
-- (RACSubject *)didPressFlagSubject {
-    if (!_didPressFlagSubject) {
-        _didPressFlagSubject = [RACSubject subject];
-    }
-    return _didPressFlagSubject;
-}
+@synthesize country = _country;
 
 - (NSArray<NSNumber *> *)detailTypes {
     if (!_detailTypes) {
         NSMutableArray<NSNumber *> *detailTypesMutable = [[NSMutableArray<NSNumber *> alloc] init];
         for (int i = CountryDetailTypeNativeName; i<= CountryDetailTypeRegionalBlocks; i++) {
-            [detailTypesMutable addObject: [NSNumber numberWithInt:i]];
+            [detailTypesMutable addObject: @(i)];
         }
         _detailTypes = [NSArray arrayWithArray:detailTypesMutable];
     }
     return _detailTypes;
 }
+
+#pragma mark - Private Subviews
 
 static NSString *HeaderCellIdentifier = @"HeaderCell";
 static NSString *DetailCellIdentifier = @"DetailCell";
@@ -75,15 +72,26 @@ static NSString *DetailCellIdentifier = @"DetailCell";
     return _mapView;
 }
 
+#pragma mark - Public
+
+- (RACSubject *)didPressFlagSubject {
+    if (!_didPressFlagSubject) {
+        _didPressFlagSubject = [RACSubject subject];
+    }
+    return _didPressFlagSubject;
+}
+
+#pragma mark - Lifecycle
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.skyBlueColor;
-    [self.view addSubview: self.mapView];
-    [self.view addSubview: self.tableView];
     self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom
                                                       withFrame:self.view.frame
                                                       andColors:@[UIColor.skyBlueColor,
                                                                   UIColor.lightBlueGreenColor]];
+    [self.view addSubview: self.mapView];
+    [self.view addSubview: self.tableView];
 }
 
 -(void)viewWillLayoutSubviews {
@@ -100,6 +108,8 @@ static NSString *DetailCellIdentifier = @"DetailCell";
     [super viewDidAppear:animated];
     [self.tableView reloadData];
 }
+
+#pragma mark - Tableview Delegates
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;

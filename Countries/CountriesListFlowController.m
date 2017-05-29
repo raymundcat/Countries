@@ -27,6 +27,8 @@
 
 @implementation CountriesListFlowController
 
+#pragma mark - Private
+
 - (CountriesListPresenter *)presenter {
     if (!_presenter) {
         _presenter = [[CountriesListPresenter alloc] init];
@@ -62,7 +64,7 @@
     return _searchFlowController;
 }
 
--(CountryDetailsFlowController *)countryDetailsFlowwController {
+- (CountryDetailsFlowController *)countryDetailsFlowwController {
     if (!_countryDetailsFlowwController) {
         _countryDetailsFlowwController = [[CountryDetailsFlowController alloc] initWithNavigationController:self.navigationController];
     }
@@ -101,7 +103,9 @@
     return _sortButton;
 }
 
-- (id)initWithNavigationController:(UINavigationController *)navigationController {
+#pragma mark - Lifecycle
+
+- (instancetype)initWithNavigationController:(UINavigationController *)navigationController {
     if (self = [self init]){
         self.navigationController = navigationController;
     }

@@ -20,6 +20,8 @@
 
 @implementation CountryDetailTableViewCell
 
+#pragma mark - Private Subviews
+
 - (UIView *)containerView {
     if (!_containerView) {
         _containerView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -54,6 +56,8 @@
     }
     return _detailValueLabel;
 }
+
+#pragma mark - Lifecycle
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

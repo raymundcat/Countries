@@ -24,6 +24,8 @@
 
 @implementation CountryDetailsFlowController
 
+#pragma mark - Private
+
 -(CountryDetailsViewController *)viewController {
     if (!_viewController) {
         _viewController = [[CountryDetailsViewController alloc] init];
@@ -50,7 +52,9 @@
     return _flagViewController;
 }
 
-- (id)initWithNavigationController:(UINavigationController *)navigationController {
+#pragma mark - Lifecycle
+
+- (instancetype)initWithNavigationController:(UINavigationController *)navigationController {
     if (self = [self init]){
         self.navigationController = navigationController;
     }
@@ -62,10 +66,6 @@
     self.viewController.country = country;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.navigationController pushViewController: self.viewController animated: YES];
-}
-
--(void)start {
-    
 }
 
 @end

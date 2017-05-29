@@ -12,9 +12,7 @@
 
 @protocol CountriesSearchInput <NSObject>
 
-- (void)viewDidLoad;
-- (void)requestRefreshData;
-- (void)selectedCountry: (Country *) country;
+- (void)didSelectCountry: (Country *) country;
 
 @property (nonatomic, strong, readonly) RACSubject *searchTextSubject;
 @property (nonatomic, strong, readonly) RACSubject *countriesSubject;

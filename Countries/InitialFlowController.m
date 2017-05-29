@@ -21,6 +21,8 @@
 
 @implementation InitialFlowController
 
+#pragma mark - Private 
+
 - (UINavigationController *)navigationController {
     if (!_navigationController) {
         _navigationController = [[UINavigationController alloc] init];
@@ -47,7 +49,9 @@
     return _countriesListFlowController;
 }
 
-- (id)initWithWindow:(UIWindow *)window {
+#pragma mark - Lifecycle
+
+- (instancetype)initWithWindow:(UIWindow *)window {
     if (self = [self init]){
         self.window = window;
     }

@@ -20,6 +20,8 @@
 
 @implementation FlagWebViewController
 
+#pragma mark - Private Subviews
+
 - (UIWebView *)webView {
     if (!_webView) {
         _webView = [[UIWebView alloc] init];
@@ -31,7 +33,7 @@
     return _webView;
 }
 
--(UIImageView *)mapView {
+- (UIImageView *)mapView {
     if (!_mapView) {
         _mapView = [[UIImageView alloc] initWithFrame:CGRectZero];
         _mapView.image = [UIImage imageNamed:@"worldmap"];
@@ -40,6 +42,16 @@
     }
     return _mapView;
 }
+
+#pragma mark - Public
+
+- (void)loadCountry: (Country *)country {
+    NSURL *url = [NSURL URLWithString: country.flag];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest: request];
+}
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,24 +71,6 @@
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];
-}
-
-- (void)loadCountry: (Country *)country {
-    NSURL *url = [NSURL URLWithString: country.flag];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [self.webView loadRequest: request];
-}
-
--(void)webViewDidFinishLoad:(UIWebView *)webView {
-//    CGSize contentSize = self.webView.scrollView.contentSize;
-//    CGSize webViewSize = self.webView.bounds.size;
-//    CGFloat scaleFactor = webViewSize.width / contentSize.width;
-//    
-//    self.webView.scrollView.minimumZoomScale = scaleFactor;
-//    self.webView.scrollView.maximumZoomScale = scaleFactor;
-//    self.webView.scrollView.zoomScale = scaleFactor;
-//    
-//    [self.webView.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 - (void)dealloc {

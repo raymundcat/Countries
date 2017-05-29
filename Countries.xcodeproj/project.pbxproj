@@ -132,7 +132,6 @@
 		EC633DC31ECDF4EA0040B8EB /* CountriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC633DC71ECDF4EA0040B8EB /* CountriesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountriesUITests.m; sourceTree = "<group>"; };
 		EC633DC91ECDF4EA0040B8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC633DF01ECF64490040B8EB /* FlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowController.h; sourceTree = "<group>"; };
 		EC633DF11ECF651D0040B8EB /* InitialFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialFlowController.h; sourceTree = "<group>"; };
 		EC633DF21ECF651D0040B8EB /* InitialFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialFlowController.m; sourceTree = "<group>"; };
 		EC768F581ED349D100FB2748 /* CountriesCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesCollectionHeaderView.h; sourceTree = "<group>"; };
@@ -421,7 +420,6 @@
 		EC633DE01ECE25EE0040B8EB /* Base Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EC633DF01ECF64490040B8EB /* FlowController.h */,
 				EC633DF11ECF651D0040B8EB /* InitialFlowController.h */,
 				EC633DF21ECF651D0040B8EB /* InitialFlowController.m */,
 				EC4023451ED00E8B006BFBB5 /* BaseViewController.h */,

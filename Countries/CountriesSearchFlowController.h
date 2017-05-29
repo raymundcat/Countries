@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "FlowController.h"
 
-@interface CountriesSearchFlowController : NSObject <FlowController, UISearchBarDelegate>
+@interface CountriesSearchFlowController : NSObject <UISearchBarDelegate>
 
-- (id)initWithNavigationController: (UINavigationController *) navigationController;
+- (instancetype)initWithNavigationController: (UINavigationController *) navigationController;
+- (void)start;
 
 @end

@@ -44,7 +44,7 @@
     country.nativeName = [json objectForKey:@"nativeName"];
     country.demonym = [json objectForKey:@"demonym"];
     country.capital = [json objectForKey:@"capital"];
-    country.population = [NSNumber numberWithInteger:[[json objectForKey:@"population"] integerValue]];
+    country.population = @([[json objectForKey:@"population"] integerValue]);
     
     country.regionalBlocks = [[NSMutableArray alloc] init];
     if ([[json objectForKey:@"regionalBlocs"] isKindOfClass:[NSArray<NSDictionary *> class]]) {

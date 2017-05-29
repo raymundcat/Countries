@@ -21,9 +21,16 @@
 @synthesize searchTextSubject = _searchTextSubject;
 @synthesize countriesSubject = _countriesSubject;
 
--(void)viewDidLoad {
-    
+#pragma mark - Private
+
+- (CountriesListAPI *)countriesAPI {
+    if (!_countriesAPI) {
+        _countriesAPI = [[CountriesListAPI alloc] init];
+    }
+    return _countriesAPI;
 }
+
+#pragma mark - Public
 
 - (RACSubject *)searchTextSubject {
     if (!_searchTextSubject) {
@@ -39,13 +46,6 @@
     return _countriesSubject;
 }
 
-- (CountriesListAPI *)countriesAPI {
-    if (!_countriesAPI) {
-        _countriesAPI = [[CountriesListAPI alloc] init];
-    }
-    return _countriesAPI;
-}
-
 -(RACSubject *)selectedCountrySubject {
     if (!_selectedCountrySubject) {
         _selectedCountrySubject = [RACSubject subject];
@@ -53,13 +53,13 @@
     return _selectedCountrySubject;
 }
 
-- (void)selectedCountry:(Country *)country {
+- (void)didSelectCountry:(Country *)country {
     [self.selectedCountrySubject sendNext:country];
 }
 
+#pragma mark - Lifecycle
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         [[self.searchTextSubject throttle:0.5]
@@ -69,6 +69,8 @@
     }
     return self;
 }
+
+#pragma mark - API call
 
 - (void)searchCountriesWithText: (NSString *)searchText {
     [self.countriesAPI searchCountriesWithName: searchText

@@ -13,6 +13,6 @@
 @interface CountryMainDetailsTableViewCell : UITableViewCell<UIWebViewDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) Country *country;
-@property (strong, nonatomic) RACSubject *didTapFlagSubject;
+@property (strong, nonatomic, readonly) RACSubject *didTapFlagSubject;
 
 @end

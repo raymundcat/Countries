@@ -15,6 +15,8 @@
 
 @implementation BaseViewController
 
+#pragma mark - Lifecycle
+
 - (RACSignal *)viewDidLoadSignal {
     if (!_viewDidLoadSignal) {
         _viewDidLoadSignal = [self rac_signalForSelector:@selector(viewDidLoad)];
@@ -22,17 +24,17 @@
     return _viewDidLoadSignal;
 }
 
+#pragma mark - Progress Indicators
+
 - (void)showProgress {
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.0 * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    dispatch_after(0, dispatch_get_main_queue(), ^(void){
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     });
 }
 
 - (void)hideProgress {
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    dispatch_after(0.5, dispatch_get_main_queue(), ^(void){
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
 }
