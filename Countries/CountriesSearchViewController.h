@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "CountriesSearchPresenter.h"
+#import "CountriesSearchInput.h"
 
 @interface CountriesSearchViewController : BaseViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 

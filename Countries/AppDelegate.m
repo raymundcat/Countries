@@ -17,12 +17,15 @@
 
 @implementation AppDelegate
 
+-(InitialFlowController *)initialFlowController {
+    if (!_initialFlowController) {
+        _initialFlowController = [[InitialFlowController alloc] initWithWindow:self.window];
+    }
+    return _initialFlowController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    self.initialFlowController = [[InitialFlowController alloc] initWithWindow:self.window];
     [self.initialFlowController start];
-    
     return YES;
 }
 

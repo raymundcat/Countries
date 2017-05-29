@@ -11,6 +11,10 @@
 #import "CountriesSearchFlowController.h"
 #import "CountryDetailsFlowController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "CountriesListAPI.h"
+#import "CountriesListInput.h"
+#import "CountriesListPresenter.h"
+#import "Constants.h"
 @import Hero;
 
 @interface CountriesListFlowController()
@@ -31,7 +35,8 @@
 
 - (CountriesListPresenter *)presenter {
     if (!_presenter) {
-        _presenter = [[CountriesListPresenter alloc] init];
+        _presenter = [[CountriesListPresenter alloc]
+                      initWithCountriesAPI:[[CountriesListAPI alloc] init]];
         @weakify(self)
         [[_presenter.selectedCountrySubject throttle:0.5]
          subscribeNext:^(Country *country) {
@@ -52,7 +57,7 @@
         _viewController.navigationItem.rightBarButtonItems = @[searchButton, sortButton];
         
         _viewController.isHeroEnabled = YES;
-        _viewController.view.heroID = @"view";
+        _viewController.view.heroID = HeroViewID;
     }
     return _viewController;
 }

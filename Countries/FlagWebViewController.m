@@ -56,7 +56,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview: self.mapView];
-    [self.view addSubview:self.webView];
+    [self.view addSubview: self.webView];
     self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom
                                                       withFrame:self.view.frame
                                                       andColors:@[UIColor.skyBlueColor,

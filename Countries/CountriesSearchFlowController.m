@@ -13,6 +13,8 @@
 #import "CountriesSearchViewController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "CountryDetailsFlowController.h"
+#import "CountriesListAPI.h"
+#import "Constants.h"
 @import Hero;
 
 @interface CountriesSearchFlowController ()
@@ -32,7 +34,8 @@
 
 - (CountriesSearchPresenter *)presenter {
     if (!_presenter) {
-        _presenter = [[CountriesSearchPresenter alloc] init];
+        _presenter = [[CountriesSearchPresenter alloc]
+                      initWithCountriesAPI:[[CountriesListAPI alloc] init]];
         @weakify(self)
         [[_presenter.selectedCountrySubject throttle:0.5]
          subscribeNext:^(Country *country) {
@@ -53,7 +56,7 @@
         [_viewController.view addGestureRecognizer: self.viewTapGesture];
         
         _viewController.isHeroEnabled = YES;
-        _viewController.view.heroID = @"view";
+        _viewController.view.heroID = HeroViewID;
     }
     return _viewController;
 }

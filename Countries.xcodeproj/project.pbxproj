@@ -10,6 +10,7 @@
 		3146AC1CE6C117885CA5BE7E /* Pods_CountriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A604DA18568B3343E664F77 /* Pods_CountriesTests.framework */; };
 		4AEA601FE947A25010986BBD /* Pods_Countries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9BDF5957242FC193E76737 /* Pods_Countries.framework */; };
 		CBC488A21453320CDF32E811 /* Pods_CountriesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD2379864D812892CABCA5B /* Pods_CountriesUITests.framework */; };
+		EC0824BF1EDCBA8600B51459 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0824BE1EDCBA8600B51459 /* Constants.m */; };
 		EC084A131ED4B058006BDFCB /* Geognos.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A121ED4B058006BDFCB /* Geognos.m */; };
 		EC084A201ED5E009006BDFCB /* CountriesHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A1F1ED5E009006BDFCB /* CountriesHTTPSessionManager.m */; };
 		EC084A231ED5FA2E006BDFCB /* SortOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A221ED5FA2E006BDFCB /* SortOptionsViewController.m */; };
@@ -82,6 +83,11 @@
 		CE6FF10CDDCED941FC592AF8 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 		D6F618152ABEA2C57868C265 /* Pods-CountriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountriesTests/Pods-CountriesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DFFB83C73ECE6ADE710DB5C4 /* Pods-CountriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountriesTests/Pods-CountriesTests.release.xcconfig"; sourceTree = "<group>"; };
+		EC0824B71EDCAFDB00B51459 /* CountriesAPIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesAPIProtocol.h; sourceTree = "<group>"; };
+		EC0824B81EDCB04B00B51459 /* CountriesListInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesListInput.h; sourceTree = "<group>"; };
+		EC0824B91EDCB0D100B51459 /* CountriesSearchInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchInput.h; sourceTree = "<group>"; };
+		EC0824BD1EDCBA8600B51459 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		EC0824BE1EDCBA8600B51459 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		EC084A111ED4B058006BDFCB /* Geognos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geognos.h; sourceTree = "<group>"; };
 		EC084A121ED4B058006BDFCB /* Geognos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geognos.m; sourceTree = "<group>"; };
 		EC084A1E1ED5E009006BDFCB /* CountriesHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 		EC4023411ECF8C3B006BFBB5 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				EC0824B71EDCAFDB00B51459 /* CountriesAPIProtocol.h */,
 				EC4023421ECF8C57006BFBB5 /* CountriesListAPI.h */,
 				EC4023431ECF8C57006BFBB5 /* CountriesListAPI.m */,
 				EC084A1E1ED5E009006BDFCB /* CountriesHTTPSessionManager.h */,
@@ -323,6 +330,8 @@
 				EC633DB01ECDF4EA0040B8EB /* LaunchScreen.storyboard */,
 				EC633DB31ECDF4EA0040B8EB /* Info.plist */,
 				EC633DA31ECDF4EA0040B8EB /* main.m */,
+				EC0824BD1EDCBA8600B51459 /* Constants.h */,
+				EC0824BE1EDCBA8600B51459 /* Constants.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -358,7 +367,7 @@
 		EC633DD71ECDF5200040B8EB /* Countries Details */ = {
 			isa = PBXGroup;
 			children = (
-				EC633DDB1ECDF53D0040B8EB /* FlowController */,
+				EC633DDB1ECDF53D0040B8EB /* Flow */,
 				EC633DDA1ECDF5360040B8EB /* Views */,
 			);
 			name = "Countries Details";
@@ -379,6 +388,7 @@
 		EC633DD91ECDF5310040B8EB /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				EC0824B81EDCB04B00B51459 /* CountriesListInput.h */,
 				EC40233D1ECF8339006BFBB5 /* CountriesListPresenter.h */,
 				EC40233E1ECF8339006BFBB5 /* CountriesListPresenter.m */,
 			);
@@ -397,13 +407,13 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		EC633DDB1ECDF53D0040B8EB /* FlowController */ = {
+		EC633DDB1ECDF53D0040B8EB /* Flow */ = {
 			isa = PBXGroup;
 			children = (
 				EC084A2D1ED95A5F006BDFCB /* CountryDetailsFlowController.h */,
 				EC084A2E1ED95A5F006BDFCB /* CountryDetailsFlowController.m */,
 			);
-			name = FlowController;
+			name = Flow;
 			sourceTree = "<group>";
 		};
 		EC633DDF1ECE25E60040B8EB /* Over Alls */ = {
@@ -431,25 +441,26 @@
 		ECBCC77B1ED20D0000A7AE00 /* Search Countries */ = {
 			isa = PBXGroup;
 			children = (
-				ECBCC77D1ED20D1700A7AE00 /* FlowController */,
+				ECBCC77D1ED20D1700A7AE00 /* Flow */,
 				ECBCC7811ED2204300A7AE00 /* Presenters */,
 				EC084A241ED622F5006BDFCB /* Views */,
 			);
 			name = "Search Countries";
 			sourceTree = "<group>";
 		};
-		ECBCC77D1ED20D1700A7AE00 /* FlowController */ = {
+		ECBCC77D1ED20D1700A7AE00 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
 				ECBCC77E1ED20DA800A7AE00 /* CountriesSearchFlowController.h */,
 				ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */,
 			);
-			name = FlowController;
+			name = Flow;
 			sourceTree = "<group>";
 		};
 		ECBCC7811ED2204300A7AE00 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				EC0824B91EDCB0D100B51459 /* CountriesSearchInput.h */,
 				ECBCC7821ED2205800A7AE00 /* CountriesSearchPresenter.h */,
 				ECBCC7831ED2205800A7AE00 /* CountriesSearchPresenter.m */,
 			);
@@ -746,6 +757,7 @@
 				EC084A361ED9BE87006BDFCB /* CountryMainDetailsTableViewCell.m in Sources */,
 				EC633DF31ECF651D0040B8EB /* InitialFlowController.m in Sources */,
 				EC4023471ED00E8B006BFBB5 /* BaseViewController.m in Sources */,
+				EC0824BF1EDCBA8600B51459 /* Constants.m in Sources */,
 				EC32872E1ED1F8E400221C66 /* NSArray+Map.m in Sources */,
 				EC32872B1ED1F1E000221C66 /* UIColor+Countries.m in Sources */,
 				EC084A201ED5E009006BDFCB /* CountriesHTTPSessionManager.m in Sources */,

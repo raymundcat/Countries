@@ -9,20 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "Country.h"
-
-@protocol CountriesListInput <NSObject>
-
-- (void)viewDidLoad;
-- (void)setSelectedCategory: (CountryCategory)category;
-- (void)didSelectCountry: (Country *) country;
-- (void)requestRefreshData;
-
-@property (nonatomic, strong, readonly) RACSubject *countriesCategoriesSubject;
-@property (nonatomic, strong, readonly) RACSubject *countriesSubject;
-@property (nonatomic, strong, readonly) RACSubject *selectedCountrySubject;
-
-@end
+#import "CountriesAPIProtocol.h"
+#import "CountriesListInput.h"
 
 @interface CountriesListPresenter : NSObject <CountriesListInput>
+
+- (instancetype)initWithCountriesAPI: (id<CountriesAPIProtocol>)countriesAPI;
 
 @end
