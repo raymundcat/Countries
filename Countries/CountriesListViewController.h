@@ -12,7 +12,7 @@
 
 @interface CountriesListViewController : BaseViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) id <CountriesListInput> input;
+@property (strong, nonatomic) id <CountriesListInput> input;
 
 - (void)showSortOption;
 

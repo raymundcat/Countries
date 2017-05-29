@@ -10,20 +10,26 @@
 #import "UIColor+Countries.h"
 #import <Masonry/Masonry.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+@import Hero;
 
 @interface CountryMainDetailsTableViewCell ()
 
-@property (nonatomic, strong) UILabel *countryNameLabel;
-@property (nonatomic, strong) UILabel *countryOtherNamesLabel;
-@property (nonatomic, strong) UIWebView *flagView;
-@property (nonatomic, strong) UIActivityIndicatorView *flagIndicatorView;
-@property (nonatomic, strong) UITapGestureRecognizer *flagTapRecognizer;
+@property (strong, nonatomic) UILabel *countryNameLabel;
+@property (strong, nonatomic) UILabel *countryOtherNamesLabel;
+@property (strong, nonatomic) UIWebView *flagView;
+@property (strong, nonatomic) UIActivityIndicatorView *flagIndicatorView;
+@property (strong, nonatomic) UITapGestureRecognizer *flagTapRecognizer;
+@property (strong, nonatomic, readwrite) RACSubject *didTapFlagSubject;
 
 @end
 
 @implementation CountryMainDetailsTableViewCell
 
+#pragma mark - Private
+
 @synthesize country = _country;
+
+#pragma mark - Private Subviews
 
 -(UILabel *)countryNameLabel {
     if (!_countryNameLabel) {
@@ -85,12 +91,7 @@
     return _flagTapRecognizer;
 }
 
-- (RACSubject *)didTapFlagSubject {
-    if (!_didTapFlagSubject) {
-        _didTapFlagSubject = [RACSubject subject];
-    }
-    return _didTapFlagSubject;
-}
+#pragma mark - Public
 
 - (void)setCountry:(Country *)country {
     _country = country;
@@ -102,6 +103,15 @@
     self.countryNameLabel.text = country.name;
     self.countryOtherNamesLabel.text = [country.otherNames componentsJoinedByString:@", "];
 }
+
+- (RACSubject *)didTapFlagSubject {
+    if (!_didTapFlagSubject) {
+        _didTapFlagSubject = [RACSubject subject];
+    }
+    return _didTapFlagSubject;
+}
+
+#pragma mark - Lifecycle
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -118,7 +128,7 @@
         [[self rac_signalForSelector:@selector(webViewDidFinishLoad:)]
          subscribeNext:^(id x) {
              @strongify(self)
-             [self relayOutFlagView];
+             [self layoutFlagView];
              [self.flagIndicatorView stopAnimating];
          }];
         
@@ -137,7 +147,7 @@
     return self;
 }
 
--(void)layoutSubviews {
+- (void)layoutSubviews {
     [super layoutSubviews];
     
     [self.countryNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -162,7 +172,7 @@
     }];
 }
 
-- (void)relayOutFlagView {
+- (void)layoutFlagView {
     CGSize contentSize = self.flagView.scrollView.contentSize;
     CGSize webViewSize = self.flagView.bounds.size;
     CGFloat scaleFactor = webViewSize.width / contentSize.width;
@@ -174,8 +184,10 @@
     [self.flagView.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
+#pragma mark - Gestures
 
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
 }
 

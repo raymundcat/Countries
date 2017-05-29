@@ -13,13 +13,15 @@
 
 @interface InitialFlowController()
 
-@property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) UINavigationController *navigationController;
-@property (nonatomic, strong) CountriesListFlowController *countriesListFlowController;
+@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) CountriesListFlowController *countriesListFlowController;
 
 @end
 
 @implementation InitialFlowController
+
+#pragma mark - Private 
 
 - (UINavigationController *)navigationController {
     if (!_navigationController) {
@@ -47,7 +49,9 @@
     return _countriesListFlowController;
 }
 
-- (id)initWithWindow:(UIWindow *)window {
+#pragma mark - Lifecycle
+
+- (instancetype)initWithWindow:(UIWindow *)window {
     if (self = [self init]){
         self.window = window;
     }

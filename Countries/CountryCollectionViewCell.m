@@ -15,40 +15,16 @@
 
 @interface CountryCollectionViewCell ()
 
-@property (nonatomic, strong) UIVisualEffectView *blurView;
-@property (nonatomic, strong) UILabel *title;
-@property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) NSTimer *timer;
+@property (strong, nonatomic) UIVisualEffectView *blurView;
+@property (strong, nonatomic) UILabel *title;
+@property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
 @implementation CountryCollectionViewCell
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.layer.cornerRadius = 3;
-        self.layer.shadowRadius = 3;
-        self.layer.shadowColor = UIColor.darkGrayColor.CGColor;
-        self.layer.shadowOpacity = 0.9;
-        self.layer.shadowOffset = CGSizeZero;
-        self.backgroundColor = UIColor.clearColor;
-        
-        [self addSubview: self.imageView];
-        [self addSubview: self.blurView];
-        [self.blurView addSubview: self.title];
-    }
-    return self;
-}
-
-- (void)setCountry:(Country *)country {
-    _country = country;
-    self.title.text = country.name;
-    [self.imageView sd_setImageWithURL: [Geognos flagURLfor: country.alpha2Code]
-                      placeholderImage: [UIImage imageNamed:@"worldmap"]
-                               options: SDWebImageRefreshCached];
-}
+#pragma mark - Private Subviews
 
 - (UILabel *)title {
     if (!_title) {
@@ -82,6 +58,36 @@
         _blurView.clipsToBounds = YES;
     }
     return _blurView;
+}
+
+#pragma mark - Public
+
+- (void)setCountry:(Country *)country {
+    _country = country;
+    self.title.text = country.name;
+    [self.imageView sd_setImageWithURL: [Geognos flagURLfor: country.alpha2Code]
+                      placeholderImage: [UIImage imageNamed:@"worldmap"]
+                               options: SDWebImageRefreshCached];
+}
+
+
+#pragma mark - Lifecycle
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.layer.cornerRadius = 3;
+        self.layer.shadowRadius = 3;
+        self.layer.shadowColor = UIColor.darkGrayColor.CGColor;
+        self.layer.shadowOpacity = 0.9;
+        self.layer.shadowOffset = CGSizeZero;
+        self.backgroundColor = UIColor.clearColor;
+        
+        [self addSubview: self.imageView];
+        [self addSubview: self.blurView];
+        [self.blurView addSubview: self.title];
+    }
+    return self;
 }
 
 - (void)layoutSubviews {

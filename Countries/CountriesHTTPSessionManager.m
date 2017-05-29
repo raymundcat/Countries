@@ -8,16 +8,17 @@
 
 #import "CountriesHTTPSessionManager.h"
 
+//Custom AFHTTPSessionManager for cached API calls
 //helper logic from http://www.hpique.com/2014/03/how-to-cache-server-responses-in-ios-apps/
 @implementation CountriesHTTPSessionManager
 
 - (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request
-                            completionHandler:(void (^)(NSURLResponse * _Nonnull, id _Nullable, NSError * _Nullable))completionHandler {
+                            completionHandler:(void (^)(NSURLResponse * _Nonnull, id _Nullable,
+                                                        NSError * _Nullable))completionHandler {
     
     NSMutableURLRequest *modifiedRequest = request.mutableCopy;
     AFNetworkReachabilityManager *reachability = self.reachabilityManager;
-    if (!reachability.isReachable)
-    {
+    if (!reachability.isReachable) {
         modifiedRequest.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
     }
     return [super dataTaskWithRequest:modifiedRequest
@@ -28,12 +29,12 @@
           dataTask:(NSURLSessionDataTask *)dataTask
  willCacheResponse:(NSCachedURLResponse *)proposedResponse
  completionHandler:(void (^)(NSCachedURLResponse * _Nullable))completionHandler {
+    
     NSURLResponse *response = proposedResponse.response;
     NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse*)response;
     NSDictionary *headers = HTTPResponse.allHeaderFields;
     
-    if (headers[@"Cache-Control"])
-    {
+    if (headers[@"Cache-Control"]) {
         NSMutableDictionary *modifiedHeaders = headers.mutableCopy;
         modifiedHeaders[@"Cache-Control"] = @"max-age=60";
         NSHTTPURLResponse *modifiedHTTPResponse = [[NSHTTPURLResponse alloc]
@@ -48,7 +49,10 @@
                                                            storagePolicy:proposedResponse.storagePolicy];
     }
     
-    [super URLSession:session dataTask:dataTask willCacheResponse:proposedResponse completionHandler:completionHandler];
+    [super URLSession:session
+             dataTask:dataTask
+    willCacheResponse:proposedResponse
+    completionHandler:completionHandler];
 }
 
 @end

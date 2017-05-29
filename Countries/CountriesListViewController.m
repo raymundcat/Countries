@@ -18,13 +18,13 @@
 
 @interface CountriesListViewController ()
 
-@property (nonatomic, strong) NSArray<NSString *> *categories;
-@property (nonatomic, strong) NSArray<NSArray<Country *> *> *countries;
-@property (nonatomic, strong) NSMutableArray<NSNumber *> *droppedSections;
-@property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (nonatomic, strong) SortOptionsViewController *sortOptionsAlertController;
-@property (nonatomic, strong) UIImageView *mapView;
+@property (strong, nonatomic) NSArray<NSString *> *categories;
+@property (strong, nonatomic) NSArray<NSArray<Country *> *> *countries;
+@property (strong, nonatomic) NSMutableArray<NSNumber *> *droppedSections;
+@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) SortOptionsViewController *sortOptionsAlertController;
+@property (strong, nonatomic) UIImageView *mapView;
 
 @end
 
@@ -33,11 +33,19 @@
 @synthesize categories = _categories;
 @synthesize countries = _countries;
 
+#pragma mark - Private
+
 - (NSArray *)categories {
     if (!_categories) {
         _categories = @[];
     }
     return _categories;
+}
+
+-(void)setCategories:(NSArray *)categories {
+    _categories = categories;
+    [self.droppedSections removeAllObjects];
+    [self.collectionView reloadData];
 }
 
 -(NSArray<NSArray<Country *> *> *)countries {
@@ -47,12 +55,20 @@
     return _countries;
 }
 
+-(void)setCountries:(NSArray<NSArray<Country *> *> *)countries {
+    _countries = countries;
+    [self.droppedSections removeAllObjects];
+    [self.collectionView reloadData];
+}
+
 - (NSMutableArray<NSNumber *> *)droppedSections {
     if (!_droppedSections) {
         _droppedSections = [[NSMutableArray<NSNumber*> alloc] init];
     }
     return _droppedSections;
 }
+
+#pragma mark - Private Subviews
 
 - (UIRefreshControl *)refreshControl {
     if (!_refreshControl) {
@@ -65,15 +81,6 @@
     return _refreshControl;
 }
 
-- (SortOptionsViewController *)sortOptionsAlertController {
-    if (!_sortOptionsAlertController) {
-        _sortOptionsAlertController = [SortOptionsViewController alertControllerWithTitle: @"Countries's Categories"
-                                                                          message: @"select an option for sorting"
-                                                                   preferredStyle: UIAlertControllerStyleActionSheet];
-    }
-    return _sortOptionsAlertController;
-}
-
 -(UIImageView *)mapView {
     if (!_mapView) {
         _mapView = [[UIImageView alloc] init];
@@ -84,17 +91,38 @@
     return _mapView;
 }
 
--(void)setCategories:(NSArray *)categories {
-    _categories = categories;
-    [self.droppedSections removeAllObjects];
-    [self.collectionView reloadData];
+static NSString *CellIdentifier = @"Cell";
+static NSString *HeaderIdentifier = @"Cell";
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.headerReferenceSize = CGSizeMake(_collectionView.frame.size.width, 70);
+        _collectionView = [[UICollectionView alloc] initWithFrame: CGRectZero
+                                             collectionViewLayout: flowLayout];
+        _collectionView.backgroundColor = UIColor.clearColor;
+        _collectionView.alwaysBounceVertical = YES;
+        [_collectionView registerClass:[CountriesCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HeaderIdentifier];
+        [_collectionView registerClass:[CountryCollectionViewCell class]
+            forCellWithReuseIdentifier:CellIdentifier];
+        _collectionView.contentInset = UIEdgeInsetsMake(58, 8, 8, 8);
+        [_collectionView addSubview: self.refreshControl];
+        _collectionView.showsVerticalScrollIndicator = NO;
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+    }
+    return _collectionView;
 }
 
--(void)setCountries:(NSArray<NSArray<Country *> *> *)countries {
-    _countries = countries;
-    [self.droppedSections removeAllObjects];
-    [self.collectionView reloadData];
+- (SortOptionsViewController *)sortOptionsAlertController {
+    if (!_sortOptionsAlertController) {
+        _sortOptionsAlertController = [SortOptionsViewController alertControllerWithTitle: @"Countries's Categories"
+                                                                                  message: @"select an option for sorting"
+                                                                           preferredStyle: UIAlertControllerStyleActionSheet];
+    }
+    return _sortOptionsAlertController;
 }
+
+#pragma mark - Input Bindings
 
 - (void)setInput:(id<CountriesListInput>)input {
     _input = input;
@@ -126,32 +154,18 @@
         @strongify(self)
         if ([x[1] isKindOfClass: [NSIndexPath class]]){
             NSIndexPath *selectedIndexPath = (NSIndexPath *)x[1];
-            [self.input selectedCountry:self.countries[selectedIndexPath.section][selectedIndexPath.row]];
+            [self.input didSelectCountry:self.countries[selectedIndexPath.section][selectedIndexPath.row]];
         }
     }];
 }
 
-static NSString *CellIdentifier = @"Cell";
-static NSString *HeaderIdentifier = @"Cell";
-- (UICollectionView *)collectionView {
-    if (!_collectionView) {
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.headerReferenceSize = CGSizeMake(_collectionView.frame.size.width, 70);
-        _collectionView = [[UICollectionView alloc] initWithFrame: CGRectZero
-                                             collectionViewLayout: flowLayout];
-        _collectionView.backgroundColor = UIColor.clearColor;
-        _collectionView.alwaysBounceVertical = YES;
-        [_collectionView registerClass:[CountriesCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HeaderIdentifier];
-        [_collectionView registerClass:[CountryCollectionViewCell class]
-            forCellWithReuseIdentifier:CellIdentifier];
-        _collectionView.contentInset = UIEdgeInsetsMake(58, 8, 8, 8);
-        [_collectionView addSubview: self.refreshControl];
-        _collectionView.showsVerticalScrollIndicator = NO;
-        _collectionView.delegate = self;
-        _collectionView.dataSource = self;
-    }
-    return _collectionView;
+- (void)showSortOption {
+    [self presentViewController: self.sortOptionsAlertController
+                       animated: YES
+                     completion: nil];
 }
+
+#pragma mark - Lifecycle
 
 -(void)viewDidLoad {
     [super viewDidLoad];
@@ -173,18 +187,14 @@ static NSString *HeaderIdentifier = @"Cell";
     }];
 }
 
-- (void)showSortOption {
-    [self presentViewController: self.sortOptionsAlertController
-                       animated: YES
-                     completion: nil];
-}
+#pragma mark - Collectionview Delegates
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return [self.categories count];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSNumber *sectionNumber = [NSNumber numberWithInteger:section];
+    NSNumber *sectionNumber = @(section);
     if ([self.droppedSections containsObject:sectionNumber] || self.categories.count == 1) {
         return [self.countries[section] count];
     }else{
@@ -202,7 +212,7 @@ static NSString *HeaderIdentifier = @"Cell";
     CountriesCollectionHeaderView *view = [collectionView dequeueReusableSupplementaryViewOfKind: UICollectionElementKindSectionHeader withReuseIdentifier:HeaderIdentifier forIndexPath:indexPath];
     view.categoryName = self.categories[indexPath.section];
     view.dropDownButton.tag = indexPath.section;
-    [view.dropDownButton setTitle:[self.droppedSections containsObject:[NSNumber numberWithInteger:indexPath.section]] ? @"▲" : @"▼"
+    [view.dropDownButton setTitle:[self.droppedSections containsObject:@(indexPath.section)] ? @"▲" : @"▼"
                          forState:UIControlStateNormal];
     [view.dropDownButton addTarget:self action:@selector(didTapHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
     return view;
@@ -222,7 +232,7 @@ static NSString *HeaderIdentifier = @"Cell";
 }
 
 - (void)didTapHeaderButton: (UIButton *)sender {
-    NSNumber *section = [NSNumber numberWithInteger: sender.tag];
+    NSNumber *section = @(sender.tag);
     if ([self.droppedSections containsObject: section]) {
         [self.droppedSections removeObject:section];
     }else{

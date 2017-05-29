@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "FlowController.h"
 
-@interface CountriesListFlowController : NSObject <FlowController>
+@interface CountriesListFlowController : NSObject
 
-- (id)initWithNavigationController: (UINavigationController *) navigationController;
+- (instancetype)initWithNavigationController: (UINavigationController *) navigationController;
+- (void)start;
 
 @end

@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FlowController.h"
 #import "Country.h"
 
-@interface CountryDetailsFlowController : NSObject<FlowController>
+@interface CountryDetailsFlowController : NSObject
 
+- (instancetype)initWithNavigationController: (UINavigationController *) navigationController;
 - (void)startWithCountry: (Country *)country;
-- (id)initWithNavigationController: (UINavigationController *) navigationController;
 
 @end

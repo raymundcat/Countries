@@ -14,7 +14,7 @@
 
 - (void)viewDidLoad;
 - (void)setSelectedCategory: (CountryCategory)category;
-- (void)selectedCountry: (Country *) country;
+- (void)didSelectCountry: (Country *) country;
 - (void)requestRefreshData;
 
 @property (nonatomic, strong, readonly) RACSubject *countriesCategoriesSubject;

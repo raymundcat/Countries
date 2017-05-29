@@ -10,8 +10,7 @@
 
 @interface CountriesCollectionHeaderView : UICollectionReusableView
 
-@property (nonatomic, strong) NSString *categoryName;
+@property (strong, nonatomic) NSString *categoryName;
 @property (nonatomic, strong, readonly) UIButton *dropDownButton;
-@property (nonatomic, strong, readonly) UILabel *title;
 
 @end

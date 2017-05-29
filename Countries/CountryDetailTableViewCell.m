@@ -14,11 +14,13 @@
 
 @property (nonatomic, strong, readwrite) UILabel *detailLabel;
 @property (nonatomic, strong, readwrite) UILabel *detailValueLabel;
-@property (nonatomic, strong) UIView *containerView;
+@property (strong, nonatomic) UIView *containerView;
 
 @end
 
 @implementation CountryDetailTableViewCell
+
+#pragma mark - Private Subviews
 
 - (UIView *)containerView {
     if (!_containerView) {
@@ -54,6 +56,8 @@
     }
     return _detailValueLabel;
 }
+
+#pragma mark - Lifecycle
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

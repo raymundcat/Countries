@@ -14,7 +14,7 @@
 
 @interface CountriesListAPI ()
 
-@property (nonatomic, strong) CountriesHTTPSessionManager *manager;
+@property (strong, nonatomic) CountriesHTTPSessionManager *manager;
 
 @end
 
@@ -37,7 +37,6 @@ static NSString *CountriesNameEndPoint = @"name";
                         CountriesAllEndPoint]
            parameters:nil
              progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"processing");
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject isKindOfClass:[NSArray class]]) {
             NSArray *responseArray = responseObject;
@@ -46,7 +45,6 @@ static NSString *CountriesNameEndPoint = @"name";
             }]);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"failed");
         completion(@[]);
     }];
 }
@@ -57,19 +55,17 @@ static NSString *CountriesNameEndPoint = @"name";
                         CountriesNameEndPoint,
                         searchText]
            parameters:nil
-             progress:^(NSProgress * _Nonnull downloadProgress) {
-                 NSLog(@"processing");
-             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                 if ([responseObject isKindOfClass:[NSArray class]]) {
-                     NSArray *responseArray = responseObject;
-                     completion([responseArray mapObjectsUsingBlock:^id(id obj, NSUInteger idx) {
-                         return [Country fromJSON:obj];
-                     }]);
-                 }
-             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                 NSLog(@"failed");
-                 completion(@[]);
-             }];
+    progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+         if ([responseObject isKindOfClass:[NSArray class]]) {
+             NSArray *responseArray = responseObject;
+             completion([responseArray mapObjectsUsingBlock:^id(id obj, NSUInteger idx) {
+                 return [Country fromJSON:obj];
+             }]);
+         }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         completion(@[]);
+    }];
 }
 
 @end

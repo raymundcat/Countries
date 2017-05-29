@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "FlowController.h"
 
-@interface InitialFlowController : NSObject <FlowController>
+@interface InitialFlowController : NSObject
 
-- (id)initWithWindow: (UIWindow *) window;
+- (instancetype)initWithWindow: (UIWindow *) window;
+- (void)start;
 
 @end

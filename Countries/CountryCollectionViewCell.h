@@ -11,6 +11,6 @@
 
 @interface CountryCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, strong) Country *country;
+@property (strong, nonatomic) Country *country;
 
 @end

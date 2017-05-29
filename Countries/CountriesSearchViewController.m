@@ -15,16 +15,18 @@
 
 @interface CountriesSearchViewController ()
 
-@property (nonatomic, strong) NSArray<Country *> *countries;
-@property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) UIImageView *mapView;
-@property (nonatomic, strong) UILabel *searchInstructionsLabel;
+@property (strong, nonatomic) NSArray<Country *> *countries;
+@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) UIImageView *mapView;
+@property (strong, nonatomic) UILabel *searchInstructionsLabel;
 
 @end
 
 @implementation CountriesSearchViewController
 
 @synthesize countries = _countries;
+
+#pragma mark - Private
 
 -(NSArray<Country *> *)countries {
     if (!_countries) {
@@ -40,30 +42,7 @@
     self.searchInstructionsLabel.hidden = _countries.count != 0;
 }
 
-- (void)setInput:(id<CountriesSearchInput>)input {
-    _input = input;
-    @weakify(self)
-    [self.viewDidLoadSignal subscribeNext:^(id x) {
-        @strongify(self)
-        [self.input viewDidLoad];
-    }];
-    [input.countriesSubject subscribeNext:^(NSArray<Country *> *countries) {
-        @strongify(self)
-        self.countries = countries;
-        [self hideProgress];
-    }];
-    [input.searchTextSubject subscribeNext:^(id x) {
-       @strongify(self)
-        [self showProgress];
-    }];
-    [[self rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:)] subscribeNext:^(RACTuple* x) {
-        @strongify(self)
-        if ([x[1] isKindOfClass: [NSIndexPath class]]){
-            NSIndexPath *selectedIndexPath = (NSIndexPath *)x[1];
-            [self.input selectedCountry: self.countries[selectedIndexPath.row]];
-        }
-    }];
-}
+#pragma mark - Private Subviews
 
 -(UIImageView *)mapView {
     if (!_mapView) {
@@ -107,16 +86,41 @@ static NSString *CellIdentifier = @"Cell";
     return _searchInstructionsLabel;
 }
 
+#pragma mark - Input Binding
+
+- (void)setInput:(id<CountriesSearchInput>)input {
+    _input = input;
+    @weakify(self)
+    [input.countriesSubject subscribeNext:^(NSArray<Country *> *countries) {
+        @strongify(self)
+        self.countries = countries;
+        [self hideProgress];
+    }];
+    [input.searchTextSubject subscribeNext:^(id x) {
+        @strongify(self)
+        [self showProgress];
+    }];
+    [[self rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:)] subscribeNext:^(RACTuple* x) {
+        @strongify(self)
+        if ([x[1] isKindOfClass: [NSIndexPath class]]){
+            NSIndexPath *selectedIndexPath = (NSIndexPath *)x[1];
+            [self.input didSelectCountry: self.countries[selectedIndexPath.row]];
+        }
+    }];
+}
+
+#pragma mark - Lifecycle
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    [self.view addSubview: self.mapView];
-    [self.view addSubview: self.searchInstructionsLabel];
-    [self.view addSubview: self.collectionView];
     self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom
                                                       withFrame:self.view.frame
                                                       andColors:@[UIColor.darkGrayColor,
                                                                   UIColor.whiteColor]];
+    [self.view addSubview: self.mapView];
+    [self.view addSubview: self.searchInstructionsLabel];
+    [self.view addSubview: self.collectionView];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -136,6 +140,8 @@ static NSString *CellIdentifier = @"Cell";
         make.width.mas_equalTo(self.view).multipliedBy(0.8);
     }];
 }
+
+#pragma mark - Collectionview Delegates
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.countries count];

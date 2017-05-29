@@ -15,17 +15,19 @@
 
 @interface CountriesListFlowController()
 
-@property (nonatomic, strong) UINavigationController *navigationController;
-@property (nonatomic, strong) CountriesListViewController *viewController;
-@property (nonatomic, strong) CountriesListPresenter *presenter;
-@property (nonatomic, strong) CountriesSearchFlowController *searchFlowController;
-@property (nonatomic, strong) UIButton *sortButton;
-@property (nonatomic, strong) UIButton *searchButton;
-@property (nonatomic, strong) CountryDetailsFlowController *countryDetailsFlowwController;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) CountriesListViewController *viewController;
+@property (strong, nonatomic) CountriesListPresenter *presenter;
+@property (strong, nonatomic) CountriesSearchFlowController *searchFlowController;
+@property (strong, nonatomic) UIButton *sortButton;
+@property (strong, nonatomic) UIButton *searchButton;
+@property (strong, nonatomic) CountryDetailsFlowController *countryDetailsFlowwController;
 
 @end
 
 @implementation CountriesListFlowController
+
+#pragma mark - Private
 
 - (CountriesListPresenter *)presenter {
     if (!_presenter) {
@@ -62,7 +64,7 @@
     return _searchFlowController;
 }
 
--(CountryDetailsFlowController *)countryDetailsFlowwController {
+- (CountryDetailsFlowController *)countryDetailsFlowwController {
     if (!_countryDetailsFlowwController) {
         _countryDetailsFlowwController = [[CountryDetailsFlowController alloc] initWithNavigationController:self.navigationController];
     }
@@ -101,7 +103,9 @@
     return _sortButton;
 }
 
-- (id)initWithNavigationController:(UINavigationController *)navigationController {
+#pragma mark - Lifecycle
+
+- (instancetype)initWithNavigationController:(UINavigationController *)navigationController {
     if (self = [self init]){
         self.navigationController = navigationController;
     }

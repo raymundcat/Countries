@@ -17,16 +17,18 @@
 
 @interface CountriesSearchFlowController ()
 
-@property (nonatomic, strong) UINavigationController *navigationController;
-@property (nonatomic, strong) CountriesSearchViewController *viewController;
-@property (nonatomic, strong) CountriesSearchPresenter *presenter;
-@property (nonatomic, strong) UISearchBar *searchBar;
-@property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
-@property (nonatomic, strong) CountryDetailsFlowController *countryDetailsFlowwController;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) CountriesSearchViewController *viewController;
+@property (strong, nonatomic) CountriesSearchPresenter *presenter;
+@property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) UITapGestureRecognizer *viewTapGesture;
+@property (strong, nonatomic) CountryDetailsFlowController *countryDetailsFlowwController;
 
 @end
 
 @implementation CountriesSearchFlowController
+
+#pragma mark - Private
 
 - (CountriesSearchPresenter *)presenter {
     if (!_presenter) {
@@ -48,7 +50,7 @@
         _viewController.navigationItem.titleView = self.searchBar;
         _viewController.navigationItem.leftBarButtonItem = nil;
         _viewController.navigationItem.hidesBackButton = YES;
-        [_viewController.view addGestureRecognizer: self.tapGesture];
+        [_viewController.view addGestureRecognizer: self.viewTapGesture];
         
         _viewController.isHeroEnabled = YES;
         _viewController.view.heroID = @"view";
@@ -63,12 +65,12 @@
     return _countryDetailsFlowwController;
 }
 
-- (UITapGestureRecognizer *)tapGesture {
-    if (!_tapGesture) {
-        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
-        _tapGesture.cancelsTouchesInView = NO;
+- (UITapGestureRecognizer *)viewTapGesture {
+    if (!_viewTapGesture) {
+        _viewTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapView)];
+        _viewTapGesture.cancelsTouchesInView = NO;
     }
-    return _tapGesture;
+    return _viewTapGesture;
 }
 
 - (UISearchBar *)searchBar {
@@ -81,7 +83,9 @@
     return _searchBar;
 }
 
-- (id)initWithNavigationController:(UINavigationController *)navigationController {
+#pragma mark - Lifecycle
+
+- (instancetype)initWithNavigationController:(UINavigationController *)navigationController {
     if (self = [self init]){
         self.navigationController = navigationController;
         [[self rac_signalForSelector:@selector(searchBar:textDidChange:)]
@@ -98,8 +102,11 @@
     [self.searchBar becomeFirstResponder];
 }
 
-- (void) didTap{
+- (void)didTapView{
     [self.searchBar endEditing: YES];
+    
+    //this enables the cancel button even
+    //when the searchbar is not active
     for (UIView *view in self.searchBar.subviews) {
         for(id subview in [view subviews]) {
             if ([subview isKindOfClass:[UIButton class]]) {
@@ -108,6 +115,8 @@
         }
     }
 }
+
+#pragma mark - Searchbar Delegate
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     [self.searchBar resignFirstResponder];
