@@ -54,7 +54,7 @@
     return _mapView;
 }
 
-static NSString *CellIdentifier = @"Cell";
+static NSString *CellIdentifier = @"CellIdentifier";
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];

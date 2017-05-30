@@ -40,8 +40,8 @@
 
 #pragma mark - Private Subviews
 
-static NSString *HeaderCellIdentifier = @"HeaderCell";
-static NSString *DetailCellIdentifier = @"DetailCell";
+static NSString *HeaderCellIdentifier = @"HeaderCellIdentifier";
+static NSString *DetailCellIdentifier = @"DetailCellIdentifier";
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero];

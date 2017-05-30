@@ -91,8 +91,8 @@
     return _mapView;
 }
 
-static NSString *CellIdentifier = @"Cell";
-static NSString *HeaderIdentifier = @"Cell";
+static NSString *CellIdentifier = @"CellIdentifier";
+static NSString *HeaderIdentifier = @"HeaderIdentifier";
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
