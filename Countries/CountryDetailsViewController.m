@@ -27,6 +27,13 @@
 
 @synthesize country = _country;
 
+-(Country *)country {
+    if (!_country) {
+        _country = [Country blankCountry];
+    }
+    return _country;
+}
+
 - (NSArray<NSNumber *> *)detailTypes {
     if (!_detailTypes) {
         NSMutableArray<NSNumber *> *detailTypesMutable = [[NSMutableArray<NSNumber *> alloc] init];
@@ -103,6 +110,7 @@ static NSString *DetailCellIdentifier = @"DetailCellIdentifier";
         make.edges.mas_equalTo(self.view);
     }];
 }
+
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];

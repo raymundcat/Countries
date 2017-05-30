@@ -97,6 +97,28 @@
     return country;
 }
 
++ (Country *)blankCountry {
+    Country *country = [[Country alloc] init];
+    country.alpha2Code = @"";
+    country.alpha3Code = @"";
+    country.numericCode = @"";
+    country.name = @"";
+    country.nativeName = @"";
+    country.capital = @"";
+    country.region = @"";
+    country.subRegion = @"";
+    country.flag = @"";
+    country.demonym = @"";
+    country.population = 0;
+    country.otherNames = [[NSMutableArray alloc] init];
+    country.regionalBlocs = [[NSMutableArray alloc] init];
+    country.languages = [[NSMutableArray alloc] init];
+    country.currencies = [[NSMutableArray alloc] init];
+    country.timeZones = [[NSMutableArray alloc] init];
+    country.borders = [[NSMutableArray alloc] init];
+    return country;
+}
+
 - (NSArray<NSString *> *)valuesForCategory: (CountryCategory)category {
     switch (category) {
         case CountryCategoryAll:

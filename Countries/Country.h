@@ -50,6 +50,7 @@ typedef enum {
 @property (nonatomic, strong, readonly) NSMutableArray<NSString *> *borders;
 
 + (Country *)fromJSON: (NSDictionary *)json;
++ (Country *)blankCountry;
 
 + (NSString *)readableNameOfDetailType: (CountryDetailType)detailType;
 - (NSArray<NSString *> *)valuesForDetail: (CountryDetailType)detailType;
