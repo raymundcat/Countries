@@ -66,7 +66,7 @@
 - (UIAlertAction *)regionalBlocOption {
     if (!_regionalBlocOption) {
         @weakify(self)
-        _regionalBlocOption = [UIAlertAction actionWithTitle:@"Region Blocks"
+        _regionalBlocOption = [UIAlertAction actionWithTitle:@"Region Blocs"
                                                     style: UIAlertActionStyleDefault
                                                   handler:^(UIAlertAction * _Nonnull action) {
                                                       @strongify(self)
