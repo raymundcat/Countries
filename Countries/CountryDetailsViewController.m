@@ -30,7 +30,7 @@
 - (NSArray<NSNumber *> *)detailTypes {
     if (!_detailTypes) {
         NSMutableArray<NSNumber *> *detailTypesMutable = [[NSMutableArray<NSNumber *> alloc] init];
-        for (int i = CountryDetailTypeNativeName; i<= CountryDetailTypeRegionalBlocks; i++) {
+        for (int i = CountryDetailTypeNativeName; i<= CountryDetailTypeRegionalBlocs; i++) {
             [detailTypesMutable addObject: @(i)];
         }
         _detailTypes = [NSArray arrayWithArray:detailTypesMutable];

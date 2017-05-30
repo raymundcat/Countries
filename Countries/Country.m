@@ -22,7 +22,7 @@
 @property (nonatomic, strong, readwrite) NSString *demonym;
 @property (nonatomic, strong, readwrite) NSNumber *population;
 @property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *otherNames;
-@property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *regionalBlocks;
+@property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *regionalBlocs;
 @property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *languages;
 @property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *currencies;
 @property (nonatomic, strong, readwrite) NSMutableArray<NSString *> *timeZones;
@@ -46,11 +46,11 @@
     country.capital = [json objectForKey:@"capital"];
     country.population = @([[json objectForKey:@"population"] integerValue]);
     
-    country.regionalBlocks = [[NSMutableArray alloc] init];
+    country.regionalBlocs = [[NSMutableArray alloc] init];
     if ([[json objectForKey:@"regionalBlocs"] isKindOfClass:[NSArray<NSDictionary *> class]]) {
         NSArray<NSDictionary *> *blocs = (NSArray<NSDictionary *> *)[json objectForKey:@"regionalBlocs"];
         for (NSDictionary *blocDict in blocs) {
-            [country.regionalBlocks addObject:[blocDict objectForKey:@"name"]];
+            [country.regionalBlocs addObject:[blocDict objectForKey:@"name"]];
         }
     }
     
@@ -105,8 +105,8 @@
             return [self.region length] > 0 ? @[self.region] : @[@"None"];
         case CountryCategorySubRegion:
             return [self.subRegion length] > 0 ? @[self.subRegion] : @[@"None"];
-        case CountryCategoryRegionalBlock:
-            return [self.regionalBlocks count] > 0 ? self.regionalBlocks : @[@"None"];
+        case CountryCategoryRegionalBloc:
+            return [self.regionalBlocs count] > 0 ? self.regionalBlocs : @[@"None"];
     }
 }
 
@@ -132,8 +132,8 @@
             return @"Subregion";
         case CountryDetailTypeBorders:
             return @"Borders";
-        case CountryDetailTypeRegionalBlocks:
-            return @"Regional Blocks";
+        case CountryDetailTypeRegionalBlocs:
+            return @"Regional Blocs";
     }
 }
 
@@ -159,8 +159,8 @@
             return [self.subRegion length] > 0 ? @[self.subRegion] : @[@"None"];
         case CountryDetailTypeBorders:
             return [self.borders count] > 0 ? self.borders : @[@"None"];
-        case CountryDetailTypeRegionalBlocks:
-            return [self.regionalBlocks count] > 0 ? self.regionalBlocks : @[@"None"];
+        case CountryDetailTypeRegionalBlocs:
+            return [self.regionalBlocs count] > 0 ? self.regionalBlocs : @[@"None"];
     }
 }
 

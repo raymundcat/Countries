@@ -13,7 +13,7 @@
 typedef enum {
     CountryCategoryRegion = 0,
     CountryCategorySubRegion,
-    CountryCategoryRegionalBlock,
+    CountryCategoryRegionalBloc,
     CountryCategoryAll
 }CountryCategory;
 
@@ -28,7 +28,7 @@ typedef enum {
     CountryDetailTypeRegion,
     CountryDetailTypeSubRegion,
     CountryDetailTypeBorders,
-    CountryDetailTypeRegionalBlocks
+    CountryDetailTypeRegionalBlocs
 }CountryDetailType;
 
 @property (nonatomic, strong, readonly) NSString *alpha2Code;
@@ -43,7 +43,7 @@ typedef enum {
 @property (nonatomic, strong, readonly) NSString *demonym;
 @property (nonatomic, strong, readonly) NSNumber *population;
 @property (nonatomic, strong, readonly) NSMutableArray<NSString *> *otherNames;
-@property (nonatomic, strong, readonly) NSMutableArray<NSString *> *regionalBlocks;
+@property (nonatomic, strong, readonly) NSMutableArray<NSString *> *regionalBlocs;
 @property (nonatomic, strong, readonly) NSMutableArray<NSString *> *languages;
 @property (nonatomic, strong, readonly) NSMutableArray<NSString *> *currencies;
 @property (nonatomic, strong, readonly) NSMutableArray<NSString *> *timeZones;
