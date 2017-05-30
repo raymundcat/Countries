@@ -61,10 +61,10 @@
                                                       withFrame:self.view.frame
                                                       andColors:@[UIColor.skyBlueColor,
                                                                   UIColor.lightBlueGreenColor]];
+    [self initLayout];
 }
 
--(void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
+-(void)initLayout {
     [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];

@@ -68,13 +68,12 @@
         [self.contentView addSubview:self.containerView];
         [self.contentView addSubview: self.countryDetailLabel];
         [self.contentView addSubview: self.detailValueLabel];
+        [self initLayout];
     }
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
+- (void)initLayout {
     [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.contentView.mas_top).offset(4);
         make.left.mas_equalTo(self.contentView.mas_left).offset(8);

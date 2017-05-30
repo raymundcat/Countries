@@ -99,10 +99,10 @@ static NSString *DetailCellIdentifier = @"DetailCellIdentifier";
                                                                   UIColor.lightBlueGreenColor]];
     [self.view addSubview: self.mapView];
     [self.view addSubview: self.tableView];
+    [self initLayout];
 }
 
--(void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
+-(void)initLayout {
     [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];

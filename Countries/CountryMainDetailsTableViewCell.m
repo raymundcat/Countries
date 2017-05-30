@@ -99,8 +99,8 @@
     _country = country;
     
     NSURL *url = [NSURL URLWithString:country.flag];
-    NSMutableURLRequest *cacheRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:15.0];
-    [self.flagView loadRequest: cacheRequest];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.flagView loadRequest: request];
     
     self.countryNameLabel.text = country.name;
     self.countryOtherNamesLabel.text = [country.otherNames componentsJoinedByString:@", "];
@@ -145,13 +145,12 @@
              @strongify(self)
              [self.flagIndicatorView stopAnimating];
         }];
+        [self initLayout];
     }
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
+- (void)initLayout {
     [self.countryNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.contentView.mas_top).offset(8);
         make.right.mas_equalTo(self.contentView.mas_right).offset(-16);

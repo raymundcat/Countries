@@ -121,10 +121,10 @@ static NSString *CellIdentifier = @"CellIdentifier";
     [self.view addSubview: self.mapView];
     [self.view addSubview: self.searchInstructionsLabel];
     [self.view addSubview: self.collectionView];
+    [self initLayout];
 }
 
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
+- (void)initLayout {
     [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];

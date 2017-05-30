@@ -65,9 +65,7 @@
 - (void)setCountry:(Country *)country {
     _country = country;
     self.title.text = country.name;
-    [self.imageView sd_setImageWithURL: [Geognos flagURLfor: country.alpha2Code]
-                      placeholderImage: [UIImage imageNamed:@"worldmap"]
-                               options: SDWebImageRefreshCached];
+    [self.imageView sd_setImageWithURL:[Geognos flagURLfor: country.alpha2Code]];
 }
 
 
@@ -86,12 +84,12 @@
         [self addSubview: self.imageView];
         [self addSubview: self.blurView];
         [self.blurView addSubview: self.title];
+        [self initLayout];
     }
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
+- (void)initLayout {
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self);
     }];

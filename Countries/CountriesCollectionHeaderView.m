@@ -59,12 +59,12 @@
         self.layer.shadowOffset = CGSizeZero;
         [self addSubview:self.titleLabel];
         [self addSubview:self.dropDownButton];
+        [self initLayout];
     }
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
+- (void)initLayout {
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.mas_left).mas_offset(12);
         make.centerY.mas_equalTo(self);

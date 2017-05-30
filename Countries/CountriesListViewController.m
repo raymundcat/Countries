@@ -175,10 +175,10 @@ static NSString *HeaderIdentifier = @"HeaderIdentifier";
     self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom
                                                       withFrame:self.view.frame
                                                       andColors:@[UIColor.darkBlueGreenColor, UIColor.lightBlueGreenColor]];
+    [self initLayout];
 }
 
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
+- (void)initLayout {
     [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];
