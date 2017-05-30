@@ -1,5 +1,7 @@
 # Countries App
 
+![simulator screen shot 30 may 2017 11 42 01 pm](https://cloud.githubusercontent.com/assets/4937515/26592394/3bdef844-4593-11e7-94a6-9f6752793e06.png)
+
 This is a simple Ojective-C iOS app built on a Reactive MVVM-C architecture with Reactive Cocoa. The aim of this app is to let users explore the [Countries API](https://restcountries.eu/) and be able to show then basic information about each countries.
 
 The App consists of 3 main features:
