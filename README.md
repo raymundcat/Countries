@@ -27,6 +27,12 @@ Country Details are presented by categorising each presentable details through e
 
 The Country flag is presented via UIWebview from the SVG image included from Countries API. Tapping on the flag launches an even bigger webview to let the users zoom for the finer details.
 
+### Tests
+
+Unit Tests are added in this project to make sure the more logical parts of the app works as intended.
+
+Country objects decoding and Presenter behaviors are tested by mocking the network layer/API through mocked JSON files added into the repository.
+
 ### Other Resources
 
 Reactive Cocoa is the main framework used for the reactive/observer pattern design. The main goal was to dimish delegations and clean up data bindings inbetween Views, Presenters and Flow Controllers.
