@@ -1,5 +1,5 @@
 //
-//  CountriesListPresenterTests.m
+//  CountriesSearchPresenterTests.m
 //  Countries
 //
 //  Created by John Raymund Catahay on 31/05/2017.
@@ -7,22 +7,22 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "CountriesListPresenter.h"
 #import "MockCountries.h"
 #import "MockCountriesAPI.h"
+#import "CountriesSearchPresenter.h"
 
-@interface CountriesListPresenterTests : XCTestCase
+@interface CountriesSearchPresenterTests : XCTestCase
 
-@property (strong, nonatomic) CountriesListPresenter *presenter;
+@property (strong, nonatomic) CountriesSearchPresenter *presenter;
 @property (strong, nonatomic) MockCountriesAPI *countriesAPI;
 
 @end
 
-@implementation CountriesListPresenterTests
+@implementation CountriesSearchPresenterTests
 
--(CountriesListPresenter *)presenter {
+-(CountriesSearchPresenter *)presenter {
     if (!_presenter) {
-        _presenter = [[CountriesListPresenter alloc]
+        _presenter = [[CountriesSearchPresenter alloc]
                       initWithCountriesAPI:self.countriesAPI];
     }
     return _presenter;
@@ -35,6 +35,7 @@
     return _countriesAPI;
 }
 
+
 - (void)setUp {
     [super setUp];
 }
@@ -43,31 +44,16 @@
     [super tearDown];
 }
 
-//Test that the list presenter returns
-//the expected set of countries.
-- (void)testCountriesReturned {
+//Tests whether or not the presenter
+//actually reflects the actual response
+//of the api
+- (void)testPresenterSearchResponse {
     XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
     [self.presenter.countriesSubject subscribeNext:^(NSArray<Country *> *countries) {
         XCTAssertEqual(countries.count, 3);
         [expectation fulfill];
     }];
-    [self.presenter viewDidLoad];
-    [self waitForExpectationsWithTimeout:5.0 handler:nil];
-}
-
-//Test that the list presenter returns
-//the expected set of categories.
-- (void)testCategoriesReturned {
-    XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
-    [self.presenter viewDidLoad];
-    [self.presenter.countriesCategoriesSubject subscribeNext:^(NSArray<NSString *> *categories) {
-        XCTAssertEqual(categories.count, 3);
-        XCTAssertTrue([categories containsObject:@"Northern Europe"]);
-        XCTAssertTrue([categories containsObject:@"South-Eastern Asia"]);
-        XCTAssertTrue([categories containsObject:@"South America"]);
-        [expectation fulfill];
-    }];
-    [self.presenter setSelectedCategory:CountryCategorySubRegion];
+    [self.presenter.searchTextSubject sendNext:@"mock search"];
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
 }
 
@@ -85,7 +71,7 @@
         selectedCountry = countries[0];
         [self.presenter didSelectCountry: selectedCountry];
     }];
-    [self.presenter viewDidLoad];
+    [self.presenter.searchTextSubject sendNext:@"mock search"];
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
 }
 

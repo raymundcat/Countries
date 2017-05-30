@@ -17,6 +17,7 @@
 		EC0824CE1EDDE6CB00B51459 /* colombia.json in Resources */ = {isa = PBXBuildFile; fileRef = EC0824CD1EDDE6CB00B51459 /* colombia.json */; };
 		EC0824D01EDDEA5900B51459 /* philippines.json in Resources */ = {isa = PBXBuildFile; fileRef = EC0824CF1EDDEA5900B51459 /* philippines.json */; };
 		EC0824D21EDDEAB400B51459 /* sweden.json in Resources */ = {isa = PBXBuildFile; fileRef = EC0824D11EDDEAB400B51459 /* sweden.json */; };
+		EC0824D51EDDEF8000B51459 /* CountryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0824D41EDDEF8000B51459 /* CountryTests.m */; };
 		EC084A131ED4B058006BDFCB /* Geognos.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A121ED4B058006BDFCB /* Geognos.m */; };
 		EC084A201ED5E009006BDFCB /* CountriesHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A1F1ED5E009006BDFCB /* CountriesHTTPSessionManager.m */; };
 		EC084A231ED5FA2E006BDFCB /* SortOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC084A221ED5FA2E006BDFCB /* SortOptionsViewController.m */; };
@@ -48,6 +49,7 @@
 		EC768F5A1ED349D100FB2748 /* CountriesCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC768F591ED349D100FB2748 /* CountriesCollectionHeaderView.m */; };
 		ECBCC7801ED20DA800A7AE00 /* CountriesSearchFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */; };
 		ECBCC7841ED2205800A7AE00 /* CountriesSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC7831ED2205800A7AE00 /* CountriesSearchPresenter.m */; };
+		ECDA2DD81EDDF918009F9A67 /* CountriesSearchPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDA2DD71EDDF918009F9A67 /* CountriesSearchPresenterTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,7 @@
 		EC0824CD1EDDE6CB00B51459 /* colombia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = colombia.json; sourceTree = "<group>"; };
 		EC0824CF1EDDEA5900B51459 /* philippines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = philippines.json; sourceTree = "<group>"; };
 		EC0824D11EDDEAB400B51459 /* sweden.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sweden.json; sourceTree = "<group>"; };
+		EC0824D41EDDEF8000B51459 /* CountryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryTests.m; sourceTree = "<group>"; };
 		EC084A111ED4B058006BDFCB /* Geognos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geognos.h; sourceTree = "<group>"; };
 		EC084A121ED4B058006BDFCB /* Geognos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geognos.m; sourceTree = "<group>"; };
 		EC084A1E1ED5E009006BDFCB /* CountriesHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -165,6 +168,7 @@
 		ECBCC77F1ED20DA800A7AE00 /* CountriesSearchFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSearchFlowController.m; sourceTree = "<group>"; };
 		ECBCC7821ED2205800A7AE00 /* CountriesSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchPresenter.h; sourceTree = "<group>"; };
 		ECBCC7831ED2205800A7AE00 /* CountriesSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSearchPresenter.m; sourceTree = "<group>"; };
+		ECDA2DD71EDDF918009F9A67 /* CountriesSearchPresenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSearchPresenterTests.m; sourceTree = "<group>"; };
 		F95A951CF1E990B161F07565 /* Pods-CountriesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountriesUITests/Pods-CountriesUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +258,14 @@
 				EC0824CD1EDDE6CB00B51459 /* colombia.json */,
 			);
 			name = "Raw JSONs";
+			sourceTree = "<group>";
+		};
+		EC0824D31EDDEF6500B51459 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				EC0824D41EDDEF8000B51459 /* CountryTests.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		EC084A241ED622F5006BDFCB /* Views */ = {
@@ -384,7 +396,9 @@
 			isa = PBXGroup;
 			children = (
 				EC0824C31EDDD7E400B51459 /* Mocks */,
+				EC0824D31EDDEF6500B51459 /* Entities */,
 				EC0824C01EDDD53E00B51459 /* Countries List */,
+				ECDA2DD61EDDF8FA009F9A67 /* Countries Search */,
 				EC633DBC1ECDF4EA0040B8EB /* CountriesTests.m */,
 				EC633DBE1ECDF4EA0040B8EB /* Info.plist */,
 			);
@@ -511,6 +525,14 @@
 				ECBCC7831ED2205800A7AE00 /* CountriesSearchPresenter.m */,
 			);
 			name = Presenters;
+			sourceTree = "<group>";
+		};
+		ECDA2DD61EDDF8FA009F9A67 /* Countries Search */ = {
+			isa = PBXGroup;
+			children = (
+				ECDA2DD71EDDF918009F9A67 /* CountriesSearchPresenterTests.m */,
+			);
+			name = "Countries Search";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -835,8 +857,10 @@
 			files = (
 				EC0824C91EDDD8FA00B51459 /* MockCountries.m in Sources */,
 				EC633DBD1ECDF4EA0040B8EB /* CountriesTests.m in Sources */,
+				EC0824D51EDDEF8000B51459 /* CountryTests.m in Sources */,
 				EC0824C21EDDD60600B51459 /* CountriesListPresenterTests.m in Sources */,
 				EC0824C61EDDD81600B51459 /* MockCountriesAPI.m in Sources */,
+				ECDA2DD81EDDF918009F9A67 /* CountriesSearchPresenterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

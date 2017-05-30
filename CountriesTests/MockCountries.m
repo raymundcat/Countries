@@ -23,7 +23,6 @@
     return [Country fromJSON: [MockCountries getJSONFromFile:@"sweden"]];
 }
 
-
 + (NSDictionary *)getJSONFromFile: (NSString *)fileName {
     NSString *filePath = [[NSBundle bundleForClass: self] pathForResource:fileName ofType:@"json"];
     NSString *myJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
