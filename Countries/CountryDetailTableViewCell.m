@@ -40,7 +40,7 @@
         _detailLabel.numberOfLines = 0;
         _detailLabel.font = [UIFont systemFontOfSize:17];
         _detailLabel.textColor = UIColor.darkBlueGreenColor;
-        _detailLabel.text = @"lorem lorem lorem";
+        _detailLabel.text = @"";
     }
     return _detailLabel;
 }
@@ -52,7 +52,7 @@
         _detailValueLabel.font = [UIFont systemFontOfSize:17];
         _detailValueLabel.textColor = UIColor.darkBlueGreenColor;
         _detailValueLabel.textAlignment = NSTextAlignmentRight;
-        _detailValueLabel.text = @"lorem lorem lorem lorem lorem lorem lorem";
+        _detailValueLabel.text = @"";
     }
     return _detailValueLabel;
 }

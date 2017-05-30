@@ -41,6 +41,7 @@
         _countryNameLabel.layer.shadowOpacity = 0.9;
         _countryNameLabel.layer.shadowOffset = CGSizeZero;
         _countryNameLabel.textAlignment = NSTextAlignmentRight;
+        _countryNameLabel.text = @"";
     }
     return _countryNameLabel;
 }
@@ -55,6 +56,7 @@
         _countryOtherNamesLabel.layer.shadowOpacity = 0.9;
         _countryOtherNamesLabel.layer.shadowOffset = CGSizeZero;
         _countryOtherNamesLabel.textAlignment = NSTextAlignmentRight;
+        _countryOtherNamesLabel.text = @"";
     }
     return _countryOtherNamesLabel;
 }
