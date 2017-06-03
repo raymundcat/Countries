@@ -33,7 +33,7 @@
         _navigationController.hidesBarsOnSwipe = YES;
 
             
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+        [_navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                           forBarMetrics:UIBarMetricsDefault];
         _navigationController.navigationBar.shadowImage = [UIImage new];
         _navigationController.navigationBar.translucent = YES;
